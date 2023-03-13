@@ -6,8 +6,14 @@ public class MyApp {
         {
             System.out.println("Hello World\n");
             testPersonne();
+            testCompte();
         }// Fin du main
 
+       public static void testCompte(){
+            Compte c1 = new Compte();
+            c1.setNumero(1L);
+           System.out.println(c1.toString());
+       }
        public static void testPersonne(){
             Personne p1 = null;
             p1 = new Personne();
