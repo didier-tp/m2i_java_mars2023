@@ -1,0 +1,50 @@
+package eu.luminess.indus;
+
+import java.util.Objects;
+
+public class Personne {
+    public String nom;
+    //public int age; //null impossible et valeur par défaut =0
+    public Integer age; //null possible (et par défaut ici sur attribut , variable d'instance)
+    public Double poids;
+
+    public void incrementerAge(){
+        if(age != null)
+           this.age++; //age = age + 1;
+                       //age++;
+    }
+
+    public void afficherV1(){
+        Integer varLocal; //pas d'initialisation par défaut des variables locales
+        System.out.println("Personne avec nom=" + this.nom + " age=" + this.age + " poids=" + this.poids);
+        // System.out.println("varLocal="+varLocal); //erreur de compilation si variable jamais initialisée
+        varLocal=0;
+        System.out.println("varLocal="+varLocal);
+    }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "nom='" + nom + '\'' +
+                ", age=" + age +
+                ", poids=" + poids +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Personne personne = (Personne) o;
+        return Objects.equals(nom, personne.nom) && Objects.equals(age, personne.age) && Objects.equals(poids, personne.poids);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, age, poids);
+    }
+
+    public void afficher(){
+        System.out.println(this.toString());
+    }
+}

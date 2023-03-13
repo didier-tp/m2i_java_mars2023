@@ -11,12 +11,12 @@ public class MyApp {
        public static void testPersonne(){
             Personne p1 = null;
             p1 = new Personne();
-            p1.setAge(50); p1.setNom("didier"); p1.setPoids(80.0);
+            p1.age=50; p1.nom="didier"; p1.poids=80.0;
             p1.incrementerAge();
             p1.afficher();
 
             Personne p1Bis = new Personne();
-            p1Bis.setAge(51); p1Bis.setNom("didier"); p1Bis.setPoids(80.0);
+            p1Bis.age=51; p1Bis.nom="didier"; p1Bis.poids=80.0;
 
             if(p1 == p1Bis)
                 System.out.println("p1 et p1Bis referencent la même instance");
@@ -30,15 +30,8 @@ public class MyApp {
 
 
             Personne p2 = new Personne();
-            p2.afficher();
-            p2.setAge(-5); //valeur invalide pas prise en compte
-            p2.afficher();
-            p2.setAge(5); //valeur valide prise en compte
-            p2.afficher();
 
-           Personne p3 = new Personne("jeanBon" , 40 , 75.75);
-           p3.afficher();
-
+            p2.afficher();
        }
 
 }
