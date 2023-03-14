@@ -7,6 +7,16 @@ public class Personne {
     private  Integer age; //null possible (et par défaut ici sur attribut , variable d'instance)
     private Double poids;
 
+    private static int ageMajorite = 21; //pourra changer si pas final
+
+    public static int getAgeMajorite() {
+        return ageMajorite;
+    }
+
+    public static void setAgeMajorite(int ageMajorite) {
+        Personne.ageMajorite = ageMajorite;
+    }
+
     public Personne(String nom, Integer age, Double poids) {
         this.nom = nom;
         this.age = age;

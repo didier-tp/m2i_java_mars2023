@@ -4,8 +4,10 @@ public class AvionV1 {
     private int nbElements;
     private Personne[] tabElements;
 
+    public static final int TAILLE_MAX = 50;
+
     public AvionV1(){
-        this.tabElements = new Personne[50];
+        this.tabElements = new Personne[TAILLE_MAX];
         this.nbElements=0;
     }
 
@@ -16,7 +18,7 @@ public class AvionV1 {
     }
 
     public void addElement(Personne p){
-        if(this.nbElements==50){
+        if(this.nbElements==TAILLE_MAX){
             System.out.println("tableau plein , plus de place !!!");
         }
         else {

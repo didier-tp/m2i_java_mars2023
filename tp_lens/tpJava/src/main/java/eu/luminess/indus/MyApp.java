@@ -7,11 +7,13 @@ public class MyApp {
             System.out.println("Hello World\n");
             testPersonne();
             testCompte();
-            testString();
+
             testTypeElementaire();
             testConversion();
             testTableau();
+            testString();
             testAvion();
+            System.out.println("racine carree de 81="+Math.sqrt(81.0));
         }// Fin du main
 
     private static void testAvion() {
@@ -27,6 +29,11 @@ public class MyApp {
            System.out.println(c1.toString());
        }
        public static void testPersonne(){
+            System.out.println("age de majorité des personnes = " + Personne.getAgeMajorite());
+            Personne.setAgeMajorite(18); //pour la France
+            System.out.println("nouvel age de majorité des personnes = " + Personne.getAgeMajorite());
+
+
             Personne p1 = null;
             p1 = new Personne();
             p1.setAge(50); p1.setNom("didier"); p1.setPoids(80.0);
