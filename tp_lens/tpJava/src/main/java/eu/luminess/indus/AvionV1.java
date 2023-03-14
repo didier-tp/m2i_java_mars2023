@@ -12,9 +12,9 @@ public class AvionV1 {
     }
 
     public void initialiser(){
-       this.addElement(new Personne("Pilote" , 40 , 81.34));
-       this.addElement(new Personne("Hotesse" , 30 , 61.34));
-       this.addElement(new Personne("jean" , 50 , 61.34));
+       this.addElement(new Employe("Pilote" , 40 , 81.34 , 4000.0));
+       this.addElement(new Employe("Hotesse" , 30 , 61.34 , 2200.0));
+       this.addElement(new Personne("passager du vent" , 50 , 61.34));
     }
 
     public void addElement(Personne p){

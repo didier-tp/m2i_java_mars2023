@@ -3,6 +3,9 @@ package eu.luminess.indus;
 import java.util.Objects;
 //classe Java  avec attributs privés , get/set et contructeur par défaut = POJO = JavaBean
 public class Personne {
+
+    private static int nbInstances = 0;
+
     private  String nom;
     private  Integer age; //null possible (et par défaut ici sur attribut , variable d'instance)
     private Double poids;
@@ -21,6 +24,11 @@ public class Personne {
         this.nom = nom;
         this.age = age;
         this.poids = poids;
+        nbInstances++;
+    }
+
+    protected void finalize() throws Throwable{
+        nbInstances--;
     }
 
     public Personne() {
