@@ -12,20 +12,20 @@ public class MySvgUtil {
 		//ex de fileName : "dessin.svg"
 		
 		try {
-			//ouvrir le fichier en écriture (flux élémentaire + PrintStream)
+			//ouvrir le fichier en Ã©criture (flux Ã©lÃ©mentaire + PrintStream)
 			FileOutputStream fos = new FileOutputStream(fileName);
 			PrintStream ps = new PrintStream(fos);
 					
-			//générer/écrire via .println() la première ligne du fichier svg
+			//gÃ©nÃ©rer/Ã©crire via .println() la premiÃ¨re ligne du fichier svg
 			//<svg xmlns='http://www.w3.org/2000/svg' height='400' width='500'>
 			ps.println("<svg xmlns='http://www.w3.org/2000/svg' height='600' width='800'>");
-			//boucler sur chaque élément de la liste listeFig
-			//et générer/écrire via .println() une ligne dont la valeur est construite
-			//via la méthode .toSvgStringWithColor()
+			//boucler sur chaque Ã©lÃ©ment de la liste listeFig
+			//et gÃ©nÃ©rer/Ã©crire via .println() une ligne dont la valeur est construite
+			//via la mÃ©thode .toSvgStringWithColor()
 			for(Figure2D fig : listeFig) {
 				ps.println(fig.toSvgStringWithColor());
 			}
-			//générer/écrire via .println() la dernière ligne du fichier svg
+			//gÃ©nÃ©rer/Ã©crire via .println() la derniÃ¨re ligne du fichier svg
 			//</svg> 
 			ps.println("</svg>");
 			//fermer les flux ouverts 

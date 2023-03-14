@@ -4,9 +4,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public abstract class Figure2D implements Transformable{
-	private String couleur="black"; //couleur du trait ou du contour ("black" par défaut)
-	private Integer epaisseur=1; //épaisseur du trait ou du contour (1 par défaut)
-	private String couleurFond; //null par défaut ("none" en svg)
+	private String couleur="black"; //couleur du trait ou du contour ("black" par dÃ©faut)
+	private Integer epaisseur=1; //Ã©paisseur du trait ou du contour (1 par dÃ©faut)
+	private String couleurFond; //null par dÃ©faut ("none" en svg)
 	
 	public Figure2D() {
 		super();
@@ -25,10 +25,10 @@ public abstract class Figure2D implements Transformable{
 		return "Figure2D [couleur=" + couleur + ", epaisseur=" + epaisseur + ", couleurFond=" + couleurFond + "]";
 	}
 
-	//design pattern "template method" avec polymorphisme sur sous tâche abstraite .
+	//design pattern "template method" avec polymorphisme sur sous tï¿½che abstraite .
 	public String toSvgStringWithColor() {
-		//polymorphisme sur l'appel à this.toSvgSubString();
-		//où this pourra référencer une instance de Cercle ou Ligne ou Rectangle (cas particuliers de Figure2D)
+		//polymorphisme sur l'appel Ã  this.toSvgSubString();
+		// this pourra rÃ©fÃ©rencer une instance de Cercle ou Ligne ou Rectangle (cas particuliers de Figure2D)
 		String beginOfSvgString = this.toSvgSubString();
 		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
