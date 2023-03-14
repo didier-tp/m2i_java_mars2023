@@ -36,6 +36,9 @@ public class AvionV2 extends ObjetVolant {
            System.out.println("\t"+this.tabElements[i]);
            //System.out.println("\t"+this.tabElements[i].toString());
           chargeUtileTotale += this.tabElements[i].getPoids();
+          if(this.tabElements[i] instanceof Employe) {
+              System.out.println("salaire d'un employe transportable="  + ((Employe) this.tabElements[i]).getSalaire() );
+          }
        }
         System.out.println("chargeUtileTotale (personne et bagages) = " + chargeUtileTotale);
     }
