@@ -1,9 +1,14 @@
 package eu.luminess.indus;
 
+import javax.swing.*;
+
 public class MyApp {
 
         public static void main(String args[]) // fonction principale d'une application Java
         {
+
+            JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
+
             System.out.println("Hello World\n");
             testPersonne();
             testCompte();
