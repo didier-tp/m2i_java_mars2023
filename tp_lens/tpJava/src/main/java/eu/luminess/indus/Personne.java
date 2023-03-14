@@ -2,7 +2,7 @@ package eu.luminess.indus;
 
 import java.util.Objects;
 //classe Java  avec attributs privés , get/set et contructeur par défaut = POJO = JavaBean
-public class Personne {
+public class Personne implements Transportable{
 
     private static int nbInstances = 0;
 
@@ -53,6 +53,11 @@ public class Personne {
             System.out.println("age négatif invalide"); //ou throw new RuntimeException("...");
         else
             this.age = age;
+    }
+
+    @Override
+    public String getDesignation() {
+        return this.toString();
     }
 
     public Double getPoids() {

@@ -1,6 +1,6 @@
 package eu.luminess.indus;
 
-public class AvionV1 {
+public class AvionV1 extends ObjetVolant {
     private int nbElements;
     private Personne[] tabElements;
 
@@ -36,4 +36,8 @@ public class AvionV1 {
        }
     }
 
+    @Override
+    public int getPlafond() {
+        return 10000; //10000 metres
+    }
 }

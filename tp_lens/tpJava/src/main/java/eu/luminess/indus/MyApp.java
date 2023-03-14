@@ -17,10 +17,12 @@ public class MyApp {
         }// Fin du main
 
     private static void testAvion() {
-            AvionV1 a1 = new AvionV1();
+            //AvionV1 a1 = new AvionV1();
+             AvionV2 a1 = new AvionV2();
             a1.initialiser();
-            a1.addElement(new Personne("axelle_Aire" , 35, 57.8));
+            a1.addElement(new Personne("axelle_Aire" , 35, 50.0));
             a1.afficher();
+            System.out.println("altitude_max="+a1.getPlafond());
     }
 
     public static void testCompte(){
