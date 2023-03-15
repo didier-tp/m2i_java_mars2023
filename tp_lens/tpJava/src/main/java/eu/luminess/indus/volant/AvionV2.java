@@ -34,6 +34,8 @@ public class AvionV2 extends ObjetVolant {
         }
     }
 
+
+
     public void afficher(){
         System.out.println("Avion avec nbElements="+this.nbElements);
         System.out.println("Elements de l'avion:");

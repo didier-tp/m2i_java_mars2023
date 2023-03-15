@@ -6,6 +6,8 @@ import eu.luminess.indus.pers.Employe;
 import eu.luminess.indus.pers.Personne;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class AvionV3 extends ObjetVolant {
@@ -18,8 +20,27 @@ public class AvionV3 extends ObjetVolant {
     public void initialiser(){
        this.addElement(new Employe("Pilote" , 40 , 50.0 , 4000.0));
        this.addElement(new Employe("Hotesse" , 30 , 50.0 , 2200.0));
-       this.addElement(new Personne("passager du vent" , 50 , 50.0));
-       this.addElement(new Bagage("valise en carton" , 20.0 , 32.0));
+       this.addElement(new Personne("Passager du vent" , 50 , 50.0));
+       this.addElement(new Bagage("Valise en carton" , 20.0 , 32.0));
+    }
+
+    public void trier(){
+
+        /*
+        new Comparator<Transportable>() { ...}
+        signifie nouvelle instance d'une classe anonyme imbriquée
+        qui implémente l'interface Comparator<Transportable>
+        avec le code entre { }
+         */
+        Collections.sort(this.listElements, new Comparator<Transportable>() {
+            @Override
+            public int compare(Transportable o1, Transportable o2) {
+                if(o1.getDesignation()!=null)
+                    return o1.getDesignation().compareTo(o2.getDesignation());
+                else return -1;
+            }
+        });
+
     }
 
     public void addElement(Transportable t){
@@ -30,6 +51,7 @@ public class AvionV3 extends ObjetVolant {
         System.out.println("Avion avec nbElements="+this.listElements.size());
         System.out.println("Elements de l'avion:");
         double chargeUtileTotale = 0.0;
+        this.trier();
        for(Transportable element : this.listElements){
            System.out.println("\t"+element);
           chargeUtileTotale += element.getPoids();
