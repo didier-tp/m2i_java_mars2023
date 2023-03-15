@@ -18,9 +18,9 @@ public class AvionV3 extends ObjetVolant {
     }
 
     public void initialiser(){
-       this.addElement(new Employe("Pilote" , 40 , 50.0 , 4000.0));
-       this.addElement(new Employe("Hotesse" , 30 , 50.0 , 2200.0));
-       this.addElement(new Personne("Passager du vent" , 50 , 50.0));
+       this.addElement(new Employe("Pilote" , 40 , 30.0 , 4000.0));
+       this.addElement(new Employe("Hotesse" , 30 , 60.0 , 2200.0));
+       this.addElement(new Personne("Passager du vent" , 40 , 50.0));
        this.addElement(new Bagage("Valise en carton" , 20.0 , 32.0));
     }
 
@@ -32,6 +32,7 @@ public class AvionV3 extends ObjetVolant {
         qui implémente l'interface Comparator<Transportable>
         avec le code entre { }
          */
+        /*
         Collections.sort(this.listElements, new Comparator<Transportable>() {
             @Override
             public int compare(Transportable o1, Transportable o2) {
@@ -40,6 +41,21 @@ public class AvionV3 extends ObjetVolant {
                 else return 0;
             }
         });
+         */
+        /*
+        //tri par désignation via lambda:
+        Collections.sort(this.listElements, (o1,o2) -> {
+            if(o1.getDesignation()!=null && o2.getDesignation() != null)
+                return o1.getDesignation().compareTo(o2.getDesignation());
+            else return 0;
+        } );
+        */
+        //tri par poids via lambda:
+        //Collections.sort(this.listElements, (o1,o2) -> (int)(o1.getPoids() - o2.getPoids()) );
+        Collections.sort(this.listElements, (o1,o2) -> (int)( (o1.getPoids()!=null && o2.getPoids()!=null) ? ( o1.getPoids() - o2.getPoids()) : 0) );
+
+
+
 
     }
 
