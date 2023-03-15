@@ -9,6 +9,8 @@ import eu.luminess.indus.volant.AvionV3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 
 public class MyApp {
 
@@ -20,16 +22,25 @@ public class MyApp {
             //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
             //System.out.println("Hello World\n");
-            testPersonne();
+            //testPersonne();
             //testCompte();
 
             //testTypeElementaire();
             //testConversion();
             //testTableau();
             //testString();
-            testAvion();
-            //System.out.println("racine carree de 81="+Math.sqrt(81.0));
+            //testAvion();
+            //System.out.println("racine carree de 81="+
+            testStream();
         }// Fin du main
+
+    private static void testStream(){
+            List<Personne> listeP = Personne.initDataSet();
+            listeP.stream().forEach((p)-> System.out.println("### " + p));
+            List<Personne> listeP2 = Personne.enchainerOperations((listeP));
+            listeP.stream().forEach((p)-> System.out.println(">>> " + p));
+            listeP2.stream().forEach((p)-> System.out.println("*** " + p));
+    }
 
     private static void testAvion() {
             //AvionV1 a1 = new AvionV1();

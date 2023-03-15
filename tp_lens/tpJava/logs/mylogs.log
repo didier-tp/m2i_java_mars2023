@@ -63,3 +63,56 @@ eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
 	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
 	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
 	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 15:44:40.053 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 15:44:40.061 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 15:45:26.770 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 15:45:26.779 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 15:46:44.922 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 15:46:44.931 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:03:55.106 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 16:03:55.114 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:28:07.136 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 16:28:07.145 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:28:40.554 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 16:28:40.563 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:31:40.932 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 16:31:40.940 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:34:19.983 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:19)] - debut du main
+2023-03-15 16:34:19.992 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:83)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:68) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:78) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:23) [classes/:?]
+2023-03-15 16:50:53.649 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:21)] - debut du main
+2023-03-15 16:52:16.972 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:21)] - debut du main
+2023-03-15 16:55:14.557 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:21)] - debut du main
+2023-03-15 16:56:06.532 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:21)] - debut du main
+2023-03-15 16:59:54.206 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:21)] - debut du main

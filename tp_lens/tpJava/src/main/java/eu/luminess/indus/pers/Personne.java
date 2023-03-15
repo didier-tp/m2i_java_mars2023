@@ -3,7 +3,12 @@ package eu.luminess.indus.pers;
 import eu.luminess.indus.Transportable;
 import eu.luminess.indus.exception.AgeInvalideException;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
 //classe Java  avec attributs privés , get/set et contructeur par défaut = POJO = JavaBean
 public class Personne implements Transportable {
 
@@ -28,6 +33,25 @@ public class Personne implements Transportable {
         this.age = age;
         this.poids = poids;
         nbInstances++;
+    }
+
+    public static List<Personne> initDataSet(){
+        List<Personne> listePers = new ArrayList<>();
+        listePers.add(new Personne("Dupond",45,67.8));
+        listePers.add(new Personne("Jean",15,57.8));
+        listePers.add(new Personne("Alfred",12,87.8));
+        listePers.add(new Personne("Didier",35,80.8));
+        return listePers;
+    }
+
+    public static List<Personne> enchainerOperations(List<Personne> listePers){
+           return      listePers.stream()
+                        .filter( (p)->p.getAge()>=18 )
+                        .sorted( (p1,p2)->Integer.compare(p1.getAge(), p2.getAge()))
+                        //.map( (p) -> { p.setNom(p.getNom().toUpperCase()); return p; } )
+                        .map( (p) ->  new Personne(p.nom.toUpperCase(), p.getAge() , p.getPoids()) )
+                        //.collect(Collectors.toList()); //à partir de java 8
+                        .toList(); //avec java 17
     }
 
     protected void finalize() throws Throwable{
