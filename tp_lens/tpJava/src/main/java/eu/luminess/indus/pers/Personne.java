@@ -73,7 +73,8 @@ public class Personne implements Transportable {
 
     @Override
     public String getDesignation() {
-        return this.toString();
+        //return this.toString();
+        return this.nom;
     }
 
     public Double getPoids() {

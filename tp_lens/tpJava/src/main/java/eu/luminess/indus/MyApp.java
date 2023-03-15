@@ -36,7 +36,7 @@ public class MyApp {
             //AvionV2 a1 = new AvionV2();
             AvionV3 a1 = new AvionV3();
             a1.initialiser();
-            a1.addElement(new Personne("axelle_Aire" , 35, 50.0));
+            a1.addElement(new Personne("Axelle_Aire" , 35, 50.0));
             a1.afficher();
             System.out.println("altitude_max="+a1.getPlafond());
     }

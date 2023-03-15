@@ -35,9 +35,9 @@ public class AvionV3 extends ObjetVolant {
         Collections.sort(this.listElements, new Comparator<Transportable>() {
             @Override
             public int compare(Transportable o1, Transportable o2) {
-                if(o1.getDesignation()!=null)
+                if(o1.getDesignation()!=null && o2.getDesignation() != null)
                     return o1.getDesignation().compareTo(o2.getDesignation());
-                else return -1;
+                else return 0;
             }
         });
 
