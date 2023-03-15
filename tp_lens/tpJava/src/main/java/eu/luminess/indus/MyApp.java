@@ -5,13 +5,17 @@ package eu.luminess.indus;
 import eu.luminess.indus.exception.AgeInvalideException;
 import eu.luminess.indus.pers.Personne;
 import eu.luminess.indus.volant.AvionV2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class MyApp {
 
+    private static Logger logger = LoggerFactory.getLogger(MyApp.class);
+
         public static void main(String args[]) // fonction principale d'une application Java
         {
-
+            logger.debug("debut du main");
             //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
             //System.out.println("Hello World\n");
@@ -78,7 +82,8 @@ public class MyApp {
            }
             catch(Exception ex){
                 //System.err.println(ex.getMessage());
-                ex.printStackTrace();
+                logger.error("echec setAge" , ex);
+               // ex.printStackTrace();
             }
 
            Personne p3 = new Personne("jeanBon" , 40 , 75.75);
