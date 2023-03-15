@@ -1,4 +1,4 @@
-package eu.luminess.indus;
+package eu.luminess.indus.volant;
 
 import lombok.Getter;
 import lombok.Setter;

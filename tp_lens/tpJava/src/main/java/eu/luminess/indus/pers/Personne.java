@@ -1,8 +1,11 @@
-package eu.luminess.indus;
+package eu.luminess.indus.pers;
+
+import eu.luminess.indus.Transportable;
+import eu.luminess.indus.exception.AgeInvalideException;
 
 import java.util.Objects;
 //classe Java  avec attributs privés , get/set et contructeur par défaut = POJO = JavaBean
-public class Personne implements Transportable{
+public class Personne implements Transportable {
 
     private static int nbInstances = 0;
 
@@ -47,6 +50,8 @@ public class Personne implements Transportable{
         return age;
     }
 
+    /*
+    //V1 sans exception
     public void setAge(Integer age) {
         //this.age = age; //code généré par assistant
         if(age <0 )
@@ -54,6 +59,17 @@ public class Personne implements Transportable{
         else
             this.age = age;
     }
+    */
+
+    public void setAge(Integer age) throws AgeInvalideException{
+        if(age <0 )
+            //throw new RuntimeException("age négatif invalide");
+            //throw new IllegalArgumentException("age négatif invalide");
+           throw new AgeInvalideException("age négatif invalide");
+        else
+            this.age = age;
+    }
+
 
     @Override
     public String getDesignation() {

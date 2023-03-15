@@ -1,24 +1,29 @@
 package eu.luminess.indus;
 
-import javax.swing.*;
+//import javax.swing.*;
+
+import eu.luminess.indus.exception.AgeInvalideException;
+import eu.luminess.indus.pers.Personne;
+import eu.luminess.indus.volant.AvionV2;
+
 
 public class MyApp {
 
         public static void main(String args[]) // fonction principale d'une application Java
         {
 
-            JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
+            //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
-            System.out.println("Hello World\n");
+            //System.out.println("Hello World\n");
             testPersonne();
-            testCompte();
+            //testCompte();
 
-            testTypeElementaire();
-            testConversion();
-            testTableau();
-            testString();
-            testAvion();
-            System.out.println("racine carree de 81="+Math.sqrt(81.0));
+            //testTypeElementaire();
+            //testConversion();
+            //testTableau();
+            //testString();
+            //testAvion();
+            //System.out.println("racine carree de 81="+Math.sqrt(81.0));
         }// Fin du main
 
     private static void testAvion() {
@@ -62,11 +67,19 @@ public class MyApp {
 
 
             Personne p2 = new Personne();
-            p2.afficher();
-            p2.setAge(-5); //valeur invalide pas prise en compte
-            p2.afficher();
-            p2.setAge(5); //valeur valide prise en compte
-            p2.afficher();
+
+
+           try {
+               p2.afficher();
+               p2.setAge(-5); //valeur invalide pas prise en compte (exception)
+               p2.afficher();
+               p2.setAge(5); //valeur valide prise en compte
+               p2.afficher();
+           }
+            catch(Exception ex){
+                //System.err.println(ex.getMessage());
+                ex.printStackTrace();
+            }
 
            Personne p3 = new Personne("jeanBon" , 40 , 75.75);
            p3.afficher();

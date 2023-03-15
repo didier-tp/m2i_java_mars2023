@@ -1,5 +1,6 @@
-package eu.luminess.indus;
+package eu.luminess.indus.pers;
 
+import eu.luminess.indus.pers.Personne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Employe  extends Personne{
+public class Employe  extends Personne {
     private Double salaire;
 
     public Employe(String nom, Integer age, Double poids, Double salaire) {

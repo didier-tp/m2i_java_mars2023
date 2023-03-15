@@ -1,4 +1,10 @@
-package eu.luminess.indus;
+package eu.luminess.indus.volant;
+
+import eu.luminess.indus.Bagage;
+import eu.luminess.indus.Transportable;
+import eu.luminess.indus.pers.Employe;
+import eu.luminess.indus.pers.Personne;
+import eu.luminess.indus.volant.ObjetVolant;
 
 public class AvionV2 extends ObjetVolant {
     private int nbElements;
