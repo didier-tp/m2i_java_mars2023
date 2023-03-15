@@ -5,6 +5,7 @@ package eu.luminess.indus;
 import eu.luminess.indus.exception.AgeInvalideException;
 import eu.luminess.indus.pers.Personne;
 import eu.luminess.indus.volant.AvionV2;
+import eu.luminess.indus.volant.AvionV3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,13 +27,14 @@ public class MyApp {
             //testConversion();
             //testTableau();
             //testString();
-            //testAvion();
+            testAvion();
             //System.out.println("racine carree de 81="+Math.sqrt(81.0));
         }// Fin du main
 
     private static void testAvion() {
             //AvionV1 a1 = new AvionV1();
-             AvionV2 a1 = new AvionV2();
+            //AvionV2 a1 = new AvionV2();
+            AvionV3 a1 = new AvionV3();
             a1.initialiser();
             a1.addElement(new Personne("axelle_Aire" , 35, 50.0));
             a1.afficher();
@@ -71,13 +73,9 @@ public class MyApp {
 
 
             Personne p2 = new Personne();
-
-
+           p2.afficher();
            try {
-               p2.afficher();
                p2.setAge(-5); //valeur invalide pas prise en compte (exception)
-               p2.afficher();
-               p2.setAge(5); //valeur valide prise en compte
                p2.afficher();
            }
             catch(Exception ex){
@@ -85,6 +83,9 @@ public class MyApp {
                 logger.error("echec setAge" , ex);
                // ex.printStackTrace();
             }
+
+           p2.setAge(5); //valeur valide prise en compte
+           p2.afficher();
 
            Personne p3 = new Personne("jeanBon" , 40 , 75.75);
            p3.afficher();
