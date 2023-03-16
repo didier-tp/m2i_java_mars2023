@@ -27,17 +27,17 @@ public class MyApp {
             //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
             //System.out.println("Hello World\n");
-            testPersonne();
+            //testPersonne();
             //testCompte();
 
             //testTypeElementaire();
             //testConversion();
             //testTableau();
             //testString();
-            //testAvion();
+            testAvion();
             //System.out.println("racine carree de 81="+
             //testStream();
-            testDate();
+            //testDate();
         }// Fin du main
 
     public static void testDate(){
@@ -67,11 +67,15 @@ public class MyApp {
     private static void testAvion() {
             //AvionV1 a1 = new AvionV1();
             //AvionV2 a1 = new AvionV2();
-            AvionV3 a1 = new AvionV3();
+            var a1 = new AvionV3();
             a1.initialiser();
             a1.addElement(new Personne("Axelle_Aire" , 35, 50.0));
             a1.afficher();
             System.out.println("altitude_max="+a1.getPlafond());
+            a1.ecrireFichierCsv("personnes_avion.csv");
+            var a2 = new AvionV3();
+            a2.lireDepuisFichierCsv("personnes_avion.csv");
+            a2.afficher();
     }
 
     public static void testCompte(){

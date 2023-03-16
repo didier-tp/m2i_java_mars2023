@@ -5,10 +5,12 @@ import eu.luminess.indus.Transportable;
 import eu.luminess.indus.pers.Employe;
 import eu.luminess.indus.pers.Personne;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class AvionV3 extends ObjetVolant {
 
@@ -24,6 +26,43 @@ public class AvionV3 extends ObjetVolant {
        this.addElement(new Bagage("Valise en carton" , 20.0 , 32.0));
        this.addElement(new Bagage("Sac null" , null , 32.0));
        this.addElement(new Bagage(null , null , null));
+    }
+
+    public void ecrireFichierCsv(String fileName){
+
+        try (PrintWriter ps = new PrintWriter(new File(fileName)) ){
+            ps.println("nom;age;poids");
+            for(Transportable t : this.listElements){
+                if(t instanceof Personne){
+                    Personne p = (Personne) t;
+                    ps.printf("%s;%d;%s\n", p.getNom() , p.getAge() , String.valueOf(p.getPoids()));
+                }
+            }
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        //finaly et close automatique car try with resource
+
+    }
+
+    public void lireDepuisFichierCsv(String fileName){
+
+        try (Scanner scanner = new Scanner(Path.of(fileName)) ){
+            scanner.nextLine(); //lecture premiere ligne entete
+            while(scanner.hasNext()) {
+                String ligne = scanner.nextLine();
+                //System.out.println(ligne) ;
+                String[] tab = ligne.split(";");
+                Personne p = new Personne(tab[0],
+                        Integer.parseInt(tab[1]),
+                        Double.parseDouble(tab[2]));
+                this.listElements.add(p);
+            }
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        //finaly et close automatique car try with resource
+
     }
 
     public void trier(){
