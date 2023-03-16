@@ -3,6 +3,7 @@ package eu.luminess.indus;
 //import javax.swing.*;
 
 import eu.luminess.indus.exception.AgeInvalideException;
+import eu.luminess.indus.pers.Adresse;
 import eu.luminess.indus.pers.Personne;
 import eu.luminess.indus.volant.AvionV2;
 import eu.luminess.indus.volant.AvionV3;
@@ -10,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public class MyApp {
@@ -22,7 +24,7 @@ public class MyApp {
             //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
             //System.out.println("Hello World\n");
-            //testPersonne();
+            testPersonne();
             //testCompte();
 
             //testTypeElementaire();
@@ -31,7 +33,7 @@ public class MyApp {
             //testString();
             //testAvion();
             //System.out.println("racine carree de 81="+
-            testStream();
+            //testStream();
         }// Fin du main
 
     private static void testStream(){
@@ -100,8 +102,30 @@ public class MyApp {
 
            Personne p3 = new Personne("jeanBon" , 40 , 75.75);
            p3.afficher();
+           afficherAdresseDePersonne(p3);
+           p3.setAdresseOptionnelle(Optional.of(new Adresse("12 rue X" , "75001" , "Paris")));
+           afficherAdresseDePersonne(p3);
 
        }
+
+     public static void afficherAdresseDePersonne(Personne p){
+            /*
+            //V1
+            if(p.getAdresseOptionnelle().isPresent())
+                System.out.println(p.getAdresseOptionnelle().get());
+            else System.out.println("sans adresse");
+             */
+         /*
+        // V2 :
+         Adresse adresse = p.getAdresseOptionnelle().orElse(null);
+         String adresseAsString = (adresse!=null)?adresse.toString() : "sans_adresse";
+         System.out.println("adresseAsString="+adresseAsString);
+         */
+
+         String adresseAsString = p.getAdresseOptionnelle().map((notNullAdresse)-> notNullAdresse.toString())
+                                                           .orElse("sans_adresse");
+         System.out.println("adresseAsString="+adresseAsString);
+     }
 
     public static void testTypeElementaire() {
         String sDate = "lundi 16 janvier 2023";

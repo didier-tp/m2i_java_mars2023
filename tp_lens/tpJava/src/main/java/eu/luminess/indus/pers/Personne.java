@@ -3,16 +3,15 @@ package eu.luminess.indus.pers;
 import eu.luminess.indus.Transportable;
 import eu.luminess.indus.exception.AgeInvalideException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 //classe Java  avec attributs privés , get/set et contructeur par défaut = POJO = JavaBean
 public class Personne implements Transportable {
 
     private static int nbInstances = 0;
+
+    private Optional<Adresse> adresseOptionnelle = Optional.empty(); //pas d'adresse par defaut
 
     private  String nom;
     private  Integer age; //null possible (et par défaut ici sur attribut , variable d'instance)
@@ -70,9 +69,18 @@ public class Personne implements Transportable {
         this.nom = nom;
     }
 
+    public Optional<Adresse> getAdresseOptionnelle() {
+        return adresseOptionnelle;
+    }
+
+    public void setAdresseOptionnelle(Optional<Adresse> adresseOptionnelle) {
+        this.adresseOptionnelle = adresseOptionnelle;
+    }
+
     public Integer getAge() {
         return age;
     }
+
 
     /*
     //V1 sans exception
