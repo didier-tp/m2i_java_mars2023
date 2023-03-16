@@ -27,7 +27,7 @@ public class MyApp {
             //javax.swing.JOptionPane.showMessageDialog(null,"Bienvenue MyApp");
 
             //System.out.println("Hello World\n");
-            //testPersonne();
+            testPersonne();
             //testCompte();
 
             //testTypeElementaire();
@@ -76,6 +76,8 @@ public class MyApp {
             var a2 = new AvionV3();
             a2.lireDepuisFichierCsv("personnes_avion.csv");
             a2.afficher();
+
+            MyUtil.decrire(a2);
     }
 
     public static void testCompte(){
@@ -94,6 +96,8 @@ public class MyApp {
             p1.setAge(50); p1.setNom("didier"); p1.setPoids(80.0);
             p1.incrementerAge();
             p1.afficher();
+
+            MyUtil.decrire(p1);
 
             Personne p1Bis = new Personne();
             p1Bis.setAge(51); p1Bis.setNom("didier"); p1Bis.setPoids(80.0);
