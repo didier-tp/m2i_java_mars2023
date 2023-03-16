@@ -135,3 +135,15 @@ eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
 	at eu.luminess.indus.pers.Personne.setAge(Personne.java:100) ~[classes/:?]
 	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:91) [classes/:?]
 	at eu.luminess.indus.MyApp.main(MyApp.java:27) [classes/:?]
+2023-03-16 10:53:23.696 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:25)] - debut du main
+2023-03-16 10:53:23.705 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:112)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:100) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:107) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:29) [classes/:?]
+2023-03-16 10:54:22.759 DEBUG [main] [eu.luminess.indus.MyApp.main(MyApp.java:26)] - debut du main
+2023-03-16 10:54:22.767 ERROR [main] [eu.luminess.indus.MyApp.testPersonne(MyApp.java:116)] - echec setAge
+eu.luminess.indus.exception.AgeInvalideException: age négatif invalide
+	at eu.luminess.indus.pers.Personne.setAge(Personne.java:100) ~[classes/:?]
+	at eu.luminess.indus.MyApp.testPersonne(MyApp.java:111) [classes/:?]
+	at eu.luminess.indus.MyApp.main(MyApp.java:30) [classes/:?]

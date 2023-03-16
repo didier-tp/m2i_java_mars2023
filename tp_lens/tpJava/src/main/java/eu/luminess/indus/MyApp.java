@@ -10,6 +10,9 @@ import eu.luminess.indus.volant.AvionV3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +37,24 @@ public class MyApp {
             //testAvion();
             //System.out.println("racine carree de 81="+
             //testStream();
+            testDate();
         }// Fin du main
+
+    public static void testDate(){
+        Date dateAujourdhui = new Date();
+        System.out.println("dateAujourdhui="+dateAujourdhui);
+
+        SimpleDateFormat  simpleDateFormatUs = new SimpleDateFormat("yyyy-MM-dd");
+        String sdateUs = simpleDateFormatUs.format(dateAujourdhui);
+        System.out.println("sdateUs="+sdateUs);
+
+        SimpleDateFormat  simpleDateFormatFr = new SimpleDateFormat("dd/MM/yyyy");
+        String sdateFr = simpleDateFormatFr.format(dateAujourdhui);
+        System.out.println("sdateFr="+sdateFr);
+
+        LocalDate today = LocalDate.now();
+        System.out.println("today is " + today);
+    }
 
     private static void testStream(){
             List<Personne> listeP = Personne.initDataSet();
@@ -126,6 +146,8 @@ public class MyApp {
                                                            .orElse("sans_adresse");
          System.out.println("adresseAsString="+adresseAsString);
      }
+
+
 
     public static void testTypeElementaire() {
         String sDate = "lundi 16 janvier 2023";
