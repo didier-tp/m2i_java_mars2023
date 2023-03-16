@@ -32,9 +32,9 @@ public class MyApp {
         try {
             String scriptFileName="f2.groovy";
             Map<String,Object> map = new HashMap<>();
-            map.put("x",5); map.put("y",7);
+            map.put("x",5); map.put("y",7); map.put("calcul" , new Calcul(81.0));
             Object result = testGroovyEvalScript(new FileReader(scriptFileName),map);
-            System.out.println("via groovy, z="+map.get("z") + " result="+result);
+            System.out.println("via groovy, z="+map.get("z") + ", calcul.res=" + ((Calcul)map.get("calcul")).getRes() + " , result="+result);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
