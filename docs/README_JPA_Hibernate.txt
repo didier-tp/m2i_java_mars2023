@@ -1,0 +1,1 @@
+C:\tp\local-git-didier-tp-repositories\m2i_jpa_dec2022 avec doc et application exemple (JPA/Hibernate intégrée à SpringBoot)
