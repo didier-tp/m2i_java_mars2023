@@ -12,7 +12,8 @@ public class MyApp {
         pers.setAge(pers.getAge()+1);
         pers.setPoids(pers.getPoids()+1);
         daoPersonne.update(pers);
+        //daoPersonne.deleteById(1);
         daoPersonne.findAll().stream().forEach(p-> System.out.println(p));
-        //...
+
     }
 }

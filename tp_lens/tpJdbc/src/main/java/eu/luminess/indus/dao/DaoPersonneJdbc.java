@@ -117,7 +117,7 @@ public class DaoPersonneJdbc implements DaoPersonne{
             pst.setInt(2, p.getAge());
             pst.setDouble(3, p.getPoids());
             pst.setInt(4,p.getId());
-            pst.executeUpdate(); //avec auto_increment mysql sur colonne id
+            pst.executeUpdate();
         }catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -128,6 +128,13 @@ public class DaoPersonneJdbc implements DaoPersonne{
 
     @Override
     public void deleteById(int id) {
-
+        try(Connection cn = this.getConnection();
+            PreparedStatement pst = cn.prepareStatement("DELETE FROM personne  WHERE id=?"))
+        {
+            pst.setInt(1,id);
+            pst.executeUpdate();
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
     }
 }
