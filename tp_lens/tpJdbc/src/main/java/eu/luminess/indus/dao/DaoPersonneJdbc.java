@@ -110,7 +110,20 @@ public class DaoPersonneJdbc implements DaoPersonne{
 
     @Override
     public Personne update(Personne p) {
-        return null;
+        try(Connection cn = this.getConnection();
+            PreparedStatement pst = cn.prepareStatement("UPDATE personne SET nom=?,age=?,poids=? WHERE id=?"))
+        {
+            pst.setString(1, p.getNom());
+            pst.setInt(2, p.getAge());
+            pst.setDouble(3, p.getPoids());
+            pst.setInt(4,p.getId());
+            pst.executeUpdate(); //avec auto_increment mysql sur colonne id
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        //Automatic close via try(withResource)
+        //NB: dans projet plus élaborer cn.close() libère la connexion dans un pool de connexions
+        return p;
     }
 
     @Override
