@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<produit xmlns="http://www.example.org/produit" ref="p1">
-    <label>CAHIER</label>
-    <prix>3.6</prix>
-</produit>
