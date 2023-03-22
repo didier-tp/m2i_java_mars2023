@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,6 +19,10 @@ public class WsCalls {
 	
 	private static ObjectMapper jacksonObjectMapper = new ObjectMapper();
 	private static HttpClient httpClient = HttpClient.newHttpClient();
+	
+	static {
+		jacksonObjectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	}
 	
 	public static CompletableFuture<HttpResponse<String>> sendAsyncGetRequest(String url){
 		HttpRequest req =
@@ -39,14 +44,22 @@ public class WsCalls {
 		return sendAsyncGetRequest(latLonFromZipWsUrl); 
 	}
 	
-	public static Ville addLatLonIntoVilleFromWsResultMap(Ville v,Map map){
-		System.out.println("map="+map);
-		List places = (List)map.get("places");
-		v.setLon( Double.valueOf( ((Map) places.get(0)).get("longitude").toString() ) );
-		v.setLat( Double.valueOf( ((Map) places.get(0)).get("latitude").toString() ) );
-		return v;
+	public static CompletableFuture<HttpResponse<String>> composeWsCallFromLatLonOfVille(Ville ville) {
+		String apiKey = "27a68278aebee75af9d4fc23d7a68f75";
+		String weatherWsUrl = """
+				https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s"""
+				.formatted(String.valueOf(ville.getLat()),
+						   String.valueOf(ville.getLon()),
+						   apiKey);
+		//System.out.println("weatherWsUrl="+weatherWsUrl);
+		return sendAsyncGetRequest(weatherWsUrl); 
 	}
 	
+	
+	
+	
+	/*
+	//V1 (via map)
 	public static Map jsonToMap(String jsonS) {
 		//TypeReference<HashMap<String,Object>> typeRef  = new TypeReference<HashMap<String,Object>>() {};
 		//HashMap<String,Object> map = jacksonObjectMapper.readValue(jsonS, typeRef);
@@ -64,6 +77,68 @@ public class WsCalls {
 	public static Map extractJsonMapOfHttpResponse(HttpResponse<String> response){
 		return jsonToMap(response.body());
 	}
+	
+	public static Ville addLatLonIntoVilleFromWsResultMap(Ville v,Map map){
+		System.out.println("map="+map);
+		List places = (List)map.get("places");
+		v.setLon( Double.valueOf( ((Map) places.get(0)).get("longitude").toString() ) );
+		v.setLat( Double.valueOf( ((Map) places.get(0)).get("latitude").toString() ) );
+		return v;
+	}
+	
+	*/
+	
+	public static MyDto.ZippopotamApiPartialResponse jsonToZippopotamRecord(String jsonS) {
+		MyDto.ZippopotamApiPartialResponse resp=null;
+		try {
+			resp = jacksonObjectMapper.readValue(jsonS, MyDto.ZippopotamApiPartialResponse.class);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		//System.out.println("zippo_resp="+resp);
+		return resp;		
+	}
+	
+	
+	
+	public static MyDto.ZippopotamApiPartialResponse extractZippopotamRecordOfHttpResponse(HttpResponse<String> response){
+		return jsonToZippopotamRecord(response.body());
+	}
+	
+	public static Ville addLatLonIntoVilleFromWsResultRecord(Ville v,MyDto.ZippopotamApiPartialResponse zippoResp){
+		//System.out.println("zippoResp="+zippoResp);
+		v.setLon( Double.valueOf( zippoResp.places().get(0).longitude() ) );
+		v.setLat( Double.valueOf( zippoResp.places().get(0).latitude() ) );
+		return v;
+	}
+	
+	public static MyDto.WeatherApiPartialResponse jsonToWeatherRecord(String jsonS) {
+		MyDto.WeatherApiPartialResponse resp=null;
+		try {
+			resp = jacksonObjectMapper.readValue(jsonS, MyDto.WeatherApiPartialResponse.class);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		//System.out.println("weather_resp="+resp);
+		return resp;		
+	}
+	
+	
+	
+	public static MyDto.WeatherApiPartialResponse extractWeatherRecordOfHttpResponse(HttpResponse<String> response){
+		return jsonToWeatherRecord(response.body());
+	}
+	
+	public static Ville addWeatherIntoVilleFromWsResultRecord(Ville v,MyDto.WeatherApiPartialResponse weatherResp){
+		//System.out.println("weatherResp="+weatherResp);
+		v.setWeather_description( weatherResp.weather().get(0).description() );
+		v.setTemperature( weatherResp.main().temp() -273.15  );
+		return v;
+	}
 
 
 	public static void main(String[] args) {
@@ -78,17 +153,33 @@ public class WsCalls {
 			CompletableFuture<Ville> cfVille = new CompletableFuture<Ville>(); 
 			cfVille.complete(ville);
 			
-			
+			/*
+			//V1 via Map
 			CompletableFuture<Map> cfResultMapOfZipWsCall = 
 			  cfVille.thenCompose(WsCalls::composeWsCallFromZipOfVille)
 				.thenApply(WsCalls::extractJsonMapOfHttpResponse);
 			
 			CompletableFuture<Ville> cfVilleWithLatLon=
 			  cfVille.thenCombine(cfResultMapOfZipWsCall, WsCalls::addLatLonIntoVilleFromWsResultMap);
+			*/
+			//V2 via partial Dto/record:
+			CompletableFuture<MyDto.ZippopotamApiPartialResponse> cfResultRecordOfZipWsCall = 
+					  cfVille.thenComposeAsync(WsCalls::composeWsCallFromZipOfVille)
+						.thenApply(WsCalls::extractZippopotamRecordOfHttpResponse);
+					
+					CompletableFuture<Ville> cfVilleWithLatLon=
+					  cfVille.thenCombine(cfResultRecordOfZipWsCall, WsCalls::addLatLonIntoVilleFromWsResultRecord);
 			
 			//et ainsi de suite ...
 			
-			cfVilleWithLatLon.thenAccept(System.out::println)
+			CompletableFuture<MyDto.WeatherApiPartialResponse> cfResultRecordOfWeatherWsCall = 				
+			  cfVilleWithLatLon.thenComposeAsync(WsCalls::composeWsCallFromLatLonOfVille)
+			.thenApply(WsCalls::extractWeatherRecordOfHttpResponse);
+			
+			CompletableFuture<Ville> cfVilleWithWeather=
+			  cfVilleWithLatLon.thenCombine(cfResultRecordOfWeatherWsCall, WsCalls::addWeatherIntoVilleFromWsResultRecord);
+			
+			cfVilleWithWeather.thenAccept(System.out::println)
 			.join();
 		}
 
