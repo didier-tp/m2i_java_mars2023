@@ -11,8 +11,8 @@ public class MyApp {
 		System.out.println("MyApp de projetJavaMaven");
         //calcul();
         //testObject();
-		testPersonne();
-		//testCercle();
+		//testPersonne();
+		testCercle();
 		//testString();
 		//testTableau();
 	}
@@ -116,6 +116,9 @@ public class MyApp {
 		c1=new Cercle(); c2=new Cercle(40,60,50);
 		//c1.rayon=50;
 		c1.setRayon(50.0);
+		System.out.println("couleur de c1="+c1.getCouleur());
+		c1.setCouleur("blue");
+		System.out.println("couleur de c1="+c1.getCouleur());
 		System.out.println("rayon de c1=" + c1.getRayon());
 		c1.setRayon(-60);
 		System.out.println("rayon de c1=" + c1.getRayon());

@@ -14,18 +14,25 @@ import java.util.Objects;
  *          surface/aire=Math.PI*rayon*rayon
  */
 
-public class Cercle {
+public class Cercle extends Surface2D /* héritage */{
 	private double xc,yc;
 	private double rayon;
 	
 	
 	
 	public Cercle(double xc, double yc, double rayon) {
-		//super();
+		super(); //ça déclenche le constructeur de Surface2D
+		         //par défaut (avec 0 parametre) qui met la couleur à "black"
 		this.xc = xc;
 		this.yc = yc;
 		this.rayon = rayon;
 	}
+	
+	public Cercle() {
+		this(0,0,0);
+	}
+
+
 	
 	//d = c1.distance(c2);
 	public double distance(Cercle autreCercle) {
@@ -34,11 +41,7 @@ public class Cercle {
 	}
 
 	
-	public Cercle() {
-		this(0,0,0);
-	}
-
-
+	
 
 
 	public double getXc() {
