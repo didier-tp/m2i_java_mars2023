@@ -11,10 +11,10 @@ public class MyApp {
 		System.out.println("MyApp de projetJavaMaven");
         //calcul();
         //testObject();
-		//testPersonne();
+		testPersonne();
 		//testCercle();
 		//testString();
-		testTableau();
+		//testTableau();
 	}
 	
 
@@ -153,6 +153,10 @@ public class MyApp {
 		Integer objA =a ; // objA = new Integer(a); //automatic boxing depuis java5
 		System.out.println("objA="+objA);
 		*/
+		System.out.println("age de majorité des Pesonnes=" + Personne.AGE_MAJORITE);
+		System.out.println("espérance de vie actuelle des Personnes=" + Personne.getEsperanceVie());
+		Personne.setEsperanceVie(80); //progrès de la médecine
+		System.out.println("nouvelle espérance de vie des Personnes=" + Personne.getEsperanceVie());
 	}
 	
 	public static void testObject() {

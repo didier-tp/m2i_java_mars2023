@@ -26,6 +26,12 @@ public class Cercle {
 		this.yc = yc;
 		this.rayon = rayon;
 	}
+	
+	//d = c1.distance(c2);
+	public double distance(Cercle autreCercle) {
+		return Math.sqrt(Math.pow(autreCercle.xc - this.xc , 2)
+				         +Math.pow(autreCercle.yc - this.yc , 2) );
+	}
 
 	
 	public Cercle() {

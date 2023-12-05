@@ -1,6 +1,16 @@
 package tp;
 
 public class Personne {
+	
+	public static final int  AGE_MAJORITE=18; //constante
+	
+	//en Tp , esperanceVie en static et avec get/set
+	
+	//via le mot clef static , on précise que lorsque cette valeur changera,
+	//elle changera en même temps pour toutes les intances de la classe Personne
+	//on parle de variable de classe (pas spécifiqu à une instance précise)
+	private static int esperanceVie=77; //valeur par defaut initiale
+	
 	private String nom;
 	private String prenom;
 	//private int age; // l'age en "int" peut valoir 0 , 12 ou 30 mais pas null
@@ -15,12 +25,16 @@ public class Personne {
 		this.age = age;
     }
 	
-	
-	
 	public Personne() {
 		this("","",0);
 	}
 
+	//methode qui renvoie true si majeur , false sinon
+	public boolean estMajeur() {
+		//return (this.age >= 18);
+		//return (this.age >= Personne.AGE_MAJORITE);
+		return (this.age >= AGE_MAJORITE);
+	}
 
 	@Override
 	public String toString() {
@@ -34,10 +48,7 @@ public class Personne {
 		this.age = this.age + 1;
 	}
 	
-	//methode qui renvoie true si majeur , false sinon
-	public boolean estMajeur() {
-		return (this.age >= 18);
-	}
+	
 
 
 
@@ -65,10 +76,18 @@ public class Personne {
 
 
 	public void setAge(Integer age) {
-		if(age>=0 && age <=150 )
+		if(age>=0 && age<=150 )
 		    this.age = age;
 		else
 			System.err.println("age trop petit ou trop grand ");
+	}
+
+	public static int getEsperanceVie() {
+		return esperanceVie;
+	}
+
+	public static void setEsperanceVie(int esperanceVie) {
+		Personne.esperanceVie = esperanceVie;
 	}
 	
 	
