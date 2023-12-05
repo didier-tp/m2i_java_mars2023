@@ -18,7 +18,13 @@ public class Cercle extends Surface2D /* héritage */{
 	private double xc,yc;
 	private double rayon;
 	
-	
+	public Cercle(double xc, double yc, double rayon,String couleur) {
+		super(couleur);//on repasse le parametre couleur au constructeur
+		               //de la classe dont on hérite (ici Surface2D)
+		this.xc = xc;
+		this.yc = yc;
+		this.rayon = rayon;
+	}
 	
 	public Cercle(double xc, double yc, double rayon) {
 		super(); //ça déclenche le constructeur de Surface2D

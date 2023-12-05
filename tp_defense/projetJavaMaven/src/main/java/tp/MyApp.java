@@ -113,7 +113,8 @@ public class MyApp {
 	
 	public static void testCercle() {
 		Cercle c1=null,c2=null;
-		c1=new Cercle(); c2=new Cercle(40,60,50);
+		c1=new Cercle(); c2=new Cercle(40,60,50,"red");
+		System.out.println("couleur de c2="+c2.getCouleur());
 		//c1.rayon=50;
 		c1.setRayon(50.0);
 		System.out.println("couleur de c1="+c1.getCouleur());
