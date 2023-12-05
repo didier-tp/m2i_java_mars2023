@@ -15,10 +15,33 @@ import java.util.Objects;
  */
 
 public class Cercle {
-	public double xc,yc;
-	public double rayon;
+	private double xc,yc;
+	private double rayon;
 	
 	
+	
+	public Cercle(double xc, double yc, double rayon) {
+		//super();
+		this.xc = xc;
+		this.yc = yc;
+		this.rayon = rayon;
+	}
+
+	
+	public Cercle() {
+		this(0,0,0);
+	}
+
+
+
+
+	public double getXc() {
+		return xc;
+	}
+
+
+	
+
 	@Override
 	public String toString() {
 		return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + "]";
@@ -49,6 +72,35 @@ public class Cercle {
 		return Double.doubleToLongBits(rayon) == Double.doubleToLongBits(other.rayon)
 				&& Double.doubleToLongBits(xc) == Double.doubleToLongBits(other.xc)
 				&& Double.doubleToLongBits(yc) == Double.doubleToLongBits(other.yc);
+	}
+
+
+	public double getYc() {
+		return yc;
+	}
+
+
+	public void setYc(double yc) {
+		this.yc = yc;
+	}
+
+
+	public double getRayon() {
+		return rayon;
+	}
+
+
+	public void setRayon(double rayon) {
+		if(rayon >= 0)
+		   this.rayon = rayon;
+		else
+			System.err.println("rayon négatif interdit");
+		    //throw new RuntimeException("rayon négatif interdit")
+	}
+
+
+	public void setXc(double xc) {
+		this.xc = xc;
 	}
     
 	

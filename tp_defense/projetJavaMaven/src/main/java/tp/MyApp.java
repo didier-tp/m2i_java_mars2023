@@ -17,9 +17,13 @@ public class MyApp {
 	
 	public static void testCercle() {
 		Cercle c1=null,c2=null;
-		c1=new Cercle(); c2=new Cercle();
-		c1.rayon=50;
-		c2.rayon=50;
+		c1=new Cercle(); c2=new Cercle(40,60,50);
+		//c1.rayon=50;
+		c1.setRayon(50.0);
+		System.out.println("rayon de c1=" + c1.getRayon());
+		c1.setRayon(-60);
+		System.out.println("rayon de c1=" + c1.getRayon());
+		
 		System.out.println("c1="+c1.toString() + " de perimetre=" + c1.perimetre()
 		                                       + " de surface=" + c1.surface());
 		System.out.println("c2="+c2.toString() + " de perimetre=" + c2.perimetre()
@@ -33,7 +37,7 @@ public class MyApp {
 	
 	public static void testPersonne() {
 		Personne p1=null;
-		p1 = new Personne();
+		p1 = new Personne("Bon" , "jean" , 40);
 		p1.age=16;
 		p1.incrementerAge();//+1 , 17
 		System.out.println("p1="+p1.toString() + " estMajeur=" + p1.estMajeur()); //false (pas majeur)

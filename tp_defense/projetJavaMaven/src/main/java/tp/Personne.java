@@ -9,11 +9,26 @@ public class Personne {
 	             //null signifie "valeur pas renseignée" en base de donnée
 	             //ou bien pas saisie dans une formulaire
 	
+	public Personne(String nom, String prenom, Integer age) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+    }
+	
+	
+	
+	public Personne() {
+		this("","",0);
+	}
+
+
 	@Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
 	}
 	
+
+
 	//méthode à appeler à chaque anniversaire
 	public void incrementerAge() {
 		this.age = this.age + 1;
