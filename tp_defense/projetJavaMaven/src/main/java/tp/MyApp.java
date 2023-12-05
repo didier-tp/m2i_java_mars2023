@@ -47,6 +47,9 @@ public class MyApp {
 	                + sPhrase.substring(posDebut+tailleSousChaine);
 			System.out.println("nouvellePhrase="+nouvellePhrase);
 		}
+		//V2:
+		String nouvellePhraseV2 = sPhrase.replaceAll(sousChaine, sousChaine.toUpperCase());
+		System.out.println("nouvellePhraseV2="+nouvellePhraseV2);
 		
 		
 		String s1 = "abcdef";
