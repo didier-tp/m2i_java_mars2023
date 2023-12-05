@@ -1,5 +1,7 @@
 package tp;
 
+import java.util.Objects;
+
 /*
  * Un cercle comporte un centre  (xc,yc) en int ou double
  *                  et un rayon en int ou double
@@ -29,5 +31,26 @@ public class Cercle {
 	public double surface() {
 		return this.rayon * this.rayon * Math.PI;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(rayon, xc, yc);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cercle other = (Cercle) obj;
+		return Double.doubleToLongBits(rayon) == Double.doubleToLongBits(other.rayon)
+				&& Double.doubleToLongBits(xc) == Double.doubleToLongBits(other.xc)
+				&& Double.doubleToLongBits(yc) == Double.doubleToLongBits(other.yc);
+	}
     
+	
+	
 }

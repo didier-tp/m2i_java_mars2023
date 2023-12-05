@@ -19,11 +19,16 @@ public class MyApp {
 		Cercle c1=null,c2=null;
 		c1=new Cercle(); c2=new Cercle();
 		c1.rayon=50;
-		c2.rayon=200;
+		c2.rayon=50;
 		System.out.println("c1="+c1.toString() + " de perimetre=" + c1.perimetre()
 		                                       + " de surface=" + c1.surface());
 		System.out.println("c2="+c2.toString() + " de perimetre=" + c2.perimetre()
                                                + " de surface=" + c2.surface());
+		//NB: .equals() doit être programmé sur la classe Cercle (via par exemple assistant eclipse)
+		if(c1.equals(c2))
+			System.out.println("c1 et c2 ont memes valeurs");
+		else
+			System.out.println("c1 et c2 ont des valeurs différentes");
 	}
 	
 	public static void testPersonne() {
