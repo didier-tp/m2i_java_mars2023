@@ -11,8 +11,61 @@ public class MyApp {
 		System.out.println("MyApp de projetJavaMaven");
         //calcul();
         //testObject();
-		testPersonne();
+		//testPersonne();
 		//testCercle();
+		testString();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void testString() {
+		
+		
+		String sPhrase = "java est un langage orienté objet"; 
+		//en exercice : construire et afficher une nouvelle version de cette chaine
+		//au sein de laquelle la sous partie "langage" est convertie en majuscule si elle est trouvée
+		//v1 (en s'appuyant sur .indexOf(sousPartieRecherchee) et .substring(posDebut,posFin+1) )
+		//rappel , les positions des caractéres vont de 0 à taille-1
+		
+		
+		
+		
+		String s1 = "abcdef";
+		//en exercice , construire et afficher s2 valant "fedcba" (avec caractères dans l'ordre inverse)
+		String s2="";
+		int taille = s1.length();
+		StringBuilder buffer = new StringBuilder(taille);
+		for(int i=taille-1 ; i>=0 ; i--)
+			buffer.append(s1.charAt(i));
+		s2=buffer.toString();
+		System.out.println("s2="+s2);
+		
+		String sLangage="java";
+		String sLang2 = "c++";
+		String sLang3 = "JAVA".toLowerCase();
+		//if(sLangage == sLang3) //PIEGE : OK en javascript mais pas toujours OK en java
+		 if(sLangage.equals(sLang3))			
+			System.out.println("meme langage");
+		else
+			System.out.println("langage different");
+		
+		String sLangMaj = sLangage.toUpperCase();
+		System.out.println("sLangage="+sLangage);
+		System.out.println("sLangMaj="+sLangMaj);
+		sLangage="python"; //on remplace au bout de la référence sLangage tout l'instance "java" 
+		                  //par l'objet "python"
+		System.out.println("sLangage="+sLangage);
 	}
 	
 	public static void testCercle() {
