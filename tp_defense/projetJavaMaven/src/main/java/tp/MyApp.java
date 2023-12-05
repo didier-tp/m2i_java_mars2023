@@ -11,8 +11,8 @@ public class MyApp {
 		System.out.println("MyApp de projetJavaMaven");
         //calcul();
         //testObject();
-		//testPersonne();
-		testCercle();
+		testPersonne();
+		//testCercle();
 	}
 	
 	public static void testCercle() {
@@ -38,13 +38,17 @@ public class MyApp {
 	public static void testPersonne() {
 		Personne p1=null;
 		p1 = new Personne("Bon" , "jean" , 40);
-		p1.age=16;
+		p1.setAge(-6);//sera pas pris en compte
+		System.out.println("p1="+p1.toString());
+		p1.setAge(16);
+		System.out.println("p1="+p1.toString());
 		p1.incrementerAge();//+1 , 17
 		System.out.println("p1="+p1.toString() + " estMajeur=" + p1.estMajeur()); //false (pas majeur)
 		
 		Personne p2=null;
 		p2 = new Personne();
-		p2.age=37;
+ 		//p2.age=37 interdit si age private
+		p2.setAge(37);
 		p2.incrementerAge();//+1 , 38
 		System.out.println("p2="+p2.toString() + " estMajeur=" + p2.estMajeur());//true (majeur)
 		
