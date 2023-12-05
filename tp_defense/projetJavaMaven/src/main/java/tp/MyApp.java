@@ -13,12 +13,44 @@ public class MyApp {
         //testObject();
 		//testPersonne();
 		//testCercle();
-		testString();
+		//testString();
+		testTableau();
 	}
 	
+
 	
+	public static void testTableau() {
+		//construire un tableau de 16 cases de type double
+		double[] tableau  = new double[16];
+		//via une première boucle for , on va remplir ce tableau avec des valeurs aléatoires
+		for(int i=0;i<tableau.length;i++) {
+			double valAleatoire = Math.random() * 10; 
+			tableau[i]=valAleatoire;
+		}
 	
-	
+		//boucle while pour afficher toutes les valeurs du tableau
+		int compteur=0;
+		while(compteur<tableau.length) {
+			System.out.println(tableau[compteur]);
+			compteur++;
+		}
+		//en exercice , trouver et afficher la plus grande des valeurs du tableau:
+		double max= Double.MIN_VALUE;
+		for(int i=0;i<tableau.length;i++) {
+			if(tableau[i]>max)
+				 max = tableau[i];
+		}
+		System.out.println("max="+max);
+		
+		//-----------------
+		//Exemple2:
+		String s1 = "jean;Bon;33";
+		String[] partiesS = s1.split(";");
+		//rappel: new Personne(nom,prenom,age)
+		Personne p1 = new Personne(partiesS[1],partiesS[0],Integer.parseInt(partiesS[2]));
+		System.out.println("p1="+p1.toString());
+		
+	}
 	
 	
 	
