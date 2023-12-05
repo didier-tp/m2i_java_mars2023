@@ -12,6 +12,9 @@ public class Surface2D {
 		this("black"); //couleur par defaut
 	}
 	
+	public void afficher() {
+		System.out.println("couleur="+this.couleur);
+	}
 
 	@Override
 	public String toString() {

@@ -18,6 +18,15 @@ public class Cercle extends Surface2D /* héritage */{
 	private double xc,yc;
 	private double rayon;
 	
+	@Override
+	public void afficher() {
+		System.out.println(this.toString());
+		/*
+		super.afficher();
+		System.out.println("....");
+		*/
+	}
+	
 	public Cercle(double xc, double yc, double rayon,String couleur) {
 		super(couleur);//on repasse le parametre couleur au constructeur
 		               //de la classe dont on hérite (ici Surface2D)
@@ -59,7 +68,9 @@ public class Cercle extends Surface2D /* héritage */{
 
 	@Override
 	public String toString() {
-		return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + "]";
+		//return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + "]";
+		return "Cercle [xc=" + xc + ", yc=" + yc + ", rayon=" + rayon + "]" 
+				 + " heritant de " + super.toString();
 	}
 
 	public double perimetre() {
