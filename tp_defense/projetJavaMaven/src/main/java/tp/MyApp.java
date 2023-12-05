@@ -37,8 +37,16 @@ public class MyApp {
 		//au sein de laquelle la sous partie "langage" est convertie en majuscule si elle est trouvée
 		//v1 (en s'appuyant sur .indexOf(sousPartieRecherchee) et .substring(posDebut,posFin+1) )
 		//rappel , les positions des caractéres vont de 0 à taille-1
-		
-		
+		String sousChaine = "langage";
+		int tailleSousChaine = sousChaine.length();
+		int posDebut = sPhrase.indexOf(sousChaine);
+		if(posDebut>=0) {
+			//phraseDebut + sousChaine en maj + phraseFin	
+	        String nouvellePhrase=sPhrase.substring(0, posDebut)
+	        		+ sPhrase.substring(posDebut, posDebut+tailleSousChaine).toUpperCase()		
+	                + sPhrase.substring(posDebut+tailleSousChaine);
+			System.out.println("nouvellePhrase="+nouvellePhrase);
+		}
 		
 		
 		String s1 = "abcdef";
