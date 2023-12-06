@@ -8,6 +8,7 @@ public class Avion {
    
    public void addElement(Transportable e) {
 	   //ajouter e dans this.elements
+	   this.elements.add(e);
    }
 
 	@Override
@@ -19,7 +20,12 @@ public class Avion {
 	public double chargeUtile() {
 		//calculer et retourner le poids total
 		//des elements de l'avion
-		return 0.0;
+		double poidsTotal=0.0;
+		for(Transportable e : this.elements) {
+			//poidsTotal = poidsTotal + e.getPoids();
+			poidsTotal += e.getPoids();  //polymorphisme sur .getPoids()
+		}
+		return poidsTotal;
 	}
    
    

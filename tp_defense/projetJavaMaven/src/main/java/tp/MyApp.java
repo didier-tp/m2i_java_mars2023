@@ -31,12 +31,15 @@ public class MyApp {
 	
 	private static void testAvion() {
 		Avion  a1 = new Avion();
-		a1.addElement(new Bagage("valise en carton",40 , 20));
-		//+ ajout personnes et employes
+		a1.addElement(new Bagage("valise en carton",40 , 20));//20kg
+		a1.addElement(new Employe("Bon","jean",33,"pilote",4000.0));
+		a1.addElement(new Employe("Aire","axelle",43,"hotesse",2000.0));
+		a1.addElement(new Personne("Therieur","alain",28));
+		a1.addElement(new Personne("Defrance","didier",54));
 		
-		//afficher a1.toString()
+		System.out.println("avion a1=" + a1.toString());
 		
-		//afficher a1.chargeUtile()
+		System.out.println("chargeUtile de a1=" + a1.chargeUtile());//4*75+20 = 320
 		
 	}
 
