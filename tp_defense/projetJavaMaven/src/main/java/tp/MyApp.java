@@ -56,6 +56,7 @@ public class MyApp {
 		t=new Bagage("bagage xy" , 40 , 20); //40 litres , 20kg
 		System.out.println("poids de t="+t.getPoids());//polymorphisme Bagage.getPoids()
 	}
+	
 
 
 
