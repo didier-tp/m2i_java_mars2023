@@ -23,11 +23,25 @@ public class MyApp {
 		//testString();
 		//testTableau();
 		//testEmploye();
-		testPolymorsphisme();
+		//testPolymorsphisme();
+		testAvion();
 	}
 	
 
 	
+	private static void testAvion() {
+		Avion  a1 = new Avion();
+		a1.addElement(new Bagage("valise en carton",40 , 20));
+		//+ ajout personnes et employes
+		
+		//afficher a1.toString()
+		
+		//afficher a1.chargeUtile()
+		
+	}
+
+
+
 	private static void testPolymorsphisme() {
 		Personne p=null; //la référence p peut référencer 
 		                 //n'importe quel type de Personne
