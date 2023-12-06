@@ -3,6 +3,7 @@ package tp;
 import java.util.Objects;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /*
@@ -17,7 +18,7 @@ import lombok.Setter;
  *          surface/aire=Math.PI*rayon*rayon
  */
 
-@Getter @Setter
+@Getter @Setter @NoArgsConstructor  /* @ToString */
 public class Cercle extends Surface2D /* héritage */{
 	private double xc,yc;
 	private double rayon;
@@ -49,9 +50,7 @@ public class Cercle extends Surface2D /* héritage */{
 		this.rayon = rayon;
 	}
 	
-	public Cercle() {
-		this(0,0,0);
-	}
+	
 
 
 	

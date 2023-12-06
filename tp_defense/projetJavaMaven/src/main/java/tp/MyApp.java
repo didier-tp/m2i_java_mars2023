@@ -15,11 +15,41 @@ public class MyApp {
 		//testCercle();
 		//testString();
 		//testTableau();
-		testEmploye();
+		//testEmploye();
+		testPolymorsphisme();
 	}
 	
 
 	
+	private static void testPolymorsphisme() {
+		Personne p=null; //la référence p peut référencer 
+		                 //n'importe quel type de Personne
+		                 //des instances de Personne ou de Employe ou ...
+		
+		//Rappel : si Employe hérite de Personne , 
+		//Employe est vu comme un cas particulier de Personne
+		
+		Personne p1 = new Personne("Therieur","alain",44);
+		Employe e1 = new Employe("Bon","jean",33,"programmeur",2000.0);
+		
+		p=p1;
+		System.out.println("p="+p.toString());//appel automatique de Personne.toString()
+		p=e1;
+		System.out.println("p="+p.toString());//appel automatique de Employe.toString()
+		
+		//NB: polymorsphisme : memes appels --> code déclenché prenant forme différente
+		
+		//System.out.println("salaire de p="+ p.getSalaire()); //impossible car Personne n'a pas de salaire
+		if(p instanceof Employe) {
+			Employe pAsEmp = (Employe) p;
+			System.out.println("salaire de pAsEmp="+ pAsEmp.getSalaire());
+		}
+		
+		
+	}
+
+
+
 	private static void testEmploye() {
 		Employe e1 = new Employe();
 		e1.setFonction("programmeur");
