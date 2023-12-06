@@ -2,6 +2,9 @@ package tp;
 
 import java.util.Objects;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /*
  * Un cercle comporte un centre  (xc,yc) en int ou double
  *                  et un rayon en int ou double
@@ -14,10 +17,13 @@ import java.util.Objects;
  *          surface/aire=Math.PI*rayon*rayon
  */
 
+@Getter @Setter
 public class Cercle extends Surface2D /* héritage */{
 	private double xc,yc;
 	private double rayon;
 	
+	
+
 	@Override
 	public void afficher() {
 		System.out.println(this.toString());
@@ -59,11 +65,6 @@ public class Cercle extends Surface2D /* héritage */{
 	
 
 
-	public double getXc() {
-		return xc;
-	}
-
-
 	
 
 	@Override
@@ -101,19 +102,6 @@ public class Cercle extends Surface2D /* héritage */{
 	}
 
 
-	public double getYc() {
-		return yc;
-	}
-
-
-	public void setYc(double yc) {
-		this.yc = yc;
-	}
-
-
-	public double getRayon() {
-		return rayon;
-	}
 
 
 	public void setRayon(double rayon) {
@@ -125,10 +113,6 @@ public class Cercle extends Surface2D /* héritage */{
 	}
 
 
-	public void setXc(double xc) {
-		this.xc = xc;
-	}
-    
 	
 	
 }

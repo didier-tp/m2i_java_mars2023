@@ -21,6 +21,24 @@
     <scope>test</scope>
 </dependency>
 
+<!-- 
+pour @Getter @Setter dans le code java
+========
+pour eclipse : 
+Help menu > Install new software > 
+Add https://projectlombok.org/p2 > 
+Install the Lombok plugin 
+and restart Eclipse.
+et menu "project / clean"
+-->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version>
+    <scope>provided</scope>
+</dependency>
+
+
 	
 </dependencies>
 
