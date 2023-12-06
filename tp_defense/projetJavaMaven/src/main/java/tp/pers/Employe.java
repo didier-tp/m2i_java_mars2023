@@ -1,4 +1,4 @@
-package tp;
+package tp.pers;
 
 public class Employe extends Personne{
 	private Double salaire;

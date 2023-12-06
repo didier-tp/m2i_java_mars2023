@@ -1,4 +1,4 @@
-package tp;
+package tp.geo;
 
 public class Surface2D {
 	protected String couleur;

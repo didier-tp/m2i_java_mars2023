@@ -1,14 +1,21 @@
 package tp;
 
-
-
 import java.util.Date;
+
+import tp.geo.Cercle;
+import tp.pers.Employe;
+import tp.pers.Personne;
 
 public class MyApp {
 
 	public static void main(String[] args) {
 		// commentaire qui va jusqu'a la fin de la ligne
 		System.out.println("MyApp de projetJavaMaven");
+		
+		//java.util.Date aujourdhui = new java.util.Date();
+		Date aujourdhui = new Date(); //avec import 
+		System.out.println("aujourdhui="+aujourdhui);
+		
         //calcul();
         //testObject();
 		//testPersonne();

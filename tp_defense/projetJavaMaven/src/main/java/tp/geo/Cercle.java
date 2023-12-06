@@ -1,4 +1,4 @@
-package tp;
+package tp.geo;
 
 import java.util.Objects;
 
