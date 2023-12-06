@@ -45,7 +45,16 @@ public class MyApp {
 			System.out.println("salaire de pAsEmp="+ pAsEmp.getSalaire());
 		}
 		
+		Transportable t=null; 
+		//t = réference sur chose transportable quelconque (Personne ou Bagage ou ...)
 		
+		p1.setPoids(80.0);
+		t=p1;//t référence une personne transportable
+		System.out.println("poids de t="+t.getPoids());//polymorphisme Personne.getPoids()
+		
+		//t reférence plus bas un bagage transportable
+		t=new Bagage("bagage xy" , 40 , 20); //40 litres , 20kg
+		System.out.println("poids de t="+t.getPoids());//polymorphisme Bagage.getPoids()
 	}
 
 
