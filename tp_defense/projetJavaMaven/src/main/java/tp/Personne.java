@@ -1,8 +1,9 @@
 package tp;
 
-public class Personne /* extends Object */ {
+public class Personne /* extends Object */ implements Transportable {
 	
 	public static final int  AGE_MAJORITE=18; //constante
+	public static final double  VOLUME_MOYEN=50.0; //constante
 	
 	//en Tp , esperanceVie en static et avec get/set
 	
@@ -18,7 +19,23 @@ public class Personne /* extends Object */ {
 	             //peut valoir 0 , 12 ,30 ou la valeur null 
 	             //null signifie "valeur pas renseignée" en base de donnée
 	             //ou bien pas saisie dans une formulaire
+	private double poids=75;//75kg comme valeur par defaut
 	
+	@Override
+	public double getVolume() {
+		return VOLUME_MOYEN;
+	}
+
+	@Override
+	public double getPoids() {
+		return poids;
+	}
+	
+	
+	public void setPoids(double poids) {
+		this.poids = poids;
+	}
+
 	public Personne(String nom, String prenom, Integer age) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -90,6 +107,7 @@ public class Personne /* extends Object */ {
 	public static void setEsperanceVie(int esperanceVie) {
 		Personne.esperanceVie = esperanceVie;
 	}
+
 	
 	
 
