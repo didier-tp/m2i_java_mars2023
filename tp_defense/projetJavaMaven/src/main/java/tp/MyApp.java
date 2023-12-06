@@ -12,13 +12,32 @@ public class MyApp {
         //calcul();
         //testObject();
 		//testPersonne();
-		testCercle();
+		//testCercle();
 		//testString();
 		//testTableau();
+		testEmploye();
 	}
 	
 
 	
+	private static void testEmploye() {
+		Employe e1 = new Employe();
+		e1.setFonction("programmeur");
+		System.out.println("fonction de e1= " 
+		                + e1.getFonction());
+		//constructeur de Employe(nom,prenom,age,fonction, salaire):
+		Employe e2 = new Employe("Aire","axelle" ,33 , "comptable" , 2000.0);
+		System.out.println("e2="+e2); //System.out.println("e2="+e2.toString());
+		e2.setSalaire(2100.0); //appel d'une méthode spécifique aux employes
+		System.out.println("e2="+e2.toString());
+		e2.setAge(34); //appel d'une méthode héritée de Personne
+		System.out.println("e2="+e2.toString());
+		if(e2.estMajeur())
+			System.out.println("e2 est majeur");
+	}
+
+
+
 	public static void testTableau() {
 		//construire un tableau de 16 cases de type double
 		double[] tableau  = new double[16];

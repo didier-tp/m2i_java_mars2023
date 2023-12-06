@@ -1,6 +1,6 @@
 package tp;
 
-public class Personne {
+public class Personne /* extends Object */ {
 	
 	public static final int  AGE_MAJORITE=18; //constante
 	
@@ -36,12 +36,13 @@ public class Personne {
 		return (this.age >= AGE_MAJORITE);
 	}
 
+	
+
+
 	@Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
 	}
-	
-
 
 	//méthode à appeler à chaque anniversaire
 	public void incrementerAge() {
