@@ -8,13 +8,22 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.release>11</maven.compiler.release>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.release>17</maven.compiler.release>
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
 	</properties>
 
 	<dependencies>
 
+         <!-- slf4j en couche haute et log4j 2 en couche basse
+              nécessitant config via src/main/resources/log4j2.properties
+              ou equivalent -->
+	     <dependency>
+	            <groupId>org.apache.logging.log4j</groupId>
+	            <artifactId>log4j-slf4j-impl</artifactId>
+	            <version>2.15.0</version>
+	     </dependency>
+     
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
