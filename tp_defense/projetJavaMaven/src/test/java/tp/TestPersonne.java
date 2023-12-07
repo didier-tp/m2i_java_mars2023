@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ public class TestPersonne {
 	@Test
 	public void testTriDePersonne() {
 		List<Personne> listePersonnes = new ArrayList<>();
-		listePersonnes.add(new Personne("Zoro","zen",55));
+		listePersonnes.add(new Personne("Zoro","zen",15));
 		listePersonnes.add(new Personne("Bon","jean",45));
 		listePersonnes.add(new Personne("Aire","axelle",56)) ; //...
 		
@@ -30,13 +31,29 @@ public class TestPersonne {
 		}
 		
 		System.out.println("tri selon l'age des personnes:");
-		Collections.sort(listePersonnes, new /* classe anonyme imbriquee qui implements */
-				java.util.Comparator<Personne>() {
-					public int compare(Personne o1, Personne o2) {
-						return o1.getAge() - o2.getAge();
-					}
-		});
+//		Collections.sort(listePersonnes, new /* classe anonyme imbriquee qui implements */
+//				java.util.Comparator<Personne>() {
+//					public int compare(Personne o1, Personne o2) {
+//						return Integer.compare(o1.getAge() , o2.getAge());
+//					}
+//		});
+		
+		//tri via une lambda expression (possible java 8):
+		Collections.sort(listePersonnes,
+				(p1,p2)->  Integer.compare(p1.getAge(), p2.getAge())  );
+		
 		for(Personne p : listePersonnes) {
+		    System.out.println("\t" + p); 
+		}
+		
+		System.out.println("listePersonnesFiltreesTrieesEtTransformees via stream et lambda:");
+		List<Personne> listePersonnesFiltreesTrieesEtTransformees =
+				listePersonnes.stream()
+				 .filter( (p)->p.getAge()>=18 )
+				 .sorted( (p1,p2)->Integer.compare(p2.getAge(), p1.getAge()))
+				 .map( (p) -> { p.setNom(p.getNom().toUpperCase()); return p; } )
+				 .collect(Collectors.toList());
+		for(Personne p : listePersonnesFiltreesTrieesEtTransformees) {
 		    System.out.println("\t" + p); 
 		}
 	}
