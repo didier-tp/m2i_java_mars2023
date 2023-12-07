@@ -10,7 +10,7 @@ public class MyApp {
         DaoPersonne daoPersonne = new DaoPersonneJdbc();
         Personne pers = daoPersonne.insert(new Personne("nouveau nom", 45, 77.7));
         pers.setAge(pers.getAge()+1);
-        pers.setPoids(pers.getPoids()+1);
+        pers.setPoids(pers.getPoids()+2);
         daoPersonne.update(pers);
         //daoPersonne.deleteById(1);
         daoPersonne.findAll().stream().forEach(p-> System.out.println(p));

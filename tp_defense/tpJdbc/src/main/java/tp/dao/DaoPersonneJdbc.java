@@ -108,6 +108,33 @@ public class DaoPersonneJdbc implements DaoPersonne{
         return p;
     }
 
+    /*
+    public Personne updateWithFinally(Personne p) {
+    	Connection cn = null;
+        try{
+        	cn = this.getConnection();
+        	PreparedStatement pst = cn.prepareStatement("UPDATE personne SET nom=?,age=?,poids=? WHERE id=?");
+            pst.setString(1, p.getNom());
+            pst.setInt(2, p.getAge());
+            pst.setDouble(3, p.getPoids());
+            pst.setInt(4,p.getId());
+            pst.executeUpdate();
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
+       finally {
+	    	   try {
+				cn.close();
+			  } catch (SQLException e) {
+				//e.printStackTrace();
+				System.err.println(e.getMessage());
+			}
+       }
+        return p;
+    }
+    */
+    
+   
     @Override
     public Personne update(Personne p) {
         try(Connection cn = this.getConnection();
@@ -125,7 +152,7 @@ public class DaoPersonneJdbc implements DaoPersonne{
         //NB: dans projet plus élaborer cn.close() libère la connexion dans un pool de connexions
         return p;
     }
-
+    
     @Override
     public void deleteById(int id) {
         try(Connection cn = this.getConnection();
