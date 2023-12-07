@@ -51,7 +51,7 @@ public class TestPersonne {
 				listePersonnes.stream()
 				 .filter( (p)->p.getAge()>=18 )
 				 .sorted( (p1,p2)->Integer.compare(p2.getAge(), p1.getAge()))
-				 .map( (p) -> { p.setNom(p.getNom().toUpperCase()); return p; } )
+				 .map( (p) -> new Personne(p.getNom().toUpperCase(),p.getPrenom(),p.getAge()) )
 				 .collect(Collectors.toList());
 		for(Personne p : listePersonnesFiltreesTrieesEtTransformees) {
 		    System.out.println("\t" + p); 
