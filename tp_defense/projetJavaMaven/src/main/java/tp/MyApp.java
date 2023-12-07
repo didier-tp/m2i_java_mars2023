@@ -18,13 +18,13 @@ public class MyApp {
 		
         //calcul();
         //testObject();
-		testPersonne();
+		//testPersonne();
 		//testCercle();
 		//testString();
 		//testTableau();
-		//testEmploye();
+		testEmploye();
 		//testPolymorsphisme();
-		//testAvion();
+		testAvion();
 	}
 	
 
@@ -32,8 +32,8 @@ public class MyApp {
 	private static void testAvion() {
 		Avion  a1 = new Avion();
 		a1.addElement(new Bagage("valise en carton",40 , 20));//20kg
-		a1.addElement(new Employe("Bon","jean",33,"pilote",4000.0));
-		a1.addElement(new Employe("Aire","axelle",43,"hotesse",2000.0));
+		a1.addElement(new Employe("Bon","jean",33,Employe.Fonction.PILOTE,4000.0));
+		a1.addElement(new Employe("Aire","axelle",43,Employe.Fonction.HOTESSE,2000.0));
 		a1.addElement(new Personne("Therieur","alain",28));
 		a1.addElement(new Personne("Defrance","didier",54));
 		
@@ -54,7 +54,7 @@ public class MyApp {
 		//Employe est vu comme un cas particulier de Personne
 		
 		Personne p1 = new Personne("Therieur","alain",44);
-		Employe e1 = new Employe("Bon","jean",33,"programmeur",2000.0);
+		Employe e1 = new Employe("Bon","jean",33,Employe.Fonction.PROGRAMMEUR,2000.0);
 		
 		p=p1;
 		System.out.println("p="+p.toString());//appel automatique de Personne.toString()
@@ -86,11 +86,11 @@ public class MyApp {
 
 	private static void testEmploye() {
 		Employe e1 = new Employe();
-		e1.setFonction("programmeur");
+		e1.setFonction(Employe.Fonction.PROGRAMMEUR);
 		System.out.println("fonction de e1= " 
 		                + e1.getFonction());
 		//constructeur de Employe(nom,prenom,age,fonction, salaire):
-		Employe e2 = new Employe("Aire","axelle" ,33 , "comptable" , 2000.0);
+		Employe e2 = new Employe("Aire","axelle" ,33 , Employe.Fonction.COMPTABLE , 2000.0);
 		System.out.println("e2="+e2); //System.out.println("e2="+e2.toString());
 		e2.setSalaire(2100.0); //appel d'une méthode spécifique aux employes
 		System.out.println("e2="+e2.toString());

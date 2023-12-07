@@ -17,6 +17,13 @@ import tp.pers.Personne;
 public class TestPersonne {
 	
 	@Test
+	public void testPrintf() {
+		Personne p1 = new Personne("Bon","jean",15);
+		System.out.printf("%s %s \n", p1.getPrenom() , p1.getNom());
+		System.out.printf("%s %s a %d ans \n", p1.getPrenom() , p1.getNom(),p1.getAge());
+	}
+	
+	@Test
 	public void testTriDePersonne() {
 		List<Personne> listePersonnes = new ArrayList<>();
 		listePersonnes.add(new Personne("Zoro","zen",15));

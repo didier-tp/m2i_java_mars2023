@@ -1,8 +1,14 @@
 package tp.pers;
 
 public class Employe extends Personne{
+	//enumeration "Fonction" = type de données
+	//ne pouvant prendre que quelques valeurs possibles
+	public enum Fonction { PROGRAMMEUR ,COMPTABLE , VENDEUR , PILOTE , HOTESSE };
+	
+	
 	private Double salaire;
-	private String fonction;
+	//private String fonction;
+	private Fonction fonction;
 	
 	
 	
@@ -24,7 +30,7 @@ public class Employe extends Personne{
 		super(nom, prenom, age);
 	}
 	
-	public Employe(String nom, String prenom, Integer age,String fonction,Double salaire) {
+	public Employe(String nom, String prenom, Integer age,Fonction fonction,Double salaire) {
 		super(nom, prenom, age);
 		this.fonction=fonction;
 		this.salaire=salaire;
@@ -42,15 +48,13 @@ public class Employe extends Personne{
 	}
 
 
-	public String getFonction() {
+	public Fonction getFonction() {
 		return fonction;
 	}
 
-
-	public void setFonction(String fonction) {
+	public void setFonction(Fonction fonction) {
 		this.fonction = fonction;
 	}
 
-	
 	
 }
