@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,8 @@ public class TestCalcul {
 		int res1 = objCalcul.division(6, 3);
 		//System.out.println("res1="+res1);
 		logger.debug("res1="+res1);
+		//Assertions.assertTrue(res1==2); //en JUnit5
+		//Assert.assertTrue(res1==2); //en JUnit4
 		assertTrue(res1==2);
 	}
 	
