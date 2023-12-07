@@ -94,12 +94,22 @@ public class Personne /* extends Object */ implements Transportable {
 	}
 
 
-
+    /*
 	public void setAge(Integer age) {
 		if(age>=0 && age<=150 )
 		    this.age = age;
 		else
 			System.err.println("age trop petit ou trop grand ");
+	}
+	*/
+	
+	public void setAge(Integer age) {
+		if(age>=0 && age<=150 )
+		    this.age = age;
+		else
+			throw new RuntimeException("age trop petit ou trop grand ");
+			//throw new IllegalArgumentException("age trop petit ou trop grand ");
+		    //NB: IllegalArgumentException herite de RuntimeException .
 	}
 
 	public static int getEsperanceVie() {

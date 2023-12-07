@@ -18,13 +18,13 @@ public class MyApp {
 		
         //calcul();
         //testObject();
-		//testPersonne();
+		testPersonne();
 		//testCercle();
 		//testString();
 		//testTableau();
 		//testEmploye();
 		//testPolymorsphisme();
-		testAvion();
+		//testAvion();
 	}
 	
 
@@ -222,8 +222,13 @@ public class MyApp {
 	public static void testPersonne() {
 		Personne p1=null;
 		p1 = new Personne("Bon" , "jean" , 40);
-		p1.setAge(-6);//sera pas pris en compte
-		System.out.println("p1="+p1.toString());
+		try {
+			p1.setAge(-6);//sera pas pris en compte
+			System.out.println("p1="+p1.toString());
+		} catch (Exception e) {
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
 		p1.setAge(16);
 		System.out.println("p1="+p1.toString());
 		p1.incrementerAge();//+1 , 17
