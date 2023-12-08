@@ -1,4 +1,4 @@
-AGE_MAJORITE;VOLUME_MOYEN;esperanceVie;nom;prenom;age;poids
-18;50.0;77;Defrance;didier;54;88.0
-18;50.0;77;Bon;jean;44;77.7
-18;50.0;77;Aire;axelle;52;72.4
+nom;prenom;age;poids
+Defrance;didier;54;88.0
+Bon;jean;44;77.7
+Aire;axelle;52;72.4

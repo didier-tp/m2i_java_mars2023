@@ -2,12 +2,17 @@ tp\MyAppBis.class
 tp\pers\Personne.class
 tp\Avion.class
 tp\calcul\Calcul.class
+tp\MyApp3.class
 tp\pers\Employe.class
+tp\util\MyCsvUtil.class
+tp\util\CsvIgnore.class
 tp\geo\Surface2D.class
 tp\pers\Employe$Fonction.class
+tp\pers\Stat.class
 tp\Bagage.class
 tp\geo\Cercle.class
 tp\MyApp.class
 tp\Transportable.class
 tp\demo\MyParamApp.class
+tp\pers\Repertoire.class
 tp\pers\ComparateurDePersonne.class
