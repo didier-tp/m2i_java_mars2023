@@ -7,7 +7,7 @@ public class ComportementThread implements Runnable{
 		for(int i=1 ; i<=10;i++) {
 			System.out.println("i="+i);
 			try {
-				Thread.sleep(4000);//4000ms = 4s
+				Thread.sleep(500);//500ms = 0.5s
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 
