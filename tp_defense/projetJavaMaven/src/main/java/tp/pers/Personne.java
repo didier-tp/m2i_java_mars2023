@@ -1,10 +1,14 @@
 package tp.pers;
 
 import tp.Transportable;
+import tp.util.CsvIgnore;
 
 public class Personne /* extends Object */ implements Transportable {
 	
+	@CsvIgnore
 	public static final int  AGE_MAJORITE=18; //constante
+	
+	@CsvIgnore
 	public static final double  VOLUME_MOYEN=50.0; //constante
 	
 	//en Tp , esperanceVie en static et avec get/set
@@ -12,6 +16,8 @@ public class Personne /* extends Object */ implements Transportable {
 	//via le mot clef static , on précise que lorsque cette valeur changera,
 	//elle changera en même temps pour toutes les intances de la classe Personne
 	//on parle de variable de classe (pas spécifiqu à une instance précise)
+	
+	@CsvIgnore
 	private static int esperanceVie=77; //valeur par defaut initiale
 	
 	private String nom;

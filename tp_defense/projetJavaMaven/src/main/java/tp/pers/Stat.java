@@ -4,11 +4,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import tp.util.CsvIgnore;
 
 @Setter @Getter @NoArgsConstructor @ToString
 public class Stat {
 		private int n;
 		private double moyenneAge;
+		
+		@CsvIgnore
 		private double moyennePoids;
 
         //+constructeur par defaut (zero param) ici via lombok
