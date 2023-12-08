@@ -3,7 +3,7 @@ package tp.demo;
 public class MyParamApp {
 
 	public static void main(String[] args) {
-		boolean avecDetails = Boolean.parseBoolean(System.getProperty("details"));
+		boolean avecDetails = Boolean.parseBoolean(System.getProperty("details","false"));
 		if(avecDetails) {
 			System.out.println("os.name=" +System.getProperty("os.name") );
 		    System.out.println("nb args=" + args.length);

@@ -4,7 +4,10 @@ tp\Avion.class
 tp\calcul\Calcul.class
 tp\pers\Employe.class
 tp\geo\Surface2D.class
+tp\pers\Employe$Fonction.class
 tp\Bagage.class
 tp\geo\Cercle.class
 tp\MyApp.class
 tp\Transportable.class
+tp\demo\MyParamApp.class
+tp\pers\ComparateurDePersonne.class
