@@ -9,7 +9,22 @@ import java.util.List;
 
 public class Repertoire {
 
-	List<Personne> listePersonnes = new ArrayList<>();
+	private Stat stat = new Stat();
+	private List<Personne> listePersonnes = new ArrayList<>();
+	
+	public void afficherStatistiques() {
+		//System.out.println("listePersonnes=" + listePersonnes);
+		// afficher par exemple le nombre de personnes
+		// et la moyenne des ages
+		stat.setN(listePersonnes.size());
+		double sommeAges = 0;
+		for(Personne p : listePersonnes) {
+			sommeAges += p.getAge();
+		}
+		stat.setMoyenneAge(sommeAges / stat.getN());
+		System.out.println("nb de personnes=" + stat.getN());
+		System.out.println("moyenne des ages=" + stat.getMoyenneAge());
+	}
 	
 	/*
 	 personnes.csv
@@ -43,12 +58,7 @@ public class Repertoire {
 	   //automatic .close() via try with resources (try avec resources entre parentheses)
 	}
 
-	public void afficherStatistiques() {
-		//System.out.println("listePersonnes=" + listePersonnes);
-		// afficher par exemple le nombre de personnes
-		// et la moyenne des ages
-		System.out.println("nb de personnes=" + listePersonnes.size());
-	}
+	
 
 	public static void main(String[] args) {
 		Repertoire repertoire = new Repertoire();
