@@ -9,6 +9,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import tp.util.MyCsvUtil;
+
 public class Repertoire {
 
 	private Stat stat = new Stat();
@@ -68,8 +70,16 @@ public class Repertoire {
 		repertoire.afficherStatistiques();
 		repertoire.ecrireFichier("stat.csv");
 	}
-
+	
 	private void ecrireFichier(String fileName) {
+		List<Stat> listeStats = new ArrayList<>();
+		listeStats.add(stat);
+		MyCsvUtil.writeValuesAsCsvFile(listeStats, fileName);
+		
+		MyCsvUtil.writeValuesAsCsvFile(listePersonnes, "personnes2.csv");
+	}
+
+	private void ecrireFichierV1(String fileName) {
 		 try (FileOutputStream fos = new FileOutputStream(fileName);
 				 PrintStream ps =  new PrintStream(fos)
 				){
