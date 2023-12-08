@@ -2,8 +2,10 @@ package tp.pers;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,6 +66,20 @@ public class Repertoire {
 		Repertoire repertoire = new Repertoire();
 		repertoire.lireFichier("personnes.csv");
 		repertoire.afficherStatistiques();
+		repertoire.ecrireFichier("stat.csv");
+	}
+
+	private void ecrireFichier(String fileName) {
+		 try (FileOutputStream fos = new FileOutputStream(fileName);
+				 PrintStream ps =  new PrintStream(fos)
+				){
+		 ps.println("n;moyenneAge;moyennePoids");
+		 ps.println(stat.getN()+";"+stat.getMoyenneAge() +";" +stat.getMoyennePoids());
+		 } catch (IOException e) {
+				e.printStackTrace();
+		}
+		//automatic .close() via try with resources (try avec resources entre parentheses)
+		
 	}
 
 }
