@@ -22,7 +22,8 @@ public class Employe extends Personne {
 	
 	
 	public String listeOccupations() {
-		return "dormir;manger;loisir;TRAVAILLER";
+		//return "dormir;manger;loisir;TRAVAILLER";
+		return super.listeOccupations() + ";TRAVAILLER";
 	}
 	
 	
