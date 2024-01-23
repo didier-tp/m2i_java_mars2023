@@ -1,6 +1,6 @@
 package tp2;
 
-public class Animal {
+public class Animal /* extends Object */{
     private String couleur;
     private Double poids;
     

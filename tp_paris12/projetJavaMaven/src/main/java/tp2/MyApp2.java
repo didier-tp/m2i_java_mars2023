@@ -31,9 +31,11 @@ public class MyApp2 {
 		
 		Animal a = null;// a peut référencer n'importe quelle sorte d'animal
 		a=chat1;//Chat hérite de Animal et est donc vu comme un cas particulier
-		a.afficher(); a.parler();
+		a.afficher(); 
+		a.parler(); //POLYMORSPHIME et declechement de "miaou miaou"
 		a=chien1;
-		a.afficher(); a.parler();
+		a.afficher(); 
+		a.parler();  //POLYMORSPHIME et declechement de "whouf wouf "
 		//a.aboyer();//compilation impossible car .aboyer pas sur n'importquel animal
 		/*
 		//possible mais compliqué et déconseillé:
