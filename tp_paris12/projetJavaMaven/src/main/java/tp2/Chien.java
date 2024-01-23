@@ -17,7 +17,7 @@ public class Chien extends Animal {
 
 
 
-private void aboyer() {
+public void aboyer() {
 	   System.out.println("whouf whouf");
    }
    

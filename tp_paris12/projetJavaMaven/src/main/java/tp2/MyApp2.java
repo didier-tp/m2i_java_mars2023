@@ -27,6 +27,21 @@ public class MyApp2 {
 		chien1.setPoids(chien1.getPoids()*0.9);//après un petit régime
 		chien1.afficher();
 		chien1.parler();
+		chien1.aboyer();//possible su public
+		
+		Animal a = null;// a peut référencer n'importe quelle sorte d'animal
+		a=chat1;//Chat hérite de Animal et est donc vu comme un cas particulier
+		a.afficher(); a.parler();
+		a=chien1;
+		a.afficher(); a.parler();
+		//a.aboyer();//compilation impossible car .aboyer pas sur n'importquel animal
+		/*
+		//possible mais compliqué et déconseillé:
+		if(a instanceof Chien) {
+			Chien aVuCommeUnChien = (Chien) a;
+			aVuCommeUnChien.aboyer();
+		}
+		*/
 	}
 	
 	

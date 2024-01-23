@@ -17,7 +17,7 @@ public class Chat extends Animal {
 
 
 
-private void miauler() {
+public void miauler() {
 	   System.out.println("miaou miaou");
    }
    
