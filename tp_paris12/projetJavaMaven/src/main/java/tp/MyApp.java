@@ -8,7 +8,22 @@ public class MyApp {
 	   //testString();
 	   //testTableau1();
 	   //testTableau2();
-    	testSplit();
+    	//testSplit();
+    	testMath();
+    }
+    
+    public static void testMath() {
+    	//soit un cercle de rayon=60.0
+    	//on va calculer le périmètre et l'aire
+    	double rayon=60.0;
+    	//il exite Math.PI , Math.pow( ... , 2) 
+    	
+    	double perimetre = 2 * rayon * Math.PI; // 2 * rayon * PI (dans classe Math)
+    	double aire= Math.pow(rayon, 2) * Math.PI; // rayon * rayon * PI ou bien PI * rayon au carré
+    	
+    	//afficher
+    	System.out.println("perimetre du cercle="+perimetre);
+    	System.out.println("aire/surface du cercle="+aire);
     }
     
     public static void testSplit() {
@@ -133,6 +148,25 @@ public class MyApp {
     	
     	Personne p2 = new Personne("Aire","axelle");
     	System.out.println("p2=" + p2.toString());
+    	
+    	//appels possibles mais pas conseillés:
+    	p1.setEsperanceDeVie(84.0);
+    	System.out.println("espérance de vie (la même pour p1 et p2)="
+    	                 + p2.getEsperanceDeVie());
+    	
+    	//appels conseillés de méthodes "static"
+    	//préfixés par un nom de classe:
+    	Personne.setEsperanceDeVie(85.0);
+    	System.out.println("espérance de vie (commune à toutes les Personnes)="
+    	                 + Personne.getEsperanceDeVie());
+    	
+    	System.out.println("AGE_MAJORITE=" + Personne.AGE_MAJORITE);
+    	p1.setAge(17);
+    	//p1.setAge(27);
+    	if(p1.estMajeur())
+    		System.out.println("p1 est majeur");
+    	else
+    		System.out.println("p1 est mineur");
     }
     
     public static void test2() {

@@ -8,7 +8,20 @@ public class Personne {
 	private Integer age=0; //null comme valeur possible si age inconnu
 	private Double poids;
 	
+	//via le mot clef static , la valeur de l'espéranceDeVie
+	//sera partagée par toutes les instances de la classe Personne
+	private static Double esperanceDeVie=83.0;//83.0=valeur au lancement (qui peut changer)
 	
+	public static final int AGE_MAJORITE=18;  //constante (qui ne peut pas changer)
+	
+	public boolean estMajeur() {
+		//return (this.age >= AGE_MAJORITE);
+		//ou bien
+		if(this.age >= AGE_MAJORITE) 
+			return true;
+		else 
+			return false;
+	}
 	
 	public Personne() {
 		this.nom="nom inconnu";
@@ -21,6 +34,8 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
+	
+	
 
 
 	public void incrementerAge() {
@@ -81,6 +96,16 @@ public class Personne {
 
 	public void setPoids(Double poids) {
 		this.poids = poids;
+	}
+
+
+	public static Double getEsperanceDeVie() {
+		return esperanceDeVie;
+	}
+
+
+	public static void setEsperanceDeVie(Double esperanceDeVie) {
+		Personne.esperanceDeVie = esperanceDeVie;
 	}
 	
 	
