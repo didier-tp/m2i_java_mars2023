@@ -22,6 +22,11 @@ public class MyApp2 {
 		Chat chat2 = new Chat("noir" , 4.4 , 15);//4.4 kg et 15h de sommeil
 		chat2.afficher();
 		chat2.parler();
+		
+		Chien chien1 = new Chien("beige" , 23.5 , "gradien_de_moutons");
+		chien1.setPoids(chien1.getPoids()*0.9);//après un petit régime
+		chien1.afficher();
+		chien1.parler();
 	}
 	
 	
