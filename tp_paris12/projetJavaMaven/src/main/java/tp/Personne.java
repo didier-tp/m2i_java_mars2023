@@ -34,7 +34,13 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
+	public void afficher() {
+		System.out.println("personne=" + this.toString());
+	}
 	
+	public String listeOccupations() {
+		return "dormir;manger;loisir";
+	}
 	
 
 

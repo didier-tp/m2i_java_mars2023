@@ -3,13 +3,13 @@ package tp;
 public class MyApp {
 	
     public static void main(String[] args) {
-	   //testPersonne();
+	   testPersonne();
 	   //testAdresse();
 	   //testString();
 	   //testTableau1();
 	   //testTableau2();
     	//testSplit();
-    	testMath();
+    	//testMath();
     }
     
     public static void testMath() {
@@ -167,6 +167,20 @@ public class MyApp {
     		System.out.println("p1 est majeur");
     	else
     		System.out.println("p1 est mineur");
+    	
+    	Personne p=null;
+    	//new Employe(nom,prenom,fonction,salaire)
+    	Employe e1 =new Employe("Therieur","alain","developpeur",2000.0);
+    	e1.setAge(25); e1.setPoids(66.66);
+    	
+    	p1.setPoids(70.3);
+    	p=p1;
+    	p.afficher();
+    	System.out.println("pour p=p1, occupations=" + p.listeOccupations());
+    	
+    	p=e1;
+    	p.afficher();
+    	System.out.println("pour p=e1, occupations=" + p.listeOccupations());
     }
     
     public static void test2() {
