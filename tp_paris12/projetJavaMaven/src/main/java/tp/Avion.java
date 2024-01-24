@@ -20,7 +20,8 @@ public class Avion {
 		System.out.println("avion nom="+nom + " nbPlaces=" + nbPlaces);
 		System.out.println("nbPersonnes=" + listePersonnes.size());
 		for(Personne p : listePersonnes) {
-			System.out.println(p.toString());
+			System.out.println(p.toString()); //éventuel polymorphimse sur .toString()
+			//Rappel: Employe = cas particulier de Personne
 		}
 	}
 	
