@@ -1,4 +1,4 @@
-package tp2;
+package animaux;
 
 public class Chien extends Animal {
    private String role; //ex: animal_de_compagnie , gardien_de_troupeau, guide_aveugle

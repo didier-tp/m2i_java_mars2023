@@ -1,10 +1,22 @@
-package tp2;
+package animaux.app;
+
+import java.util.Date;
+
+import animaux.Animal;
+import animaux.Chat;
+import animaux.Chien;
+import animaux.Transportable;
+
+//import java.util.*;
+
 
 public class MyApp2 {
 
 	public static void main(String[] args) {
 		testAnimal();
-
+        // java.util.Date date = new java.util.Date(); //ok même sans import
+        Date date = new Date();
+        System.out.println("date="+date);
 	}
 	
 	public static void testAnimal() {

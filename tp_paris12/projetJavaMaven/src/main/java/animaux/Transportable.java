@@ -1,4 +1,4 @@
-package tp2;
+package animaux;
 
 public interface Transportable {
     public Double getPoids(); //en kg

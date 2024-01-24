@@ -1,4 +1,4 @@
-package tp2;
+package animaux;
 
 public class Chat extends Animal {
    private Integer nbHeureSommeil;

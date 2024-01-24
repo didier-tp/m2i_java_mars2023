@@ -1,4 +1,4 @@
-package tp2;
+package animaux;
 
 /*
  * Animal a1 = new Animal("blanc",4.5); IMPOSSIBLE
