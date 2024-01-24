@@ -1,6 +1,7 @@
 package com.m2i.tp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MyApp {
@@ -14,6 +15,8 @@ public class MyApp {
 		List<Double> liste1 = new ArrayList<>();
 		// ajouter 5 valeurs (ex: 5.0 , 18.0 , 56.0, 7.0 , 33.0 )
 		liste1.add(5.0); liste1.add(18.0); liste1.add(56.0); liste1.add(7.0); liste1.add(33.0);
+		
+		//List<Double> liste1 = Arrays.asList(5.0 , 18.0 , 56.0 , 7.0 , 33.0);
 		
 		//constuire une seconde liste vide au début (liste2)
 		List<Double> liste2 = new ArrayList<>();
