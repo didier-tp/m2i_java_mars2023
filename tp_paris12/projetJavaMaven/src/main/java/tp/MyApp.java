@@ -3,13 +3,29 @@ package tp;
 public class MyApp {
 	
     public static void main(String[] args) {
-	   testPersonne();
+	   //testPersonne();
 	   //testAdresse();
 	   //testString();
 	   //testTableau1();
 	   //testTableau2();
     	//testSplit();
     	//testMath();
+    	testAvion();
+    }
+    
+    public static void testAvion() {
+    	Avion avion1 = new Avion();
+    	
+    	Employe pilote = new Employe("NomPilote" , "prenomPilote" , "pilote" , 4000.0);
+    	avion1.addPersonne(pilote);
+    	
+    	avion1.addPersonne(new Employe("Aire","axelle" , "hotesse" , 2500.0));
+    	
+    	avion1.addPersonne(new Personne("NomPassager1","prenomPassager1"));
+    	avion1.addPersonne(new Personne("NomPassager2","prenomPassager2"));
+    	
+    	avion1.afficher();
+    	
     }
     
     public static void testMath() {
