@@ -5,7 +5,42 @@ import java.util.List;
 
 public class MyApp {
 	public static void main(String[] args) {
-		testListe();
+		//testListe();
+		testListe2();
+	}
+	
+	public static void testListe2() {
+	    // construire liste1 comme une liste de <Double>
+		List<Double> liste1 = new ArrayList<>();
+		// ajouter 5 valeurs (ex: 5.0 , 18.0 , 56.0, 7.0 , 33.0 )
+		liste1.add(5.0); liste1.add(18.0); liste1.add(56.0); liste1.add(7.0); liste1.add(33.0);
+		
+		//constuire une seconde liste vide au début (liste2)
+		List<Double> liste2 = new ArrayList<>();
+		//parcourir liste1 et pour chaque itération
+		for(Double valeur : liste1) {
+			// calculer la valeur au carré 
+			double carre = valeur*valeur;
+			//et ajouter le resultat dans liste2
+			liste2.add(carre);
+		}
+		
+		//afficher taille de liste2
+		System.out.println("taille liste2=" + liste2.size());
+		//afficher toutes les valeurs de liste2
+		System.out.println("liste2=" + liste2);
+		/*
+		for(Double v : liste2) {
+			System.out.println(v);
+		}
+		*/
+		
+		//calculer et afficher moyenne de liste1
+		double somme=0;
+		for(Double valeur : liste1) {
+			somme=somme+valeur;
+		}
+		System.out.println("moyenne liste1=" + somme / liste1.size());
 	}
 	
 	public static void testListe() {
