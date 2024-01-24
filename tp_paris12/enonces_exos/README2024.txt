@@ -1,0 +1,1 @@
+NB: en 2024 , on utilisera plutot java 17 que java 8

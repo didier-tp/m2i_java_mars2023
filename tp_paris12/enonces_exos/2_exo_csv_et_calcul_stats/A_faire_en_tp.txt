@@ -1,0 +1,32 @@
+Dans l'idéal : 
+- effectuer la phase 1 seul (en demandant de l'aide au formateur si besoin)
+- effectuer les phases 2,3 et 4 par groupes (de 2 ou 3 personnes)
+===========================
+
+Phase 1 (obligatoire)
+=====================
+
+Ecrire de a à z une nouvelle application java qui va :
+- lire les lignes du fichier produits.csv et remonter le tout en mémoire sous forme de List<Produit> (avec classe Produit à coder)
+- calculer la moyenne des prix et la moyenne des poids
+- générer une nouvelle version du fichier stats.csv avec des valeurs réactualisées (en fonction des résultats des calculs)
+
+
+Phase 2 (falculative)
+====================
+On pourra trier les produits (par exemple par prix) et générer un fichier produits_tries_par_prix.csv
+
+
+Phase 3 (falculative)
+====================
+On pourra effectuer en plus des stats pour chaque categorie et générer une nouvelle version du fichier stats_par_categories.csv avec des valeurs réactualisées
+
+
+Phase 4 (facultative)
+=====================
+On pourra éventuellement restructurer le code en :
+  - s'appuyant sur le design pattern "DAO" (interface ProduitDao , classes ProduitDaoCsv et ProduitDaoSql )
+  - programmant une variante de l'application qui va lire les valeurs des produits dans une table "produit" d'une base de données relationnelle (h2 ou mysql ou autre)
+  - proposant le choix ( "csv" ou "sql" via questions/réponses ou option(s) ) 
+
+
