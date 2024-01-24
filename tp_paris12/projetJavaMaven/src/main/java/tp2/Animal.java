@@ -1,12 +1,15 @@
 package tp2;
 
-public class Animal /* extends Object */{
+public abstract class Animal /* extends Object */{
     private String couleur;
     private Double poids;
     
+    /*
     public void parler() {
-    	System.out.println("l'animal parle ..."); //code temporaire
+    	System.out.println("l'animal parle ..."); //ancien code temporaire
     }
+    */
+    public abstract void parler(); //méthode abstraite sans code entre { }
     
     public void afficher() {
     	System.out.println("animal="+this.toString());

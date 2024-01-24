@@ -8,9 +8,13 @@ public class MyApp2 {
 	}
 	
 	public static void testAnimal() {
+		/*
+		//ce n'est plus possible depuis que Animal est astract
+		// new ClassAbstaite() est interdit
 		Animal a1 = new Animal("blanc",4.5);
 		a1.afficher();
 		a1.parler();
+		*/
 		
 		Chat chat1 = new Chat();
 		chat1.setCouleur("roux");
