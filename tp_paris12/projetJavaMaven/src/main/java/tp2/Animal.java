@@ -1,10 +1,27 @@
 package tp2;
 
-public abstract class Animal /* extends Object */{
+/*
+ * Animal a1 = new Animal("blanc",4.5); IMPOSSIBLE
+ * mais
+ * Animal a = new Chat() possible
+ */
+
+public abstract class Animal implements Transportable{
     private String couleur;
     private Double poids;
     
-    /*
+    //solution 1
+    private static final Double VOLUME_MOYEN=10.0;
+    //solution 2
+    //private Double volume; //+get/set
+    
+    @Override
+	public Double getVolume() {
+		return VOLUME_MOYEN;
+		//return vomume
+	}
+
+	/*
     public void parler() {
     	System.out.println("l'animal parle ..."); //ancien code temporaire
     }

@@ -48,6 +48,14 @@ public class MyApp2 {
 			aVuCommeUnChien.aboyer();
 		}
 		*/
+		
+		Transportable choseTransportable = null;
+		choseTransportable=chat1;
+		//choseTransportable=personne1; //serait possible si class Personne implements Transportable
+		System.out.println("poid de la chose transportable="
+				+ choseTransportable.getPoids() + " " + choseTransportable.UNITE_POIDS);
+		System.out.println("volume de la chose transportable="
+				+ choseTransportable.getVolume() + " " + choseTransportable.UNITE_VOLUME);
 	}
 	
 	
