@@ -13,10 +13,11 @@ public class MyApp {
 	
 	public static void testFichier() {
 		FileUtil fileUtil = new FileUtil();
-		List<Double> listeValeurs = fileUtil.lireFichierV3("data.txt");
+		List<Double> listeValeurs = fileUtil.lireFichierV1("data.txt");
 		System.out.println("listeValeurs="+listeValeurs);
 		
-		List<Double> listeCarres = fileUtil.listeDesCarres(listeValeurs);
+		List<Double> listeCarres = fileUtil.listeDesCarresV1(listeValeurs);
+		//List<Double> listeCarres = fileUtil.listeDesCarresV2(listeValeurs);
 		
 		fileUtil.ecrireFichier("carres.txt" , listeCarres);
 		

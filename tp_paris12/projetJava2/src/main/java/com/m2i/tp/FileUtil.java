@@ -2,10 +2,13 @@ package com.m2i.tp;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FileUtil {
 
@@ -74,15 +77,32 @@ public class FileUtil {
 		//with automatic .close() on AutoClosable resource like FileInputStream or BufferedReader
 		return liste;
 	}
-
-	public List<Double> listeDesCarres(List<Double> listeValeurs) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public List<Double> listeDesCarresV2(List<Double> listeValeurs) {
+		//V2 avec "lambda expression" et "stream" de java >=8
+		return listeValeurs.stream().map(val->val*val).collect(Collectors.toList());
 	}
 
-	public void ecrireFichier(String string, List<Double> listeCarres) {
-		// TODO Auto-generated method stub
-		
+	public List<Double> listeDesCarresV1(List<Double> listeValeurs) {
+		List<Double> listeCarres = new ArrayList<>();
+		for(Double val:listeValeurs ) {
+			listeCarres.add(val*val);
+		}
+		return listeCarres;
+	}
+
+	public void ecrireFichier(String fileName, List<Double> listeCarres) {
+		try {
+			FileOutputStream fos = new FileOutputStream(fileName);
+			PrintStream ps = new PrintStream(fos);
+			for(Double valCarree :listeCarres ) {
+				ps.println(valCarree);
+			}
+			ps.close(); fos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("le fichier " + fileName + " a été généré");
 	}
 
 }
