@@ -7,7 +7,14 @@ import java.util.List;
 public class MyApp {
 	public static void main(String[] args) {
 		//testListe();
-		testListe2();
+		//testListe2();
+		testFichier();
+	}
+	
+	public static void testFichier() {
+		FileUtil fileUtil = new FileUtil();
+		List<Double> listeValeurs = fileUtil.lireFichier("data.txt");
+		System.out.println("listeValeurs="+listeValeurs);
 	}
 	
 	public static void testListe2() {
