@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class MyApp {
 	public static void main(String[] args) {
 		//testListe();
@@ -17,6 +19,7 @@ public class MyApp {
 		Scanner scanner = new Scanner(System.in);	
 		System.out.println("votre nom:");
 		String ligneSaisie = scanner.nextLine();
+		//String ligneSaisie = JOptionPane.showInputDialog(null, "votre nom:");
 		String nom = ligneSaisie;
 		nom=nom.toUpperCase();
 		System.out.println("nom (en majuscule)="+nom);
