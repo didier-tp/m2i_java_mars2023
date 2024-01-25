@@ -4,14 +4,14 @@ public class MyApp {
 	
     public static void main(String[] args) {
 	   //testPersonne();
-	   //testAdresse();
+	   testAdresse();
 	   //testString();
 	   //testTableau1();
 	   //testTableau2();
     	//testSplit();
     	//testMath();
     	//testAvion();
-    	testExceptions();
+    	//testExceptions();
     }
     
     public static double calculRacineCarre(double x) {
@@ -29,8 +29,8 @@ public class MyApp {
 			int somme = Integer.parseInt(sNum1) + Integer.parseInt(sNum2);
 			System.out.println("somme="+somme);
 		} catch (NumberFormatException e) {
-			//e.printStackTrace();
 			System.err.println(e.getMessage());
+			//e.printStackTrace();
 		}
     	
     	try {
@@ -39,10 +39,9 @@ public class MyApp {
 			double y=calculRacineCarre(x);
 			System.out.println("racinne carree="+y);
 		} catch (Exception e) {
-			//e.printStackTrace();
-			System.err.println(e.getMessage());
+			System.err.println(e.getMessage());//e.printStackTrace();
 		}
-    	
+    	System.out.println("suite et fin de testException");
     }
     
     public static void testAvion() {
@@ -155,7 +154,12 @@ public class MyApp {
     
     
     public static void testAdresse() {
+    	double x=0;
+    	System.out.println("x="+x);
+    	x=5;
+    	System.out.println("x="+x);
     	Adresse ad1 = new Adresse();
+    	System.out.println("ad1"+ad1.toString());
     	ad1.setRue("rue xy");
     	ad1.setCodePostal(75001);
     	ad1.setVille("Paris");
