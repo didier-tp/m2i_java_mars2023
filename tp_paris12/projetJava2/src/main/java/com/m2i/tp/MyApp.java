@@ -13,8 +13,13 @@ public class MyApp {
 	
 	public static void testFichier() {
 		FileUtil fileUtil = new FileUtil();
-		List<Double> listeValeurs = fileUtil.lireFichier("data.txt");
+		List<Double> listeValeurs = fileUtil.lireFichierV3("data.txt");
 		System.out.println("listeValeurs="+listeValeurs);
+		
+		List<Double> listeCarres = fileUtil.listeDesCarres(listeValeurs);
+		
+		fileUtil.ecrireFichier("carres.txt" , listeCarres);
+		
 	}
 	
 	public static void testListe2() {
