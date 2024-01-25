@@ -10,7 +10,39 @@ public class MyApp {
 	   //testTableau2();
     	//testSplit();
     	//testMath();
-    	testAvion();
+    	//testAvion();
+    	testExceptions();
+    }
+    
+    public static double calculRacineCarre(double x) {
+    	if(x>=0)
+    		return Math.sqrt(x);
+    	else
+    		throw new IllegalArgumentException("racine carre invalide pour x negatif");
+    }
+    
+    public static void testExceptions() {
+    	try {
+			String sNum1 = "12";
+			//String sNum2 = "3";
+			String sNum2 = "3a";
+			int somme = Integer.parseInt(sNum1) + Integer.parseInt(sNum2);
+			System.out.println("somme="+somme);
+		} catch (NumberFormatException e) {
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+    	
+    	try {
+			//double x=9.0;
+			double x=-9.0;
+			double y=calculRacineCarre(x);
+			System.out.println("racinne carree="+y);
+		} catch (Exception e) {
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+    	
     }
     
     public static void testAvion() {
@@ -147,21 +179,30 @@ public class MyApp {
     
     public static void testPersonne() {
     	Personne p1 = new Personne();
-    	System.out.println("p1=" + p1.toString());
-    	p1.setPrenom("jean");
-    	p1.setNom(null);
-    	p1.setNom("");
-    	p1.setNom("Bon");
-    	p1.setAge(-30); //age négatif refusé/pas pris en compte
-    	Integer ageDeP1 = p1.getAge();
-    	System.out.println("agedeP1=" + ageDeP1);
-    	p1.setAge(30);
-    	ageDeP1 = p1.getAge();
-    	System.out.println("agedeP1=" + ageDeP1);
-    	p1.incrementerAge();//nouvel age = 31
-    	//System.out.println("p1=" + p1.toString());
-    	System.out.println("p1=" + p1); //..toString() appelé automatiquement sur les objets
-    	
+    	try {
+			System.out.println("p1=" + p1.toString());
+			p1.setPrenom("jean");
+			p1.setNom(null);
+			p1.setNom("");
+			p1.setNom("Bon");
+			p1.setAge(-30); //age négatif refusé/pas pris en compte
+    	} catch (Exception e) {
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		try {
+				Integer ageDeP1 = p1.getAge();
+				System.out.println("agedeP1=" + ageDeP1);
+				p1.setAge(30);
+				ageDeP1 = p1.getAge();
+				System.out.println("agedeP1=" + ageDeP1);
+				p1.incrementerAge();//nouvel age = 31
+				//System.out.println("p1=" + p1.toString());
+				System.out.println("p1=" + p1); //..toString() appelé automatiquement sur les objets
+		} catch (IllegalParamException e) {
+				e.printStackTrace();
+		}
+		
     	Personne p2 = new Personne("Aire","axelle");
     	System.out.println("p2=" + p2.toString());
     	

@@ -61,10 +61,13 @@ public class Personne {
 	}
 
 
-	public void setAge(Integer age) {
+	//public void setAge(Integer age) throws IllegalParamException {
+	public void setAge(Integer age) throws IllegalArgumentException {
 		if(age <0) {
-			System.out.println("age négatif invalide");
+			//System.out.println("age négatif invalide");
 			//throw new RuntimeException("age négatif invalide");
+			throw new IllegalArgumentException("age négatif invalide");
+			//throw new IllegalParamException("age négatif invalide");
 		}
 		else
 		  this.age = age;
