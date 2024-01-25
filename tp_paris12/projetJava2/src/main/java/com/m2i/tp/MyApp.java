@@ -3,12 +3,23 @@ package com.m2i.tp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class MyApp {
 	public static void main(String[] args) {
 		//testListe();
 		//testListe2();
-		testFichier();
+		//testFichier();
+		testSaisies();
+	}
+	
+	public static void  testSaisies() {
+		Scanner scanner = new Scanner(System.in);	
+		System.out.println("votre nom:");
+		String ligneSaisie = scanner.nextLine();
+		String nom = ligneSaisie;
+		nom=nom.toUpperCase();
+		System.out.println("nom (en majuscule)="+nom);
 	}
 	
 	public static void testFichier() {
