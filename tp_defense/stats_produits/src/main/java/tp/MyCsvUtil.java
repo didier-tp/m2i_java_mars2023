@@ -59,4 +59,25 @@ public class MyCsvUtil {
 		System.out.println("le fichier " + statsFileName + " a été généré");
 	}
 
+	public void writeProductFile(List<Produit> listeProduits,String outputFileName) {
+		try(
+				FileOutputStream fos = new FileOutputStream(outputFileName);
+				PrintStream ps = new PrintStream(fos)){
+			    ps.println("num;label;categorie;prix;poids") ;
+			    for(Produit prod : listeProduits) {
+				ps.printf("%d;%s;%s;%s;%s\n",prod.getNumero(),
+						             prod.getLabel(),
+						             prod.getCategorie(),
+						             String.valueOf(prod.getPrix()),
+						             String.valueOf(prod.getPoids()));
+			    }
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			//automatic finally in try(withResources){....}catch(...){...}
+			//with automatic .close() on AutoClosable resource like FileOutputStream or PrintStream
+			System.out.println("le fichier " + outputFileName + " a été généré");
+	}
+
 }

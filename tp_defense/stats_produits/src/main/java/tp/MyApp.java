@@ -1,6 +1,7 @@
 package tp;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MyApp {
 	
@@ -13,10 +14,18 @@ public class MyApp {
 		myApp.loadProducts();
 		myApp.computeStats();
 		myApp.writeStats();
+		myApp.writeSortedProducts();
 	}
 	
 	private void loadProducts(){
 		this.listeProduits = csvUtil.readProductFile();
+	}
+	
+	private void sortProductsByPrice(){
+		this.listeProduits = 
+				this.listeProduits.stream()
+				.sorted((p1,p2)->Double.compare(p1.getPrix(), p2.getPrix()))
+				.collect(Collectors.toList());
 	}
 	
     private void computeStats(){
@@ -34,5 +43,10 @@ public class MyApp {
     private void writeStats(){
     	csvUtil.writeStatFile(stat);
 	}
+    
+    private void writeSortedProducts() {
+    	this.sortProductsByPrice();
+    	csvUtil.writeProductFile(this.listeProduits,"produits_tries_par_prix.csv");
+    }
 
 }
