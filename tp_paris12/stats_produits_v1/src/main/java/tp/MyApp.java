@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class MyApp {
 	
 	private Stat stat;
-	private List<Produit> listeProduits;
+	private List<Produit> listeProduits=null;
 	//Map<String , List<Produit>> mapSubListProdByCategorie ;
 	//Map<String , Stat> mapStatsByCategorie ;
 	
@@ -17,6 +17,7 @@ public class MyApp {
 
 	public static void main(String[] args) {
 		testMap();
+	
 		MyApp myApp = new MyApp();
 		myApp.loadProducts();
 		myApp.computeStats();
@@ -25,6 +26,11 @@ public class MyApp {
 		//myApp.writeSortedProducts();
 		//myApp.writeStatsByCategories();
 	}
+	
+	private void loadProducts(){
+		this.listeProduits = csvUtil.readProductFile();
+	}
+	
 	
 	public static void testMap(){
 		Map<Integer,String> mapMois = new HashMap<>();
@@ -54,9 +60,6 @@ public class MyApp {
 		//à completer en tp
 	}
 
-	private void loadProducts(){
-		this.listeProduits = csvUtil.readProductFile();
-	}
 	
 	private void sortProductsByPrice(){
 		//à completer en tp (phase 2 facultative)
