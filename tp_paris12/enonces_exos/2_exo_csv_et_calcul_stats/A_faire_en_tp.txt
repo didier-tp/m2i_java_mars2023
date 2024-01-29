@@ -27,6 +27,6 @@ Phase 4 (facultative)
 On pourra éventuellement restructurer le code en :
   - s'appuyant sur le design pattern "DAO" (interface ProduitDao , classes ProduitDaoCsv et ProduitDaoSql )
   - programmant une variante de l'application qui va lire les valeurs des produits dans une table "produit" d'une base de données relationnelle (h2 ou mysql ou autre)
-  - proposant le choix ( "csv" ou "sql" via questions/réponses ou option(s) ) 
+  - proposant le choix ( "csv" ou "sql" ou "les 2" via questions/réponses ou option(s) ) 
 
 

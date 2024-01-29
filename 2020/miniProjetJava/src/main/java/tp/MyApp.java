@@ -11,11 +11,25 @@ import tp.figure.Rectangle;
 import tp.svg.MySvgUtil;
 
 public class MyApp {
+	
+	private int compteur;
 
 	public static void main(String[] args) {
-		System.out.println("cette application va générer un fichier dessin.svg ou dessin2.svg");
-		premiersTests();
+		System.out.println("cette application va gï¿½nï¿½rer un fichier dessin.svg ou dessin2.svg");
+		//premiersTests();
 		//enchainerTransformationsEtGenerationFichierSvg();
+		MyApp myApp = new MyApp();
+		myApp.m1();
+		myApp.m2();
+	}
+	
+	public void m1() {
+		compteur =1;
+		compteur++;
+	}
+	
+    public void m2() {
+		System.out.println("compteur="+compteur);
 	}
 	
 	public static List<Figure2D> buildListeFigures() {
@@ -52,7 +66,7 @@ public class MyApp {
 		    .collect(Collectors.toList());
 		    //.collect(Collectors.toCollection(ArrayList<Figure2D>::new));
 		MySvgUtil.generateSvgFile(listeTransformeeFigures, "dessin2.svg"); 
-		System.out.println("le fichier dessin2.svg a été regénéré");
+		System.out.println("le fichier dessin2.svg a ï¿½tï¿½ regï¿½nï¿½rï¿½");
 	}
 	
     public static void premiersTests() {
