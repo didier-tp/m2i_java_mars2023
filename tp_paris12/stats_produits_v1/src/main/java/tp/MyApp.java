@@ -16,6 +16,7 @@ public class MyApp {
 	private MyCsvUtil csvUtil = new MyCsvUtil();
 
 	public static void main(String[] args) {
+		testMap();
 		MyApp myApp = new MyApp();
 		myApp.loadProducts();
 		myApp.computeStats();
@@ -23,6 +24,20 @@ public class MyApp {
 		myApp.writeStats();
 		//myApp.writeSortedProducts();
 		//myApp.writeStatsByCategories();
+	}
+	
+	public static void testMap(){
+		Map<Integer,String> mapMois = new HashMap<>();
+		mapMois.put(1, "janvier");
+		//...
+		mapMois.put(12, "decembre");
+		String nomDuMoisNumero12 = mapMois.get(12);
+		System.out.println("nomDuMoisNumero12="+nomDuMoisNumero12);//affiche décembre
+		for(Integer key:mapMois.keySet()) {
+			System.out.print("key="+key + " ");
+			String value = mapMois.get(key);
+			System.out.println("value=" + value);
+		}
 	}
 	
 	
