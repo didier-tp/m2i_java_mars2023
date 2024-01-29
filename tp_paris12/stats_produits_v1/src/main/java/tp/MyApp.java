@@ -1,6 +1,6 @@
 package tp;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,12 +8,12 @@ import java.util.stream.Collectors;
 
 public class MyApp {
 	
-	Stat stat;
-	List<Produit> listeProduits;
+	private Stat stat;
+	private List<Produit> listeProduits;
 	//Map<String , List<Produit>> mapSubListProdByCategorie ;
 	//Map<String , Stat> mapStatsByCategorie ;
 	
-	MyCsvUtil csvUtil = new MyCsvUtil();
+	private MyCsvUtil csvUtil = new MyCsvUtil();
 
 	public static void main(String[] args) {
 		MyApp myApp = new MyApp();
@@ -51,16 +51,13 @@ public class MyApp {
 		int nbProd=0;
 		double sommePrix=0.0;
 		double sommePoids=0.0;
-		for(Produit prod : this.listeProduits) {
-			nbProd++;
-			sommePrix += prod.getPrix();
-			sommePoids += prod.getPoids();
-		}
+		//à completer en tp
 		this.stat = new Stat(nbProd,sommePrix/nbProd,sommePoids/nbProd);
 	}
     
     private void writeStats(){
     	System.out.println("listeProduits="+listeProduits);
+    	System.out.println("stats="+this.stat);
     	//csvUtil.writeStatFile(stat);
 	}
     
