@@ -11,26 +11,15 @@ import tp.figure.Rectangle;
 import tp.svg.MySvgUtil;
 
 public class MyApp {
-	
-	private int compteur;
 
 	public static void main(String[] args) {
 		System.out.println("cette application va g�n�rer un fichier dessin.svg ou dessin2.svg");
-		//premiersTests();
+		premiersTests();
 		//enchainerTransformationsEtGenerationFichierSvg();
-		MyApp myApp = new MyApp();
-		myApp.m1();
-		myApp.m2();
+	
 	}
 	
-	public void m1() {
-		compteur =1;
-		compteur++;
-	}
-	
-    public void m2() {
-		System.out.println("compteur="+compteur);
-	}
+
 	
 	public static List<Figure2D> buildListeFigures() {
 		List<Figure2D> listeFigures = new ArrayList<>();

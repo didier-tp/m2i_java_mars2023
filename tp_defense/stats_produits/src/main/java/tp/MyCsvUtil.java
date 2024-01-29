@@ -8,11 +8,13 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MyCsvUtil {
 	
-	private String produitsFileName="produits.csv"; //paer défaut
-	private String statsFileName="stats.csv"; //paer défaut
+	private String produitsFileName="produits.csv"; //par défaut
+	private String statsFileName="stats.csv"; //par défaut
+	private String statsByCategorieFileName="stats_par_categories.csv"; //par défaut
 
 	public List<Produit> readProductFile(){
 		List<Produit> listeProduits = new ArrayList<>();
@@ -57,6 +59,28 @@ public class MyCsvUtil {
 		//automatic finally in try(withResources){....}catch(...){...}
 		//with automatic .close() on AutoClosable resource like FileOutputStream or PrintStream
 		System.out.println("le fichier " + statsFileName + " a été généré");
+	}
+	
+	public void writeStatFileFromCategorieMap(Map<String,Stat> statMap) {
+		try(
+			FileOutputStream fos = new FileOutputStream(statsByCategorieFileName);
+			PrintStream ps = new PrintStream(fos)){
+		    ps.println("categorie;nbProduits;moyennePrix;moyennePoids") ;
+		    for( String categorie : statMap.keySet()) {
+		    	Stat stat = statMap.get(categorie);
+		    	ps.printf("%s;%d;%s;%s\n",categorie,
+		    			 stat.getNbProduits(),
+			             String.valueOf(stat.getMoyennePrix()),
+			             String.valueOf(stat.getMoyennePoids()));
+		    }
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//automatic finally in try(withResources){....}catch(...){...}
+		//with automatic .close() on AutoClosable resource like FileOutputStream or PrintStream
+		System.out.println("le fichier " + statsByCategorieFileName + " a été généré");
 	}
 
 	public void writeProductFile(List<Produit> listeProduits,String outputFileName) {
