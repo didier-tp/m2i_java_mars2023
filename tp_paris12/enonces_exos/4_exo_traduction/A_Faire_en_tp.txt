@@ -1,8 +1,21 @@
 1) charger le debut de projet tp_paris12/traductions dans eclipse ou intelliJ
 2) comprendre la structure (code java , diag UML)
 3) completer le code manquant au niveau de la classe AbstractBasicTranslator
-4) tester via adaptatiion de MyApp.main
+4) tester via main de MyApp.main ("hello" doit être traduit par "bonjour" en francais et "buenos dias" en espagnol et pas null)
 5) completer le code manquant au niveau du EnglishToFrenchTranslator.initFromJavacode et EnglishToSpanishTranslator.initFromJavaCode
-6) tester via adaptatiion de MyApp.main
-7) ...
+   on enregistrera les traductions des principales couleurs ("green" , "red" , ...) 
+6) tester via main de MyApp.main ("green" doit être traduit par "vert" en francais et "verde" en espagnol et pas null)
+7) Au sein de MyApp.main() , appeler .loadFromFile() à la place de ..initFromJavaCode()
+   de manière à ce que les traductions soient chargées depuis les fichiers english_to_french.properties et english_to_spanish.properties
+   rangés dans le répertoire "src/main/resources" d'un projet java/maven
+   Adapter si nécessaire le contenu des fichiers  english_to_french.properties et english_to_spanish.properties
+8) Ajouter quelques lignes dans MyApp.main() pour tester des traductions inverses
+   Verifier par exemple que englishToFrenchTranslator.translateInverse("vert") retourne "green"
+9) Reflechir et coder la classe FrenchToSpanishTranslator en implémentant directement l'interface WordTranslator
+   et en déléguant des appels à des instances des classes EnglishToFrenchTranslator et EnglishToSpanishTranslator
+   idée: .tranlate("vert") peut appeler englishToFrenchTranslator.inverseTranslate("vert")
+                           et injecter ce resultat intermédiaire dans englishToSpanishTranslator.translate()
+10) Tester le comportement de la classe FrenchToSpanishTranslator via quelques ajouts de lignes dans MyApp.main() 
+    on testera en autre de "vert" en francais est traduit par "verde" espagnol
+  
 
