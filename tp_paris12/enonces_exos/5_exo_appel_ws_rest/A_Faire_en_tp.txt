@@ -1,0 +1,10 @@
+1) charger le debut de projet tp_paris12/restCalls dans eclipse ou intelliJ
+2) observer la structure (code java , pom.xml)
+3) observer les exemples de tests unitaires src/test/java , tp.TestMyHttp2Util.java
+4) coder la méthode MyApp.testSimpleWsCall() pour s'exercer sur un cas simple
+5) TP FACULTATIF
+===============
+   partie complexe mais néanmoins intéressante:
+   coder la méthode fetchMissingValuesWithWsCalls() 
+  
+
