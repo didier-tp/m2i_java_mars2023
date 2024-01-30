@@ -1,6 +1,6 @@
 1) charger le debut de projet tp_paris12/miniBank dans eclipse ou intelliJ
 2) comprendre la structure (code java , diag UML)
-3) completer le code manquant au niveau de la classe Personne
+3) completer le code manquant au niveau de la classe Compte
 4) completer le code manquant au niveau du constructeur de CompteDaoSimu
 5) completer le code manquant au niveau du ServiceCompte.effectuerVirement
 6) tester tout cela à fond au niveau de MyApp.testVirement
