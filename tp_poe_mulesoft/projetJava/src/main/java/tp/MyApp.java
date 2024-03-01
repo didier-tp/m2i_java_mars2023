@@ -16,6 +16,8 @@ public class MyApp {
 		Personne p1 = new Personne();
 		p1.prenom = "Jean"; p1.nom="Bon"; p1.age=30;
 		p1.incremenerAge();
+		//System.out.println("p1="+p1.toString());
+		System.out.println("p1="+p1);
 		System.out.println("apres incrementerAge(), p1.age= " + p1.age + " et p1.nomComplet()=" + p1.nomComplet() );
 		
 		Personne p2 = null;

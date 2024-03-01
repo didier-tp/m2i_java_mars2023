@@ -13,4 +13,11 @@ public class Personne {
 	public String nomComplet() {
 		return this.prenom + " " + this.nom; //retourner à peu près la con concaténation du premom et du nom
 	}
+
+	@Override
+	public String toString() {
+		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+	}
+	
+	
 }
