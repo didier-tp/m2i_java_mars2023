@@ -7,11 +7,21 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		essaiCompte();
+		//essaiCompte();
+		essaiPersonne();
 	}
 	
 	public static void essaiPersonne() {
+		Personne p1 = new Personne();
+		p1.prenom = "Jean"; p1.nom="Bon"; p1.age=30;
+		p1.incremenerAge();
+		System.out.println("apres incrementerAge(), p1.age= " + p1.age + " et p1.nomComplet()=" + p1.nomComplet() );
 		
+		Personne p2 = null;
+		p2=new Personne();
+		p2.prenom = "Axelle"; p2.nom="Aire"; p2.age=26;
+		p2.incremenerAge();
+		System.out.println("apres incrementerAge(), p2.age= " + p2.age + " et p2.nomComplet()=" + p2.nomComplet() );
 	}
 	
 	public static void essaiCompte() {

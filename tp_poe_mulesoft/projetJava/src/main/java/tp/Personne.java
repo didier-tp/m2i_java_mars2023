@@ -2,15 +2,15 @@ package tp;
 
 public class Personne {
 	
-	//nom
-	//prenom
-	//age de type int
+	public String nom;
+	public String prenom;
+	public int age;
 	
 	public void incremenerAge() {
-		//nouvelAge = ageCourant + 1
+		this.age = this.age + 1;
 	}
 	
 	public String nomComplet() {
-		return ; //retourner à peu près la con concaténation du premom et du nom
+		return this.prenom + " " + this.nom; //retourner à peu près la con concaténation du premom et du nom
 	}
 }
