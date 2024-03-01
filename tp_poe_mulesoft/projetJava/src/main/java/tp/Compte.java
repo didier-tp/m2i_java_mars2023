@@ -8,6 +8,13 @@ public class Compte {
 	public String numero;
 	public double solde;
 	
+	
+
+	@Override
+	public String toString() {
+		return "Compte [numero=" + numero + ", solde=" + solde + "]";
+	}
+
 	//traitements/fonctions internes (operations/méthodes):
 	public void crediter(double montant) {
 		this.solde = this.solde + montant;

@@ -1,5 +1,6 @@
 package tp;
 
+import javax.swing.JOptionPane;
 
 public class MyApp {
 
@@ -7,7 +8,7 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		//essaiCompte();
+		essaiCompte();
 		essaiPersonne();
 	}
 	
@@ -33,6 +34,9 @@ public class MyApp {
 		compte1.solde=500.0; 
 		compte1.crediter(50); //on ajoute 50 euros sur le compte1
 		System.out.println("apres crediter , compte1.solde="+compte1.solde); //550.0
+		//System.out.println("compte1="+compte1.toString());
+		System.out.println("compte1="+compte1); //.toString() appelé automatiquement
+		//JOptionPane.showMessageDialog(null, "compte1="+compte1);
 		
 		Compte compte2 = null; //on déclare ici une variable commpte2 pourra référencer un futur objet de type Compte
 		compte2 = new Compte();//la variable compte2 référence l'objet créé par new ...
