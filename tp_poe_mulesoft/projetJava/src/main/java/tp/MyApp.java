@@ -10,6 +10,10 @@ public class MyApp {
 		essaiCompte();
 	}
 	
+	public static void essaiPersonne() {
+		
+	}
+	
 	public static void essaiCompte() {
 		//compte1 et compte2 sont des objets/exemplaires/instances de la  classe Compte
 		//compte1 et compte2 sont des variables de type Compte (toute classe Java est vu comme un type de données "orienté objet")
