@@ -2,9 +2,11 @@ package tp;
 
 public class Personne {
 	
+	//public Integer numero; //clef primaire (pk / primary key) , avant le auto_increment = null (pas encore connu avant le INSERT SQL)
 	public String nom;
 	public String prenom;
-	public int age;
+	//public int age;  //valeur par défaut =0 et null impossible
+	public Integer age; //null possible et valeur par defaut = null
 	
 	public void incremenerAge() {
 		this.age = this.age + 1;

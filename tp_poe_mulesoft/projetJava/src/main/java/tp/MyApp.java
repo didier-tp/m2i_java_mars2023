@@ -8,13 +8,19 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		essaiCompte();
+		//essaiCompte();
 		essaiPersonne();
 	}
 	
 	public static void essaiPersonne() {
 		Personne p1 = new Personne();
-		p1.prenom = "Jean"; p1.nom="Bon"; p1.age=30;
+		System.out.println("p1="+p1);
+		p1.prenom = "Jean"; p1.nom="Bon"; 
+		p1.age=30;
+		System.out.println("p1="+p1);
+		//p1.age=0;
+		//p1.age=null; //l'age ne peut pas être à null si le type de .age est int
+		//p1.age=-30;
 		p1.incremenerAge();
 		//System.out.println("p1="+p1.toString());
 		System.out.println("p1="+p1);
@@ -79,8 +85,9 @@ public class MyApp {
 	
 		double a=36.0;
 		double b=10.0;
+		double c=0;
 		double res=a/b; 
-		
+		System.out.println("c=" + c);  
 		System.out.println("res=" + res);  
 		if(res >=13)
 			System.out.println("res est superieur ou egal à 13");
