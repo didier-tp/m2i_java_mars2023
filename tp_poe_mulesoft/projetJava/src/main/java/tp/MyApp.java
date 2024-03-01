@@ -6,7 +6,26 @@ public class MyApp {
 	public static void main(String[] args) {
 		System.out.println("Hello world");   
         //essai1();
-		essai2();
+		//essai2();
+		essaiCompte();
+	}
+	
+	public static void essaiCompte() {
+		//compte1 et compte2 sont des objets/exemplaires/instances de la  classe Compte
+		//compte1 et compte2 sont des variables de type Compte (toute classe Java est vu comme un type de données "orienté objet")
+		//le mot clef new permet de créer un exemplaire/instance de la classe Compte.
+		Compte compte1 = new Compte(); 
+		compte1.numero="c1";
+		compte1.solde=500.0; 
+		compte1.crediter(50); //on ajoute 50 euros sur le compte1
+		System.out.println("apres crediter , compte1.solde="+compte1.solde); //550.0
+		
+		Compte compte2 = null; //on déclare ici une variable commpte2 pourra référencer un futur objet de type Compte
+		compte2 = new Compte();//la variable compte2 référence l'objet créé par new ...
+		compte2.numero="c2";
+		compte2.solde=300.0;
+		compte2.debiter(50); //on retirer 50 euros sur le compte2
+		System.out.println("apres debiter , compte2.solde="+compte2.solde); //250.0
 	}
 	
 	public static void essai2() {
