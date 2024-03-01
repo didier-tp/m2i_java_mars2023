@@ -9,7 +9,7 @@ public class MyApp {
 	
 	public static void essai1() {
 		/*
-		int a=36;
+		int a=36; 
 		int b=10;
 		int res=a/b; 
 		*/
