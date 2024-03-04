@@ -15,7 +15,8 @@ public class Compte {
 	public Compte(String numero, double solde) {
 		super();
 		this.numero = numero;
-		this.solde = solde;
+		//this.solde = solde;
+		this.setSolde(solde);
 	}
 
 
