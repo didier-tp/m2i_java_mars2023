@@ -10,7 +10,10 @@ public class Compte {
 	private String numero;//null  par defaut
 	private double solde; //0.0 par defaut
 	
-
+	//Rappel : "static" pour que la valeur de decouvertMaximumCommun
+	//soit la même pour toutes les instances de cette classe Compte
+    private static double decouvertMaximumCommun = -500.0;
+    //avec .get/.set static générés par assistants
 
 	public Compte(String numero, double solde) {
 		super();
@@ -25,6 +28,17 @@ public class Compte {
 	}
 
 	
+	
+
+
+	public static double getDecouvertMaximumCommun() {
+		return decouvertMaximumCommun;
+	}
+
+
+	public static void setDecouvertMaximumCommun(double decouvertMaximumCommun) {
+		Compte.decouvertMaximumCommun = decouvertMaximumCommun;
+	}
 
 
 	@Override
