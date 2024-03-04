@@ -74,7 +74,12 @@ public class Compte {
 	}
 	
 	public void debiter(double montant) {
-		this.solde = this.solde - montant;
+		double nouveauSoldeTheorique = this.solde - montant;
+		if(nouveauSoldeTheorique>=Compte.decouvertMaximumCommun)
+			this.solde=nouveauSoldeTheorique;
+		else
+			System.err.println("erreur debit : pas assez d'argent sur le compte");
+		    //throw new ...
 	}
 
 	

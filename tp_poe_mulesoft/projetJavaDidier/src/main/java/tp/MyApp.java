@@ -8,10 +8,10 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		//essaiCompte();
+		essaiCompte();
 		//essaiPersonne();
-		essaiString();
-		essaiTableau();
+		//essaiString();
+		//essaiTableau();
 	}
 	
 	public static void essaiTableau() {
@@ -185,6 +185,14 @@ public class MyApp {
 		
 		Compte compte3=new Compte("c3",303.0);
 		System.out.println("compte3="+compte3);
+		
+		System.out.println("decouvert maxi autorisé=" + Compte.getDecouvertMaximumCommun());
+		Compte.setDecouvertMaximumCommun(-600.0);
+		System.out.println("decouvert maxi autorisé=" + Compte.getDecouvertMaximumCommun());
+		//compte3.debiter(2000); //refusé
+		compte3.debiter(200); //accepté
+		System.out.println("compte3="+compte3);
+		
 	}
 	
 	public static void essai2() {
