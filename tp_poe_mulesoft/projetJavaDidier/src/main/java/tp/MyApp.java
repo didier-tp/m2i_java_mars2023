@@ -31,14 +31,38 @@ public class MyApp {
 		
 		//A FAIRE (COMPLETER) EN TP:
 		//trouver et afficher l'indice et la valeur de la plus grande valeur du tableau tab1
-		//...
-		//...
+		int posMax=-1;
+		int valMax=-99999999;
+		int i=0;
+		while(i<tab1.length) {
+			if(tab1[i] >= valMax) {
+				valMax=tab1[i]; 
+				posMax=i;
+			}
+			i++;
+		}
+		System.out.println("plus grande valeur du tableau = " + valMax + " en position="  +posMax);
 		
 		//A FAIRE (COMPLETER) EN TP:
 		//construire un tableau de "double" 12.0 , 14.0 , 10.0 , 8.0 , 6.0
 		//calculer et afficher , la somme , la moyenne (et éventuellement l'écart type )
 		//de ce tableau
-
+        double[] tab2 = {  12.0 , 14.0 , 10.0 , 8.0 , 6.0 };
+        double somme=0;
+        for(int j=0;j<tab2.length;j++) {
+        	somme=somme+tab2[j];
+        }
+        double moyenne= somme/tab2.length;
+        System.out.println("tab2 , somme=" + somme + " moyenne= " + moyenne);
+        double sommeCarreEcarts=0;
+        for(int j=0;j<tab2.length;j++) {
+        	double ecartAlaMoyenne = tab2[j] - moyenne ;
+        	sommeCarreEcarts+=  ecartAlaMoyenne * ecartAlaMoyenne;
+        }
+        double ecartType= Math.sqrt(sommeCarreEcarts/tab2.length);
+        System.out.println("tab2 , ecartType= " + ecartType);
+		
+		//plus autres essais libres ...
 	}
 	
 	public static void essaiString() {
@@ -56,15 +80,30 @@ public class MyApp {
 		System.out.println("partiesDeS6[2]=" + partiesDeS6[2]);
 		
 		//String s7="kayak";
-		String s7="papa";
+		//String s7="papa";
 		//String s7="tôt";
 		//String s7="java";
-		//String s7="radar";
+		String s7="radar";
 		//A FAIRE (COMPLETER) EN TP:
 		//tester si s7 est un palindrome (se lit de la même façon dans les deux sens)
+		boolean uneDifference=false;
+		for(int i=0;i<s7.length();i++) {
+			int indexInverse = s7.length() -1 -i;
+			if(s7.charAt(i) != s7.charAt(indexInverse)) {
+				uneDifference=true;
+				break;
+			}
+		}
+		if(uneDifference)
+			System.out.println("s7 n'est pas un palindrome : " + s7);
+		else
+			System.out.println("s7 est un palindrome : " + s7);
 	
-		//tester si 7 vaut ou pas "java"
-		
+		//tester si s7 vaut ou pas "java"
+		if(s7.equals("java"))
+			System.out.println("s7 vaut java ");
+		else
+			System.out.println("s7 est different de java");
 		
 		String s8="une tomate VERTE et une pomme VERTE sur une table";
 		//A FAIRE (COMPLETER) EN TP:
@@ -72,7 +111,16 @@ public class MyApp {
 		//avec premier "VERTE" transformé en "ROUGE"
 		//avec dernier "VERTE" transformé en "ROUGE"
 		//avec tous les "VERTE" transformés en "ROUGE"
+		int tailleDeVerte = "VERTE".length();
+		int firstPos=s8.indexOf("VERTE");
+		if(firstPos>0)
+		    System.out.println( s8.substring(0, firstPos) + "ROUGE" + s8.substring(firstPos + tailleDeVerte ));
+		int lastPos=s8.lastIndexOf("VERTE");
+		if(firstPos>0)
+		    System.out.println( s8.substring(0, lastPos) + "ROUGE" + s8.substring(lastPos + tailleDeVerte ));
+		System.out.println( s8.replaceAll("VERTE", "ROUGE"));
 		
+		//plus autres essais libres ...
 	}
 	
 	public static void essaiPersonne() {
