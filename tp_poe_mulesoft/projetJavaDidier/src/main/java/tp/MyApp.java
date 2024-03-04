@@ -25,8 +25,12 @@ public class MyApp {
 		*/
 		int[] tab1 = { 16, 64, 81 , 100, 9 };
 		for(int i=0;i<tab1.length;i++) {
+			/*
 			System.out.println("pour i=" + i + " tab1[i]=" + tab1[i] 
 					+ " racine carree=" + Math.sqrt(tab1[i]));
+			*/
+			System.out.printf("pour i=%d , tab1[i]= %d racine carree= %f \n" , 
+					                i ,tab1[i] ,  Math.sqrt(tab1[i]));
 		}
 		
 		//A FAIRE (COMPLETER) EN TP:
@@ -100,10 +104,14 @@ public class MyApp {
 			System.out.println("s7 est un palindrome : " + s7);
 	
 		//tester si s7 vaut ou pas "java"
+		/*
 		if(s7.equals("java"))
 			System.out.println("s7 vaut java ");
 		else
 			System.out.println("s7 est different de java");
+		*/
+		String message=(s7.equals("java"))?"s7 vaut java": "s7 est different de java";
+		System.out.println(message);
 		
 		String s8="une tomate VERTE et une pomme VERTE sur une table";
 		//A FAIRE (COMPLETER) EN TP:
@@ -114,11 +122,11 @@ public class MyApp {
 		int tailleDeVerte = "VERTE".length();
 		int firstPos=s8.indexOf("VERTE");
 		if(firstPos>0)
-		    System.out.println( s8.substring(0, firstPos) + "ROUGE" + s8.substring(firstPos + tailleDeVerte ));
+		    System.out.println( s8.substring(0, firstPos) + "ORANGE" + s8.substring(firstPos + tailleDeVerte ));
 		int lastPos=s8.lastIndexOf("VERTE");
 		if(firstPos>0)
-		    System.out.println( s8.substring(0, lastPos) + "ROUGE" + s8.substring(lastPos + tailleDeVerte ));
-		System.out.println( s8.replaceAll("VERTE", "ROUGE"));
+		    System.out.println( s8.substring(0, lastPos) + "ORANGE" + s8.substring(lastPos + tailleDeVerte ));
+		System.out.println( s8.replaceAll("VERTE", "ORANGE"));
 		
 		//plus autres essais libres ...
 	}
