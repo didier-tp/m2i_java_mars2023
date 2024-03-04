@@ -9,9 +9,12 @@ public class Personne {
 	private Integer age; //null possible et valeur par defaut = null
 	
 	//A FAIRE en TP: ajouter une constante AGE_MAJORITE valant 18
+	public static final int AGE_MAJORITE=18;
 	
 	//A FAIRE en TP: ajouter en static et get/set
 	//esperanceDeVieHomme , esperanceDeVieFemme
+	private static double esperanceDeVieHomme=79.3;
+	private static double esperanceDeVieFemme=85.3;
 	
 	
 	public Personne(String nom, String prenom, Integer age) {
@@ -27,7 +30,9 @@ public class Personne {
 		this("?","?",0);//nom, prenom, age
 	}
 
-
+	public boolean estMajeur() {
+		return (this.age>=Personne.AGE_MAJORITE);
+	}
 
 	public void incremeterAge() {
 		this.age = this.age + 1;
@@ -67,6 +72,30 @@ public class Personne {
 			System.err.println("age négatif invalide , pas pris en compte");
 		else
 		   this.age = age;
+	}
+
+
+
+	public static double getEsperanceDeVieHomme() {
+		return esperanceDeVieHomme;
+	}
+
+
+
+	public static void setEsperanceDeVieHomme(double esperanceDeVieHomme) {
+		Personne.esperanceDeVieHomme = esperanceDeVieHomme;
+	}
+
+
+
+	public static double getEsperanceDeVieFemme() {
+		return esperanceDeVieFemme;
+	}
+
+
+
+	public static void setEsperanceDeVieFemme(double esperanceDeVieFemme) {
+		Personne.esperanceDeVieFemme = esperanceDeVieFemme;
 	}
 	
 	

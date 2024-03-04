@@ -12,8 +12,8 @@ public class MyApp {
 		MyApp myApp = new MyApp();
 		myApp.essaiCompte();
 		*/
-		essaiCompte(); //static
-		//essaiPersonne();
+		//essaiCompte(); //static
+		essaiPersonne();
 		//essaiString();
 		//essaiTableau();
 	}
@@ -157,6 +157,15 @@ public class MyApp {
 		p2.setPrenom("Axelle"); p2.setNom("Aire"); p2.setAge(26);
 		p2.incremeterAge();
 		System.out.println("apres incrementerAge(), p2.age= " + p2.getAge() + " et p2.nomComplet()=" + p2.nomComplet() );
+		
+		System.out.println("esperanceDeVieFemme="+Personne.getEsperanceDeVieFemme());
+		Personne.setEsperanceDeVieFemme(Personne.getEsperanceDeVieFemme()+1);
+		System.out.println("nouvelle esperanceDeVieFemme="+Personne.getEsperanceDeVieFemme());
+		System.out.println("AGE_MAJORITE en France="+Personne.AGE_MAJORITE);
+		p1.setAge(16);
+		System.out.println("a 16ans:" + (p1.estMajeur()?"majeur":"mineur" ));
+		p1.setAge(26);
+		System.out.println("a 26ans:" + (p1.estMajeur()?"majeur":"mineur" ));
 	}
 	
 	public static void essaiCompte() {
