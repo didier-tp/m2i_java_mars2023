@@ -1,5 +1,11 @@
 package tp.data;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter @Setter @ToString @NoArgsConstructor
 public class Town {
 
 	private String codePostal;
@@ -20,51 +26,4 @@ public class Town {
 	}
 	
 	
-	public Town() {
-		
-	}
-
-    
-
-
-	@Override
-	public String toString() {
-		return "Town [codePostal=" + codePostal + ", nomVille=" + nomVille + ", longitute=" + longitute + ", latitude="
-				+ latitude + ", population=" + population + "]";
-	}
-
-
-	public String getCodePostal() {
-		return codePostal;
-	}
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
-	}
-	public String getNomVille() {
-		return nomVille;
-	}
-	public void setNomVille(String nomVille) {
-		this.nomVille = nomVille;
-	}
-	public Double getLongitute() {
-		return longitute;
-	}
-	public void setLongitute(Double longitute) {
-		this.longitute = longitute;
-	}
-	public Double getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-	public Integer getPopulation() {
-		return population;
-	}
-	public void setPopulation(Integer population) {
-		this.population = population;
-	}
-	
-	
-
 }

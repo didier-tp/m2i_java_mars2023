@@ -16,7 +16,7 @@ public class MyApp {
 		Personne p1 = new Personne();
 		System.out.println("p1="+p1);
 		p1.prenom = "Jean"; p1.nom="Bon"; 
-		p1.age=30;
+		p1.age=30; 
 		System.out.println("p1="+p1);
 		//p1.age=0;
 		//p1.age=null; //l'age ne peut pas être à null si le type de .age est int

@@ -28,6 +28,8 @@
 	    <version>1.18.30</version> <!-- lombok 1.18.28 incompatible avec java 21 -->
 	    <scope>provided</scope>
 	</dependency>
+	
+	<!-- https://projectlombok.org/p2 pour eclipse -->
 	 
 	 <dependency>
 	    <groupId>org.junit.jupiter</groupId>
