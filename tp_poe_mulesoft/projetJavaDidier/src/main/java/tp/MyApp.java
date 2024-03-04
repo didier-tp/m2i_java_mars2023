@@ -8,7 +8,11 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		essaiCompte();
+		/*
+		MyApp myApp = new MyApp();
+		myApp.essaiCompte();
+		*/
+		essaiCompte(); //static
 		//essaiPersonne();
 		//essaiString();
 		//essaiTableau();
@@ -192,6 +196,9 @@ public class MyApp {
 		//compte3.debiter(2000); //refusé
 		compte3.debiter(200); //accepté
 		System.out.println("compte3="+compte3);
+		System.out.println("PI="+Math.PI);
+		System.out.println("VIREMENT_MAXI_EN_LIGNE="+Compte.VIREMENT_MAXI_EN_LIGNE);
+		//Compte.VIREMENT_MAXI_EN_LIGNE=5000; //impossible de changer la valeur d'une constante
 		
 	}
 	

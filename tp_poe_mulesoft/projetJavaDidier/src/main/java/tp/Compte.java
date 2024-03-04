@@ -10,6 +10,8 @@ public class Compte {
 	private String numero;//null  par defaut
 	private double solde; //0.0 par defaut
 	
+	public static final double VIREMENT_MAXI_EN_LIGNE=4000.0;
+	
 	//Rappel : "static" pour que la valeur de decouvertMaximumCommun
 	//soit la même pour toutes les instances de cette classe Compte
     private static double decouvertMaximumCommun = -500.0;
