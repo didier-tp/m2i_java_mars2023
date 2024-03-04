@@ -26,7 +26,7 @@ public class Personne {
 
 
 
-	public void incremenerAge() {
+	public void incremeterAge() {
 		this.age = this.age + 1;
 	}
 	

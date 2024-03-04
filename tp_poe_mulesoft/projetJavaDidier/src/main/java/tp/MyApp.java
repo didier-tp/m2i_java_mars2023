@@ -9,7 +9,41 @@ public class MyApp {
         //essai1();
 		//essai2();
 		//essaiCompte();
-		essaiPersonne();
+		//essaiPersonne();
+		essaiString();
+		essaiTableau();
+	}
+	
+	public static void essaiTableau() {
+		/*
+		int[] tab1 = new int[5]; //tableau de 5 cases : [0] , ... , [4]
+		tab1[0]=16;
+		tab1[1]=64;
+		tab1[2]=81;
+		tab1[3]=100;
+		tab1[4]=9;
+		*/
+		int[] tab1 = { 16, 64, 81 , 100, 9 };
+		for(int i=0;i<tab1.length;i++) {
+			System.out.println("pour i=" + i + " tab1[i]=" + tab1[i] 
+					+ " racine carree=" + Math.sqrt(tab1[i]));
+		}
+
+	}
+	
+	public static void essaiString() {
+		String s1 = "Java" , s2 = " est " , s3 ="orientié Objet";
+		String s4 = s1+s2+s3;
+		System.out.println("s4="+s4);
+		String s5=s4.toUpperCase();
+		System.out.println("s4="+s4);
+		System.out.println("s5="+s5);
+		System.out.println("taille="+s4.length());
+		
+		String s6="lundi;mardi;mercredi;jeudi";
+		String[] partiesDeS6 = s6.split(";");
+		System.out.println("partiesDeS6[0]=" + partiesDeS6[0]);
+		System.out.println("partiesDeS6[2]=" + partiesDeS6[2]);
 	}
 	
 	public static void essaiPersonne() {
@@ -24,7 +58,7 @@ public class MyApp {
 		//p1.age=0;
 		//p1.age=null; //l'age ne peut pas être à null si le type de .age est int
 		//p1.age=-30;
-		p1.incremenerAge();
+		p1.incremeterAge();
 		//System.out.println("p1="+p1.toString());
 		System.out.println("p1="+p1);
 		System.out.println("apres incrementerAge(), p1.age= " + p1.getAge() + " et p1.nomComplet()=" + p1.nomComplet() );
@@ -32,7 +66,7 @@ public class MyApp {
 		Personne p2 = null;
 		p2=new Personne();
 		p2.setPrenom("Axelle"); p2.setNom("Aire"); p2.setAge(26);
-		p2.incremenerAge();
+		p2.incremeterAge();
 		System.out.println("apres incrementerAge(), p2.age= " + p2.getAge() + " et p2.nomComplet()=" + p2.nomComplet() );
 	}
 	
