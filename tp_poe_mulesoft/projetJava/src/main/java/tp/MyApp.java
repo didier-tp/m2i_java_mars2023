@@ -8,8 +8,8 @@ public class MyApp {
 		System.out.println("Hello world");   
         //essai1();
 		//essai2();
-		//essaiCompte();
-		essaiPersonne();
+		essaiCompte();
+		//essaiPersonne();
 	}
 	
 	public static void essaiPersonne() {
@@ -38,20 +38,31 @@ public class MyApp {
 		//compte1 et compte2 sont des variables de type Compte (toute classe Java est vu comme un type de données "orienté objet")
 		//le mot clef new permet de créer un exemplaire/instance de la classe Compte.
 		Compte compte1 = new Compte(); 
-		compte1.numero="c1";
-		compte1.solde=500.0; 
+		compte1.setNumero("c1");
+		//compte1.setSolde(-5000000000.0); 
+		compte1.setSolde(500);
 		compte1.crediter(50); //on ajoute 50 euros sur le compte1
-		System.out.println("apres crediter , compte1.solde="+compte1.solde); //550.0
+		System.out.println("apres crediter , compte1.solde="+compte1.getSolde()); //550.0
 		//System.out.println("compte1="+compte1.toString());
 		System.out.println("compte1="+compte1); //.toString() appelé automatiquement
 		//JOptionPane.showMessageDialog(null, "compte1="+compte1);
 		
 		Compte compte2 = null; //on déclare ici une variable commpte2 pourra référencer un futur objet de type Compte
 		compte2 = new Compte();//la variable compte2 référence l'objet créé par new ...
-		compte2.numero="c2";
-		compte2.solde=300.0;
+		compte2.setNumero("c2");
+		compte2.setSolde(300.0);
 		compte2.debiter(50); //on retirer 50 euros sur le compte2
-		System.out.println("apres debiter , compte2.solde="+compte2.solde); //250.0
+		System.out.println("apres debiter , compte2.solde="+compte2.getSolde()); //250.0
+		
+		Compte compte2Bis = new Compte("c2",250.0);
+		if(compte2.equals(compte2Bis)) //avec besoin de coder Compte.equals() par assistant eclipse
+			System.out.println("compte 2 et compte2Bis ont mêmes valeurs en interne");
+		else
+			System.out.println("compte 2 et compte2Bis ont des valeurs différentes");
+			
+		
+		Compte compte3=new Compte("c3",303.0);
+		System.out.println("compte3="+compte3);
 	}
 	
 	public static void essai2() {
