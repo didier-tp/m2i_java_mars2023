@@ -15,7 +15,7 @@ public class MyApp {
 	public static void essaiPersonne() {
 		Personne p1 = new Personne();
 		System.out.println("p1="+p1);
-		p1.prenom = "Jean"; p1.nom="Bon"; 
+		p1.prenom = "jean"; p1.nom="Bon"; 
 		p1.age=30; 
 		System.out.println("p1="+p1);
 		//p1.age=0;
