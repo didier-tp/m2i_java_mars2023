@@ -8,7 +8,10 @@ public class Personne {
 	//public int age;  //valeur par défaut =0 et null impossible
 	private Integer age; //null possible et valeur par defaut = null
 	
+	//A FAIRE en TP: ajouter une constante AGE_MAJORITE valant 18
 	
+	//A FAIRE en TP: ajouter en static et get/set
+	//esperanceDeVieHomme , esperanceDeVieFemme
 	
 	
 	public Personne(String nom, String prenom, Integer age) {
