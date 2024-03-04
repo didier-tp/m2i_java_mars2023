@@ -28,6 +28,16 @@ public class MyApp {
 			System.out.println("pour i=" + i + " tab1[i]=" + tab1[i] 
 					+ " racine carree=" + Math.sqrt(tab1[i]));
 		}
+		
+		//A FAIRE (COMPLETER) EN TP:
+		//trouver et afficher l'indice et la valeur de la plus grande valeur du tableau tab1
+		//...
+		//...
+		
+		//A FAIRE (COMPLETER) EN TP:
+		//construire un tableau de "double" 12.0 , 14.0 , 10.0 , 8.0 , 6.0
+		//calculer et afficher , la somme , la moyenne (et éventuellement l'écart type )
+		//de ce tableau
 
 	}
 	
@@ -44,6 +54,25 @@ public class MyApp {
 		String[] partiesDeS6 = s6.split(";");
 		System.out.println("partiesDeS6[0]=" + partiesDeS6[0]);
 		System.out.println("partiesDeS6[2]=" + partiesDeS6[2]);
+		
+		//String s7="kayak";
+		String s7="papa";
+		//String s7="tôt";
+		//String s7="java";
+		//String s7="radar";
+		//A FAIRE (COMPLETER) EN TP:
+		//tester si s7 est un palindrome (se lit de la même façon dans les deux sens)
+	
+		//tester si 7 vaut ou pas "java"
+		
+		
+		String s8="une tomate VERTE et une pomme VERTE sur une table";
+		//A FAIRE (COMPLETER) EN TP:
+		//constuire et afficher 3 variantes de s8
+		//avec premier "VERTE" transformé en "ROUGE"
+		//avec dernier "VERTE" transformé en "ROUGE"
+		//avec tous les "VERTE" transformés en "ROUGE"
+		
 	}
 	
 	public static void essaiPersonne() {
