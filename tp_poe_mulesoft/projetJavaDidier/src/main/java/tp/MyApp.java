@@ -23,6 +23,7 @@ public class MyApp {
 		Employe e1 = new Employe();
 		e1.setNom("Bon"); e1.setPrenom("jean"); e1.setAge(27);
 		e1.setFonction("comptable"); e1.setSalaire(2000.0);
+		e1.setPoids(60.0);
 		e1.incremeterAge();
 		e1.afficher();
 		System.out.println("listeOccupations de e1 = " + e1.listeOccupations());
@@ -41,6 +42,13 @@ public class MyApp {
 		p=new Personne("Aire","axelle",24);
 		System.out.println(p.toString());
 		
+		Transportable choseTransportable = null;
+		choseTransportable=e1; 
+		System.out.println("poids choseTransportable="+choseTransportable.getPoids()
+		                   + " " + Transportable.UNITE_POIDS);
+		//choseTransportable =  new Bagage(); 
+		System.out.println("poids choseTransportable="+choseTransportable.getPoids()
+        + " " + Transportable.UNITE_POIDS);
 		
 	}
 	
