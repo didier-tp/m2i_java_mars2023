@@ -3,6 +3,7 @@
 */*.class
 **/*.class
 */.settings/*
+**/.settings/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -15,8 +16,11 @@
 */node_modules
 **/node_modules
 */target
+**/target
 */.project
+**/.project
 */.classpath
+**/.classpath
 */mylog.txt
 
 */*.iml
