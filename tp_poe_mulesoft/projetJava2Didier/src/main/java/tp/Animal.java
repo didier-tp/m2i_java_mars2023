@@ -2,15 +2,17 @@ package tp;
 
 
 
-public class Animal{
+public abstract class Animal{
     private String couleur;
     private Double poids;
     
-
+    /*
     public void parler() {
     	System.out.println("l'animal parle ..."); //code temporaire
     }
-   
+   */
+    public abstract void parler() ; //operation sans code à ce niveau
+                                   //qui sera coder dans les sous classes
     
     public void afficher() {
     	System.out.println("animal="+this.toString());

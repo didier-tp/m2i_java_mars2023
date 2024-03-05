@@ -8,6 +8,10 @@ public class Chat extends Animal {
 		super();
 	}
    
+   public void parler() {
+	   miauler();
+   }
+   
   
    public Chat(String couleur,Double poids,Integer nbHeureSommeil) {
 	super(couleur,poids);//on repasse les valeurs des paramètres couleur et poids
@@ -21,9 +25,7 @@ public void miauler() {
 	   System.out.println("miaou miaou");
    }
    
-   public void parler() {
-	   miauler();
-   }
+   
    
    
    //on redéfini une méthode héritée (avec un meilleur code spécifique au chat) 
@@ -55,4 +57,5 @@ public void miauler() {
 	public void setNbHeureSommeil(Integer nbHeureSommeil) {
 		this.nbHeureSommeil = nbHeureSommeil;
 	}
+
 }

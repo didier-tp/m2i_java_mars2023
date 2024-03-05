@@ -8,6 +8,9 @@ public class MyApp2 {
 	}
 	
 	public static void essaiAnimaux() {
+		
+		
+		
 		System.out.println("**** chat1 *****");
 		Chat chat1 = new Chat();
 		chat1.setCouleur("roux");
@@ -27,6 +30,9 @@ public class MyApp2 {
 		chien1.afficher();
 		chien1.parler();
 		chien1.aboyer();//possible su public
+		
+		//Animal animal = new Animal(); 
+		//new Animal() maintenant impossible si la classe Animal est abstraite
 		
 		Animal a = null;// a peut référencer n'importe quelle sorte d'animal
 		System.out.println("**** a=chat1 *****");
@@ -51,6 +57,9 @@ public class MyApp2 {
 	}
 	
 	public static void faireParlerUnAnimal(Animal a) {
+		
+		//Question de philo : est ce que les animaux savent parler ?
+		
 		//code astucieux qui exploite le polymorphisme
 		a.parler(); //qui en interne .miauler() pour les chats
 		            // ou .aboyer() pour les chiens
