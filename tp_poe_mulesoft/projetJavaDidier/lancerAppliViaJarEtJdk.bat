@@ -3,6 +3,6 @@ REM set JAVA_HOME=C:\Program Files\eclipse\plugins\org.eclipse.justj.openjdk.hot
 set PATH=%JAVA_HOME%\bin
 cd "%~dp0"
 cd target
-java -classpath projetJavaDidier.jar tp.MyApp
-REM java -jar myAppli.jar
+REM java -classpath projetJavaDidier.jar tp.MyApp
+java -jar projetJavaDidier.jar
 pause
