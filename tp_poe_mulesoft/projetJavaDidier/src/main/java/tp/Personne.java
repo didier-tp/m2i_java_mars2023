@@ -1,12 +1,15 @@
 package tp;
 
-public class Personne /* extends Object */{
+public class Personne /* extends Object */ implements Transportable{
 	
 	//public Integer numero; //clef primaire (pk / primary key) , avant le auto_increment = null (pas encore connu avant le INSERT SQL)
 	protected String nom;
 	private String prenom;
 	//public int age;  //valeur par défaut =0 et null impossible
 	private Integer age; //null possible et valeur par defaut = null
+	
+	private double poids;
+	private double volume;
 	
 	//A FAIRE en TP: ajouter une constante AGE_MAJORITE valant 18
 	public static final int AGE_MAJORITE=18;
@@ -105,8 +108,48 @@ public class Personne /* extends Object */{
 	public static void setEsperanceDeVieFemme(double esperanceDeVieFemme) {
 		Personne.esperanceDeVieFemme = esperanceDeVieFemme;
 	}
+
+
+
 	
-	
-	
+
+
+
+	public void setPoids(double poids) {
+		this.poids = poids;
+	}
+
+
+
+	public void setVolume(double volume) {
+		this.volume = volume;
+	}
+
+
+
+	@Override
+	public double getPoids() {
+		return this.poids;
+	}
+
+
+
+	@Override
+	public double getVolume() {
+		return this.volume;
+	}
+
+
+
+	@Override
+	public boolean estFragile() {
+		return true;
+	}
+
+
+
+
+
+
 	
 }
