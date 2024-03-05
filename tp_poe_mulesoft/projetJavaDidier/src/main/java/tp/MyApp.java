@@ -1,11 +1,20 @@
 package tp;
 
-import javax.swing.JOptionPane;
+import java.util.Date;
+
+import tp.bank.Compte;
+import tp.pers.Employe;
+import tp.pers.Personne;
+
+
 
 public class MyApp {
 
 	public static void main(String[] args) {
 		System.out.println("Hello world");   
+		//java.util.Date aujourdui = new java.util.Date();
+		Date aujourdui = new Date();
+		System.out.println("aujourdui="+aujourdui);
         //essai1();
 		//essai2();
 		/*

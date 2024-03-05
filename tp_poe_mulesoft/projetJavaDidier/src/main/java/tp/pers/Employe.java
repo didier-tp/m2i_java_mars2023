@@ -1,4 +1,4 @@
-package tp;
+package tp.pers;
 
 //Employe hérite de Personne
 //Employe est une sorte (ou cas particulier) de Personne 
