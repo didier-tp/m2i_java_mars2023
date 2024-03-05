@@ -21,6 +21,7 @@ public void aboyer() {
 	   System.out.println("whouf whouf");
    }
    
+	@Override
    public void parler() {
 	   aboyer();
    }

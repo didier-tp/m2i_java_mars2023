@@ -32,15 +32,35 @@ public class MyApp2 {
 		System.out.println("**** a=chat1 *****");
 		a=chat1;//Chat hérite de Animal et est donc vu comme un cas particulier
 		a.afficher(); 
+		faireParlerUnAnimal(a);
 		a.parler(); //POLYMORSPHIME et declenchement de "miaou miaou"
+		// ou bien System.out.println(a.parler()); si a.parler() retourne une String
 		System.out.println("**** a=chien1 *****");
 		a=chien1;
-		a.afficher(); 
+		a.afficher();
+		faireParlerUnAnimal(a);
 		a.parler();  //POLYMORSPHIME et declenchement de "whouf wouf "
 		//a.aboyer();//compilation impossible car .aboyer pas sur n'importquel animal
 		/*
 		//possible mais compliqué et déconseillé:
 		if(a instanceof Chien) {
+			Chien aVuCommeUnChien = (Chien) a;
+			aVuCommeUnChien.aboyer();
+		}
+		*/
+	}
+	
+	public static void faireParlerUnAnimal(Animal a) {
+		//code astucieux qui exploite le polymorphisme
+		a.parler(); //qui en interne .miauler() pour les chats
+		            // ou .aboyer() pour les chiens
+		/*
+		//code possible mais pas conseillé / pas astucieux:
+		if(a instanceof Chat) {
+			Chat aVuCommeUnChat = (Chat) a;
+			aVuCommeUnChat.miauler();
+		}
+		else if(a instanceof Chien) {
 			Chien aVuCommeUnChien = (Chien) a;
 			aVuCommeUnChien.aboyer();
 		}
