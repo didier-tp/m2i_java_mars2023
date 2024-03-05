@@ -31,6 +31,17 @@ public class MyApp {
 		e2.afficher();
 		System.out.println("e2="+e2.toString());
 		
+		Personne p=null; //la référence p pour référencer des personnes quelconques
+		p=e1;
+		System.out.println("Age de p =" +  p.getAge());
+		System.out.println(p.toString());
+		if(p instanceof Employe) {
+		   System.out.println("Fonction de p =" + ((Employe)p).getFonction() );
+		}
+		p=new Personne("Aire","axelle",24);
+		System.out.println(p.toString());
+		
+		
 	}
 	
 	public static void essaiTableau() {
