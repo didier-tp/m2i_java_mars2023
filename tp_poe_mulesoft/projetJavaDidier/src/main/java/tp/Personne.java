@@ -3,7 +3,7 @@ package tp;
 public class Personne /* extends Object */{
 	
 	//public Integer numero; //clef primaire (pk / primary key) , avant le auto_increment = null (pas encore connu avant le INSERT SQL)
-	private String nom;
+	protected String nom;
 	private String prenom;
 	//public int age;  //valeur par défaut =0 et null impossible
 	private Integer age; //null possible et valeur par defaut = null

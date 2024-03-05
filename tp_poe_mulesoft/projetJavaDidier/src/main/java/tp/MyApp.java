@@ -26,6 +26,11 @@ public class MyApp {
 		e1.incremeterAge();
 		e1.afficher();
 		System.out.println("listeOccupations de e1 = " + e1.listeOccupations());
+		
+		Employe e2 = new Employe("Therieur","alain" , 34,"comptable",2000.0);
+		e2.afficher();
+		System.out.println("e2="+e2.toString());
+		
 	}
 	
 	public static void essaiTableau() {
