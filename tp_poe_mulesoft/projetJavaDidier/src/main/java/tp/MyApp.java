@@ -2,6 +2,9 @@ package tp;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import tp.bank.Compte;
 import tp.pers.Employe;
 import tp.pers.Personne;
@@ -23,10 +26,29 @@ public class MyApp {
 		*/
 		//essaiCompte(); //static
 		//essaiPersonne();
-		essaiEmploye();
+		//essaiEmploye();
 		//essaiString();
 		//essaiTableau();
+		essaiJson();
 	}
+	
+
+		public static void essaiJson() {
+			Personne p=new Personne("Aire","axelle",24);
+			System.out.println("(en java) p="+p.toString());
+			
+			ObjectMapper jsonMapper = new ObjectMapper();
+			
+			String jsonPers=null;
+			try {
+				jsonPers = jsonMapper.writeValueAsString(p);
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println("(en json) jsonPers="+jsonPers);
+		}
+	
 	
 	public static void essaiEmploye() {
 		Employe e1 = new Employe();
