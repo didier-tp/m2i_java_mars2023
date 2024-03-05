@@ -1,6 +1,6 @@
 package tp;
 
-public class Personne {
+public class Personne /* extends Object */{
 	
 	//public Integer numero; //clef primaire (pk / primary key) , avant le auto_increment = null (pas encore connu avant le INSERT SQL)
 	private String nom;
@@ -45,6 +45,14 @@ public class Personne {
 	@Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", prenom=" + prenom + ", age=" + age + "]";
+	}
+	
+	public void afficher() {
+		System.out.println(">>>" + this.toString());
+	}
+	
+	public String listeOccupations() {
+		return "dormir;manger;loisirs";
 	}
 
 	public String getNom() {
