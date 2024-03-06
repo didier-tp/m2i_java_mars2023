@@ -25,11 +25,11 @@ public class MyApp {
 		myApp.essaiCompte();
 		*/
 		//essaiCompte(); //static
-		//essaiPersonne();
+		essaiPersonne();
 		//essaiEmploye();
 		//essaiString();
 		//essaiTableau();
-		essaiJson();
+		//essaiJson();
 	}
 	
 
@@ -206,7 +206,12 @@ public class MyApp {
 		System.out.println("p1="+p1);
 		//p1.prenom = "jean"; p1.nom="Bon";  //ANCIENNE VERSION avec PUBLIC
 		p1.setPrenom("jean"); p1.setNom("Bon"); 
-		p1.setAge(-30); //pas pris en compte (valeur invalide refusée)
+		try {
+			p1.setAge(-30); //pas pris en compte (valeur invalide refusée)
+		} catch (Exception e) {
+			e.printStackTrace();
+			//System.err.println(e.getMessage());
+		}
 		System.out.println("p1="+p1);
 		p1.setAge(30); 
 		System.out.println("p1="+p1);
