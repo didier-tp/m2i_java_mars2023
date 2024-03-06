@@ -1,10 +1,34 @@
 package tp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyApp2 {
 
 	public static void main(String[] args) {
 		//essaiAnimaux();
-		essaiException();
+		//essaiException();
+		essaiCollection();
+	}
+	
+	public static void essaiCollection() {
+		List<String> liste = new ArrayList<String>();
+		liste.add("lundi"); 
+		liste.add("mardi");
+		liste.add("mercredi");
+		liste.add("jeudi");
+		System.out.println("taille=" + liste.size());
+		
+		for(int i=0;i<liste.size();i++) {
+			System.out.println(liste.get(i) +  " en position i="+i);
+		}
+		
+		liste.remove("jeudi");
+		
+		//for() au sens forEach():
+		for(String val : liste) {
+			System.out.println(val);
+		}
 	}
 	
 	public static void essaiException() {
@@ -28,7 +52,6 @@ public class MyApp2 {
 		} catch (ArithmeticException e) {
 			e.printStackTrace();
 		}
-		
 		try {
 			System.out.println("racine carre de 9=" + maRacineCarree(9));
 			System.out.println("racine carre de -9=" + maRacineCarree(-9));//va provoquer une exception
@@ -43,13 +66,10 @@ public class MyApp2 {
 	}
 	
 	public static int division(int a , int b) throws ArithmeticException {
-		//retourner a divisé par b
-		//si b vaut 0 ça va remonter automatiquement ArithmeticException
 		return a/b;
 	}
 	
 	public static double maRacineCarree(double x) throws IllegalArgumentException{
-		//si x<0 alors remonter new RuntimeException("racine carrée invalide si x négatif")
 		if(x<0) 
 			//throw new RuntimeException("racine carrée invalide si x négatif");
 		    throw new IllegalArgumentException("racine carrée invalide si x négatif = " + x);
