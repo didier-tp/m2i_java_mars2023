@@ -35,6 +35,15 @@ public void aboyer() {
 	   System.out.println("   Animal de type Chien avec role=" 
 	                   + this.role);
    }
+   
+   
+
+
+@Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return super.toString() + " Chien role="+role;
+}
 
 
 public String getRole() {

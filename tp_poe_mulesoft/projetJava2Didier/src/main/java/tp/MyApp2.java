@@ -14,9 +14,11 @@ public class MyApp2 {
 	}
 	public static void essaiZoo() {
 		Zoo zoo = new Zoo("ZooXyz");
-		Chien chien1 = new Chien(.);
+		Chien chien1 = new Chien("blanc",23.3 , "chien de compagnie");
 		zoo.ajouterAnimal(chien1);
-		zoo.ajouterAnimal(new Chat(  ));
+		zoo.ajouterAnimal(new Chat("noir" , 3.1 , 14 ));
+		zoo.ajouterAnimal(new Chien("beige",20.3 , "gardien de troupeau"));
+		zoo.ajouterAnimal(new Chat("marron" , 3.6 , 13 ));
 		zoo.afficher();
 		//...
 	}
