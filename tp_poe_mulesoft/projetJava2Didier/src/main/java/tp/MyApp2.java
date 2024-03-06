@@ -19,7 +19,25 @@ public class MyApp2 {
 				e.printStackTrace();
 		}
 		System.out.println("suite de essaiException");
+		
+		
+		//appeler division(6,2) et division(6,0)
+		//et gerer ça via try/catch
+		
+		//appeler maRacineCarre(9) et maRacineCarre(-9)
+		//et gerer ça via try/catch
 	}
+	
+	public static int division(int a , int b) {
+		//retourner a divisé par b
+		//si b vaut 0 ça va remonter automatiquement ArithmeticException
+	}
+	
+	public static double maRacineCarree(double x) {
+		//si x<0 alors remonter new RuntimeException("racine carrée invalide si x négatif")
+		return Math.sqrt(x);
+	}
+	
 	
     public static double conversion(String s) throws NumberFormatException{
     	//NB: en interne .parseDouble souleve quelquefois NumberFormatException
