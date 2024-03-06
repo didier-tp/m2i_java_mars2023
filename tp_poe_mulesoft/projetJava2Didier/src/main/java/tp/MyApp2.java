@@ -21,20 +21,38 @@ public class MyApp2 {
 		System.out.println("suite de essaiException");
 		
 		
-		//appeler division(6,2) et division(6,0)
-		//et gerer ça via try/catch
+		try {
+			System.out.println("6/2=" + division(6,2));
+			System.out.println("6/0=" + division(6,0));//va provoquer une exception
+			System.out.println("6/3=" + division(6,3));//CETTE LIGNE NE SERA JAMAIS EXECUTEE !!!
+		} catch (ArithmeticException e) {
+			e.printStackTrace();
+		}
 		
-		//appeler maRacineCarre(9) et maRacineCarre(-9)
-		//et gerer ça via try/catch
+		try {
+			System.out.println("racine carre de 9=" + maRacineCarree(9));
+			System.out.println("racine carre de -9=" + maRacineCarree(-9));//va provoquer une exception
+		} catch (IllegalArgumentException e) {
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		finally {
+			System.out.println("racine carre de 64=" + maRacineCarree(64));
+		}
+		System.out.println("suite et fin de essaiException");
 	}
 	
-	public static int division(int a , int b) {
+	public static int division(int a , int b) throws ArithmeticException {
 		//retourner a divisé par b
 		//si b vaut 0 ça va remonter automatiquement ArithmeticException
+		return a/b;
 	}
 	
-	public static double maRacineCarree(double x) {
+	public static double maRacineCarree(double x) throws IllegalArgumentException{
 		//si x<0 alors remonter new RuntimeException("racine carrée invalide si x négatif")
+		if(x<0) 
+			//throw new RuntimeException("racine carrée invalide si x négatif");
+		    throw new IllegalArgumentException("racine carrée invalide si x négatif = " + x);
 		return Math.sqrt(x);
 	}
 	
