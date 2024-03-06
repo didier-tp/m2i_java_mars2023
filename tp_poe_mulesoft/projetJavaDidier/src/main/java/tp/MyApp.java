@@ -40,11 +40,12 @@ public class MyApp {
 			ObjectMapper jsonMapper = new ObjectMapper();
 			
 			String jsonPers=null;
-			try {
-				jsonPers = jsonMapper.writeValueAsString(p);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-			}
+			
+				try {
+					jsonPers = jsonMapper.writeValueAsString(p);
+				} catch (JsonProcessingException e) {
+					e.printStackTrace();
+				}
 			
 			System.out.println("(en json) jsonPers="+jsonPers);
 		}

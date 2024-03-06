@@ -81,8 +81,11 @@ public class Personne /* extends Object */ implements Transportable{
 	}
 
 	public void setAge(Integer age) {
-		if(age<0) 
-			System.err.println("age négatif invalide , pas pris en compte");
+		if(age<0) {
+			//throw new RuntimeException("age négatif invalide");
+			throw new IllegalArgumentException("age négatif invalide");
+			//System.err.println("age négatif invalide , pas pris en compte");
+		}
 		else
 		   this.age = age;
 	}
