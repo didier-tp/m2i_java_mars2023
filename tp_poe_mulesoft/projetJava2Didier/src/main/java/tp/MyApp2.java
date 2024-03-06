@@ -2,7 +2,9 @@ package tp;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MyApp2 {
 
@@ -11,8 +13,20 @@ public class MyApp2 {
 		//essaiException();
 		//essaiCollection();
 		//essaiCollection2();
-		essaiZoo();
+		//essaiZoo();
+		essaiMap();
 	}
+	
+	public static void essaiMap() {
+		Map<String,String> mapCouleursAnglaisFrancais = new HashMap<>();
+		mapCouleursAnglaisFrancais.put("red", "rouge");
+		mapCouleursAnglaisFrancais.put("blue", "bleu");
+		mapCouleursAnglaisFrancais.put("green", "vert");
+		String couleurEnAnglais="blue";
+		String couleurEnFrancais = mapCouleursAnglaisFrancais.get(couleurEnAnglais);
+		System.out.println("couleurEnFrancais="+couleurEnFrancais);
+	}
+	
 	public static void essaiZoo() {
 		Zoo zoo = new Zoo("ZooXyz");
 		Chien chien1 = new Chien("blanc",23.3 , "chien de compagnie");
