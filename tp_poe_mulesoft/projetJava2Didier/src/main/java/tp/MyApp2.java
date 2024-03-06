@@ -9,6 +9,7 @@ public class MyApp2 {
 		//essaiAnimaux();
 		//essaiException();
 		essaiCollection();
+		essaiCollection2();
 	}
 	
 	public static void essaiCollection() {
@@ -28,6 +29,26 @@ public class MyApp2 {
 		//for() au sens forEach():
 		for(String val : liste) {
 			System.out.println(val);
+		}
+	}
+	
+	public static void essaiCollection2() {
+		List<Integer> liste = new ArrayList<>();
+		liste.add(1); 
+		liste.add(4);
+		liste.add(9);
+		liste.add(16);
+		System.out.println("taille=" + liste.size());
+		
+		for(int i=0;i<liste.size();i++) {
+			System.out.println(liste.get(i) +  " en position i="+i);
+		}
+		
+		liste.remove(0);//avec ici le 0 interprété comme indice/position
+		
+		//for() au sens forEach():
+		for(Integer val : liste) {
+			System.out.println(val + " racineCarree=" + Math.sqrt(val));
 		}
 	}
 	
