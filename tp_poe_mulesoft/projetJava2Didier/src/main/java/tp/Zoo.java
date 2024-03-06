@@ -1,6 +1,7 @@
 package tp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Zoo {
@@ -17,6 +18,10 @@ public class Zoo {
     	System.out.println("Zoo nom="+this.nom);
     	//afficher le nombre d'animaux dans le zoo
     	System.out.println("nombre d'animaux="+this.listeAnimaux.size());
+    	
+    	ComparateurDeAnimal comparateurDeAnimal = new ComparateurDeAnimal();
+    	Collections.sort(listeAnimaux,comparateurDeAnimal);
+    	
     	//afficher en boucle chaque animal du zoo (en appelant dessus .toString() ou bien .afficher()
     	System.out.println("animaux du Zoo et leurs façons de partler:");
     	for(Animal animal : this.listeAnimaux) {

@@ -1,6 +1,7 @@
 package tp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MyApp2 {
@@ -45,10 +46,12 @@ public class MyApp2 {
 	
 	public static void essaiCollection2() {
 		List<Integer> liste = new ArrayList<>();
-		liste.add(1); 
-		liste.add(4);
 		liste.add(9);
+		liste.add(1); 
 		liste.add(16);
+		liste.add(4);
+		Collections.sort(liste);
+		
 		System.out.println("taille=" + liste.size());
 		
 		for(int i=0;i<liste.size();i++) {
