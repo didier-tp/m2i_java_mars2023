@@ -8,8 +8,17 @@ public class MyApp2 {
 	public static void main(String[] args) {
 		//essaiAnimaux();
 		//essaiException();
-		essaiCollection();
-		essaiCollection2();
+		//essaiCollection();
+		//essaiCollection2();
+		essaiZoo();
+	}
+	public static void essaiZoo() {
+		Zoo zoo = new Zoo("ZooXyz");
+		Chien chien1 = new Chien(.);
+		zoo.ajouterAnimal(chien1);
+		zoo.ajouterAnimal(new Chat(  ));
+		zoo.afficher();
+		//...
 	}
 	
 	public static void essaiCollection() {
