@@ -3,8 +3,27 @@ package tp;
 public class MyApp2 {
 
 	public static void main(String[] args) {
-		essaiAnimaux();
-
+		//essaiAnimaux();
+		essaiException();
+	}
+	
+	public static void essaiException() {
+		try {
+				//String sNum="50.5";
+				String sNum="50a.5";
+				System.out.println("sNum+1="+(sNum + 1)); //concatenation
+				double num = conversion(sNum);
+				System.out.println("num="+num);
+				System.out.println("num+1="+(num+1));//addition
+		} catch (NumberFormatException e) {
+				e.printStackTrace();
+		}
+		System.out.println("suite de essaiException");
+	}
+	
+    public static double conversion(String s) throws NumberFormatException{
+    	//NB: en interne .parseDouble souleve quelquefois NumberFormatException
+		return Double.parseDouble(s);
 	}
 	
 	public static void essaiAnimaux() {
