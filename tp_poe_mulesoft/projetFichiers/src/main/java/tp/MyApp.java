@@ -13,8 +13,12 @@ import java.util.List;
 public class MyApp {
 
 	public static void main(String[] args) {
-		List<String> couleurs = essaiLecture();
-        essaiEcriture(couleurs,"data2.txt");
+		//List<String> couleurs = essaiLecture();
+        //essaiEcriture(couleurs,"data2.txt");
+		Catalogue catalogue = new Catalogue();
+		catalogue.lireFichierProduits();
+		catalogue.calculerStats();
+		catalogue.ecrireFichierStats();
 	}
 	
 	public static void essaiEcriture(List<String> listeValeurs , String fileName) {
