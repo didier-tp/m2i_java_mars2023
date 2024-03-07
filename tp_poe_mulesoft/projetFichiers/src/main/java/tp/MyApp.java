@@ -3,16 +3,31 @@ package tp;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyApp {
 
 	public static void main(String[] args) {
-		essaiLecture();
-
+		List<String> couleurs = essaiLecture();
+        essaiEcriture(couleurs,"data2.txt");
+	}
+	
+	public static void essaiEcriture(List<String> listeValeurs , String fileName) {
+		try (
+			PrintStream ps = new PrintStream(new FileOutputStream(fileName))
+			) {
+			for(String ligne : listeValeurs) {
+				ps.println(ligne.toUpperCase());
+			}
+			System.out.println("le fichier " + fileName + " a ete généré (à voir apres refresh eclipse)");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}//finally automatique qui déclenche .close() sur ps du try(ps=...)
 	}
 	
 	public static List<String> essaiLecture() {
