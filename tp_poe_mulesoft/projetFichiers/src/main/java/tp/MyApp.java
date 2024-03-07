@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +16,28 @@ public class MyApp {
 	public static void main(String[] args) {
 		//List<String> couleurs = essaiLecture();
         //essaiEcriture(couleurs,"data2.txt");
+		
+		essaiIntrospection();
+		
 		Catalogue catalogue = new Catalogue();
 		catalogue.lireFichierProduits();
 		catalogue.calculerStats();
 		catalogue.ecrireFichierStats();
 		catalogue.ecrireFichierProduitsJson();
 		catalogue.ecrireFichierProduitsXml();
+		catalogue.ecrireNouveauFichierCsv();
+	}
+	
+	public static void essaiIntrospection() {
+		try {
+			Class c = Class.forName("tp.Produit");
+			System.out.println("liste des attributs/fields de la classe Produit:");
+			for(Field f : c.getDeclaredFields()) {
+				System.out.println("\t" + f.getName() +  " de type " + f.getType().getSimpleName());
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void essaiEcriture(List<String> listeValeurs , String fileName) {

@@ -21,6 +21,10 @@ public class Catalogue {
 	private List<Produit> listeProduits;//=null
 	private Stats stats;
 	
+	public void ecrireNouveauFichierCsv() {
+		MyCsvUtil.writeValuesAsCsvFile(listeProduits,"produits2.csv");
+	}
+	
     public void ecrireFichierProduitsJson() {
     	try (	PrintStream ps = new PrintStream(new FileOutputStream("produits.json"))
     			) {
