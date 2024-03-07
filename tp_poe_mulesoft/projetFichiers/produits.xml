@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<produits>
+    <produit>
+        <label>cahier</label>
+        <numero>1</numero>
+        <prix>5.5</prix>
+    </produit>
+    <produit>
+        <label>stylo</label>
+        <numero>2</numero>
+        <prix>2.1</prix>
+    </produit>
+    <produit>
+        <label>classeur</label>
+        <numero>3</numero>
+        <prix>6.0</prix>
+    </produit>
+    <produit>
+        <label>gomme</label>
+        <numero>4</numero>
+        <prix>3.3</prix>
+    </produit>
+    <produits>
+        <label>cahier</label>
+        <numero>1</numero>
+        <prix>5.5</prix>
+    </produits>
+    <produits>
+        <label>stylo</label>
+        <numero>2</numero>
+        <prix>2.1</prix>
+    </produits>
+    <produits>
+        <label>classeur</label>
+        <numero>3</numero>
+        <prix>6.0</prix>
+    </produits>
+    <produits>
+        <label>gomme</label>
+        <numero>4</numero>
+        <prix>3.3</prix>
+    </produits>
+</produits>

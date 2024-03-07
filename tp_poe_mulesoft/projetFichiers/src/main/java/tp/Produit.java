@@ -1,5 +1,8 @@
 package tp;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "produit")
 public class Produit {
    //à coder avec numero,label,prix
 	private int numero;

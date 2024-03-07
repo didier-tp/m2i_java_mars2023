@@ -11,20 +11,39 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.fasterxml.jackson.databind.ObjectMapper; 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Marshaller; 
 
 public class Catalogue {
 	
 	private List<Produit> listeProduits;//=null
 	private Stats stats;
 	
-    public void ecrireFichierProduisJson() {
+    public void ecrireFichierProduitsJson() {
     	try (	PrintStream ps = new PrintStream(new FileOutputStream("produits.json"))
     			) {
     			ObjectMapper jacksonObjectMapper = new ObjectMapper();
     			String listeProduitsAsJsonString = jacksonObjectMapper.writeValueAsString(this.listeProduits);
     		    ps.println(listeProduitsAsJsonString);
     			System.out.println("le fichier produits.json a été regénéré (à voir apres refresh eclipse)");
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}
+	}
+    
+    public void ecrireFichierProduitsXml() {
+    	try (	FileOutputStream fos = new FileOutputStream("produits.xml")
+    			) {
+    		    JAXBContext jaxbContext = JAXBContext.newInstance(Produits.class);
+    		    Marshaller marshaller = jaxbContext.createMarshaller();
+    		    marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8"); //NOI18N
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+    		    Produits produitsPourXml = new Produits();
+    		    produitsPourXml.setProduits(listeProduits);
+    		    marshaller.marshal(produitsPourXml, fos);
+    			System.out.println("le fichier produits.xml a été regénéré (à voir apres refresh eclipse)");
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
