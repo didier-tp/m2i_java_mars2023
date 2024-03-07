@@ -15,22 +15,48 @@ public class MyApp {
 
 	}
 	
-	public static void essaiLecture() {
+	public static List<String> essaiLecture() {
 		List<String> listeLignes = new ArrayList<>();
-		try {
-			FileInputStream fis = new FileInputStream("data.txt");
-			BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+		try( BufferedReader br = new BufferedReader(
+				new InputStreamReader(new FileInputStream("data.txt")))
+				) {
 			String ligne = br.readLine();
 			while(ligne!=null) {
 				listeLignes.add(ligne);
 				ligne = br.readLine(); //on tente de lire la ligne suivante
 			}
-			br.close(); fis.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} //finally automatique qui déclenche .close() sur le br qu'il y a 
+		// dans les parenthèses du try "with resource"
+		System.out.println("listeLignes="+listeLignes);
+		return listeLignes;
+	}
+	
+	/*
+	public static void essaiLectureV1() {
+		List<String> listeLignes = new ArrayList<>();
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(
+					new InputStreamReader(new FileInputStream("data.txt")));
+			String ligne = br.readLine();
+			while(ligne!=null) {
+				listeLignes.add(ligne);
+				ligne = br.readLine(); //on tente de lire la ligne suivante
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
 		}
 		System.out.println("listeLignes="+listeLignes);
 	}
+	*/
 	
 	
 
