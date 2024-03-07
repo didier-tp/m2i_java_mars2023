@@ -41,7 +41,7 @@ public class Catalogue {
     		    marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8"); //NOI18N
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
     		    Produits produitsPourXml = new Produits();
-    		    produitsPourXml.setProduits(listeProduits);
+    		    produitsPourXml.setListeProduits(listeProduits);
     		    marshaller.marshal(produitsPourXml, fos);
     			System.out.println("le fichier produits.xml a été regénéré (à voir apres refresh eclipse)");
     		} catch (Exception e) {
