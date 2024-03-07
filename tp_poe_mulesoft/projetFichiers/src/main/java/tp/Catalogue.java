@@ -9,12 +9,26 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale; 
+import java.util.Locale;
+
+import com.fasterxml.jackson.databind.ObjectMapper; 
 
 public class Catalogue {
 	
-	private List<Produit> listeProduits;
+	private List<Produit> listeProduits;//=null
 	private Stats stats;
+	
+    public void ecrireFichierProduisJson() {
+    	try (	PrintStream ps = new PrintStream(new FileOutputStream("produits.json"))
+    			) {
+    			ObjectMapper jacksonObjectMapper = new ObjectMapper();
+    			String listeProduitsAsJsonString = jacksonObjectMapper.writeValueAsString(this.listeProduits);
+    		    ps.println(listeProduitsAsJsonString);
+    			System.out.println("le fichier produits.json a été regénéré (à voir apres refresh eclipse)");
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}
+	}
 	
 	public void lireFichierProduits() {
 		this.listeProduits = new ArrayList<Produit>();

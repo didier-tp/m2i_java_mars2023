@@ -19,6 +19,7 @@ public class MyApp {
 		catalogue.lireFichierProduits();
 		catalogue.calculerStats();
 		catalogue.ecrireFichierStats();
+		catalogue.ecrireFichierProduisJson();
 	}
 	
 	public static void essaiEcriture(List<String> listeValeurs , String fileName) {
