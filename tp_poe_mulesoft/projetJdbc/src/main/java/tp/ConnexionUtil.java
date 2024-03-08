@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 
 public class ConnexionUtil {
 	
-	public Connection etablirConnexion() {
+	public static Connection etablirConnexion() {
 		Connection cn =null;
 		ResourceBundle ressources = ResourceBundle.getBundle("paramDB") ; // paramDB.properties
 		String driver = ressources.getString("driver");

@@ -20,9 +20,7 @@ public class PersonneDaoJdbc implements PersonneDao {
 	@Override
 	public List<Personne> getAllPersonnes() {
 		List<Personne> personnes = new ArrayList<Personne>();
-		ConnexionUtil connexionUtil =new ConnexionUtil();
-		Connection cn = connexionUtil.etablirConnexion();
-		try {
+		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
 			Statement st = cn.createStatement();
 			String reqSql="SELECT * FROM personne";
 			ResultSet rs = st.executeQuery(reqSql);
@@ -30,10 +28,9 @@ public class PersonneDaoJdbc implements PersonneDao {
 				Personne p = new Personne(rs.getInt("id"),rs.getString("nom"),rs.getInt("age"),rs.getDouble("poids"));
 				personnes.add(p);
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		} //finally automatique avec cn.close() déclenché automatiquement
 		return personnes;
 	}
 
