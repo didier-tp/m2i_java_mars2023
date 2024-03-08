@@ -11,7 +11,15 @@ public class MyApp {
 
 	public static void main(String[] args) {
 	     //essaiConnexion();
+		essaiUpdatePersonne();
 		essaiGetAllPersonnes();
+	}
+	
+
+	public static void essaiUpdatePersonne() {
+		PersonneDao personneDao = new PersonneDaoJdbc();
+		Personne pers1Modifiee = new Personne(1,"alex_therieur" , 50 , 72.0);
+		personneDao.updatePersonne(pers1Modifiee);
 	}
 	
 	public static void essaiGetAllPersonnes() {
