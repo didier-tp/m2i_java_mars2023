@@ -34,11 +34,33 @@ public class PersonneDaoJdbc implements PersonneDao {
 		} //finally automatique avec cn.close() déclenché automatiquement
 		return personnes;
 	}
+	
+	Integer recupValeurAutoIncrPk(PreparedStatement pst){
+		Integer pk=null;
+		try {
+		ResultSet rsKeys = pst.getGeneratedKeys();
+		if(rsKeys.next()){ pk= rsKeys.getInt(1); }
+		} catch (SQLException e) { e.printStackTrace(); }
+		return pk;
+		}
 
 	@Override
 	public Personne saveNew(Personne p) {
-		// en fin d'après ensemble car auto_increment compliqué en java/jdbc
-		return null;
+		//en entrée , la personne à un id null (pas encore connu)
+		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
+			String reqSql="INSERT INTO personne(nom,age,poids) VALUES(?,?,?)";
+			PreparedStatement pst = cn.prepareStatement(reqSql,Statement.RETURN_GENERATED_KEYS);
+			//pst.setTypeColonne(numero_du_ieme_? , valeur_de_remplacement)
+			pst.setString(1, p.getNom());
+			pst.setInt(2, p.getAge());
+			pst.setDouble(3, p.getPoids());
+			pst.executeUpdate(); //declencher l'ordre SQL dans la base de données	
+			Integer idAutoIncremente = recupValeurAutoIncrPk(pst);
+			p.setId(idAutoIncremente);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} //finally automatique avec cn.close() déclenché automatiquement
+		return p; //on retourne une personne avec l'id auto incrémenté
 	}
 
 	@Override
