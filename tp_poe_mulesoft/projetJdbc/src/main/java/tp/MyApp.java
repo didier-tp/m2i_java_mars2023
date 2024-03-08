@@ -16,13 +16,13 @@ public class MyApp {
 	
 	public static void essaiGetAllPersonnes() {
 		PersonneDao personneDao = new PersonneDaoJdbc();
+		//PersonneDao personneDao = new PersonneDaoJpa();
 		List<Personne> personnes = personneDao.getAllPersonnes();
 		System.out.println("personnes="+personnes);
 	}
 	
 	public static void essaiConnexion() {
-		ConnexionUtil connexionUtil =new ConnexionUtil();
-		Connection cn = connexionUtil.etablirConnexion();
+		Connection cn = ConnexionUtil.etablirConnexion();
 		System.out.println("cn="+cn);
 	}
 

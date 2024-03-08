@@ -36,13 +36,13 @@ public class PersonneDaoJdbc implements PersonneDao {
 
 	@Override
 	public Personne saveNew(Personne p) {
-		// TODO Auto-generated method stub
+		// en fin d'après ensemble car auto_increment compliqué en java/jdbc
 		return null;
 	}
 
 	@Override
 	public Personne getPersonneById(Integer id) {
-		// TODO Auto-generated method stub
+		// A faire en TP de groupe , SELECT * FROM personne WHERE id=?
 		return null;
 	}
 
@@ -50,13 +50,19 @@ public class PersonneDaoJdbc implements PersonneDao {
 
 	@Override
 	public void updatePersonne(Personne p) {
-		// TODO Auto-generated method stub
+		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
+			Statement st = cn.createStatement();
+			String reqSql="UPDATE personne SET nom=? , age=? , poids=? WHERE id=?";
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} //finally automatique avec cn.close() déclenché automatiquement
 		
 	}
 
 	@Override
 	public void deletePersonne(Integer id) {
-		// TODO Auto-generated method stub
+		// A faire en TP de groupe , DELETE * FROM personne WHERE id=?
 		
 	}
 
