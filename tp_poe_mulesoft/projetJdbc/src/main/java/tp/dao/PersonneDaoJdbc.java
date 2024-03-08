@@ -1,6 +1,7 @@
 package tp.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,9 +52,15 @@ public class PersonneDaoJdbc implements PersonneDao {
 	@Override
 	public void updatePersonne(Personne p) {
 		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
-			Statement st = cn.createStatement();
 			String reqSql="UPDATE personne SET nom=? , age=? , poids=? WHERE id=?";
-			
+			PreparedStatement pst = cn.prepareStatement(reqSql);
+			//pst.setTypeColonne(numero_du_ieme_? , valeur_de_remplacement)
+			pst.setString(1, p.getNom());
+			pst.setInt(2, p.getAge());
+			pst.setDouble(3, p.getPoids());
+			pst.setInt(4, p.getId());
+			pst.executeUpdate(); //declencher l'ordre SQL dans la base de données
+			                     //pour tout sauf le select 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} //finally automatique avec cn.close() déclenché automatiquement
