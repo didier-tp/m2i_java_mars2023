@@ -11,8 +11,13 @@ public class MyApp {
 
 	public static void main(String[] args) {
 	     //essaiConnexion();
-		essaiUpdatePersonne();
-		essaiGetAllPersonnes();
+		//relancer si besoin le script qui ré-initialise la table entre 2 essais
+		
+		essaiUpdatePersonne();//mise à jour personne1
+		essaiGetAllPersonnes();//afficher tout dont personne1 modifiée
+		essaiGetPersonneById();//afficher que personne1
+		essaiDeletePersonne();//supprimer personne id=2
+		essaiGetAllPersonnes();//réafficher tout ce qui reste
 	}
 	
 
@@ -20,6 +25,18 @@ public class MyApp {
 		PersonneDao personneDao = new PersonneDaoJdbc();
 		Personne pers1Modifiee = new Personne(1,"alex_therieur" , 50 , 72.0);
 		personneDao.updatePersonne(pers1Modifiee);
+	}
+	
+	public static void essaiGetPersonneById() {
+		PersonneDao personneDao = new PersonneDaoJdbc();
+		Personne personne1 = personneDao.getPersonneById(1);
+		System.out.println("personne1="+personne1);
+	}
+	
+	public static void essaiDeletePersonne() {
+		PersonneDao personneDao = new PersonneDaoJdbc();
+		personneDao.deletePersonne(2);
+		System.out.println("personne avec id=2 normalement supprimée dans la table personne");
 	}
 	
 	public static void essaiGetAllPersonnes() {

@@ -43,8 +43,19 @@ public class PersonneDaoJdbc implements PersonneDao {
 
 	@Override
 	public Personne getPersonneById(Integer id) {
-		// A faire en TP de groupe , SELECT * FROM personne WHERE id=?
-		return null;
+		Personne personne = null;
+		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
+			String reqSql="SELECT * FROM personne WHERE id=?";
+			PreparedStatement pst = cn.prepareStatement(reqSql);
+            pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				personne = new Personne(rs.getInt("id"),rs.getString("nom"),rs.getInt("age"),rs.getDouble("poids"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} //finally automatique avec cn.close() déclenché automatiquement
+		return personne;
 	}
 
 	
@@ -53,6 +64,7 @@ public class PersonneDaoJdbc implements PersonneDao {
 	public void updatePersonne(Personne p) {
 		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
 			String reqSql="UPDATE personne SET nom=? , age=? , poids=? WHERE id=?";
+			//String reqSql="UPDATE personne SET  poids=? WHERE id=?"; possible si besoin de changer le poids seulement
 			PreparedStatement pst = cn.prepareStatement(reqSql);
 			//pst.setTypeColonne(numero_du_ieme_? , valeur_de_remplacement)
 			pst.setString(1, p.getNom());
@@ -69,8 +81,15 @@ public class PersonneDaoJdbc implements PersonneDao {
 
 	@Override
 	public void deletePersonne(Integer id) {
-		// A faire en TP de groupe , DELETE * FROM personne WHERE id=?
-		
+		try( Connection cn = ConnexionUtil.etablirConnexion() ) {
+			String reqSql="DELETE FROM personne WHERE id=?";
+			PreparedStatement pst = cn.prepareStatement(reqSql);
+			//pst.setTypeColonne(numero_du_ieme_? , valeur_de_remplacement)
+			pst.setInt(1, id);
+			pst.executeUpdate(); //declencher l'ordre SQL dans la base de données
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} //finally automatique avec cn.close() déclenché automatiquement
 	}
 
 }
