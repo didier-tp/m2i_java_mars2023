@@ -16,8 +16,10 @@ public class MyApp {
 		essaiUpdatePersonne();//mise à jour personne1
 		essaiGetAllPersonnes();//afficher tout dont personne1 modifiée
 		essaiGetPersonneById();//afficher que personne1
-		essaiDeletePersonne();//supprimer personne id=2
-		essaiGetAllPersonnes();//réafficher tout ce qui reste
+		//essaiDeletePersonne();//supprimer personne id=2
+		essaiInsertPersonne();
+		essaiInsertPersonne();
+		essaiGetAllPersonnes();//réafficher tout ce qui reste ou qu'il ya en plus
 	}
 	
 
@@ -25,6 +27,12 @@ public class MyApp {
 		PersonneDao personneDao = new PersonneDaoJdbc();
 		Personne pers1Modifiee = new Personne(1,"alex_therieur" , 50 , 72.0);
 		personneDao.updatePersonne(pers1Modifiee);
+	}
+	
+	public static void essaiInsertPersonne() {
+		PersonneDao personneDao = new PersonneDaoJdbc();
+		Personne nouvellePersonne = new Personne(null,"nouveau_nom" , 0 , 3.3);
+		personneDao.saveNew(nouvellePersonne);
 	}
 	
 	public static void essaiGetPersonneById() {
