@@ -20,6 +20,8 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 		</dependency>
+		<!-- ce driver jdbc permet de se connecter à une base de données gérée 
+		     par le server mysql (ou bien la variante mariadb) -->
 
 	</dependencies>
 
