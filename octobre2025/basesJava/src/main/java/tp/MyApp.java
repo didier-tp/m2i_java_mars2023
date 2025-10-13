@@ -30,9 +30,20 @@ public class MyApp {
 		  String sAge = reader.next();
 		  System.out.println("sAge=" + sAge);
 	  }
+	  
+	  public static void testerPersonne() {
+		  Personne p1=null;
+		  p1= new Personne();
+		  p1.nom="toto";  p1.age=44;  p1.poids=66.8;
+		  p1.afficher();  //.afficher() appele en interne System.out.println(...)
+		  Personne p2= new Personne();
+		  p2.nom="titi";  p2.age=34;  p2.poids=77.8;
+		  p2.afficher(); 
+	  }
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
-		testerTypes();
+		//testerTypes();
+		testerPersonne();
 	}
 }
