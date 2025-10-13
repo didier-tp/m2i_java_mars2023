@@ -81,6 +81,7 @@ public class Personne {
 		Personne other = (Personne) obj;
 		return Objects.equals(age, other.age) && Objects.equals(nom, other.nom) && Objects.equals(poids, other.poids);
 	}
+
 	
 	
 	
