@@ -108,13 +108,33 @@ public class MyApp {
        System.out.println("inverse="+inverse);
 	  }
 	  
+      public static void testStatic() {
+    	  System.out.println("Personne.AGE_MAJORITE="+Personne.AGE_MAJORITE);
+    	  Personne p1= new Personne("titi",14,77.8);
+    	  Personne p2= new Personne("toto",24,67.8);
+    	  Personne p=p2 ; //ou =p1;
+    	  if(p.estMajeur())  
+    		  System.out.println("p est majeur");
+    	  else
+    		  System.out.println("p est mineur");
+    	  System.out.println("Espérance de vie actuelle des personnes="+Personne.getEsperanceVie());	
+    	  //après pandémie de type "covid":
+    	  Personne.setEsperanceVie(Personne.getEsperanceVie()-1.5);
+    	  System.out.println("Nouvelle Espérance de vie des personnes="+Personne.getEsperanceVie());
+    	  //après progrès de la médecine:
+    	  Personne.setEsperanceVie(Personne.getEsperanceVie()+2.5);
+    	  System.out.println("Nouvelle Espérance de vie des personnes="+Personne.getEsperanceVie());
+    	  
+    	  System.out.println("racine carrée de 81=" + Math.sqrt(81));
+      }
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
 		//testerTypes();
 		//testerPersonne();
 		//testerBagage();
-		testTableaux();
-		testString();
+		//testTableaux();
+		//testString();
+		testStatic();
 	}
 }

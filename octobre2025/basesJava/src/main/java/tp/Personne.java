@@ -4,10 +4,29 @@ import java.util.Objects;
 
 public class Personne {
 	
+	public static final int AGE_MAJORITE=18;
+	
+	private static double esperanceVie=78.2; //+get/set static
+	
 	private String nom;
 	private Integer age;
 	private Double poids;
 	
+	
+	public static double getEsperanceVie() {
+		return esperanceVie;
+	}
+
+	public static void setEsperanceVie(double esperanceVie) {
+		Personne.esperanceVie = esperanceVie;
+	}
+
+	public boolean estMajeur() {
+		if(this.getAge()==null) return false;
+		else {
+			return (this.getAge()>=Personne.AGE_MAJORITE);
+		}
+	}
 
 	public Personne(String nom, Integer age, Double poids) {
 		super();
