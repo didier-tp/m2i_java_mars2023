@@ -59,11 +59,49 @@ public class MyApp {
 		  //System.out.println("valise1="+valise1.toString());
 		  System.out.println("valise1="+valise1);
 	  }
+	  
+	  public static void testTableaux() {
+		  //construire et remplir un tableaux de 6 nombres reels
+		  /*
+		  double[] tableau  = new double[6];
+		  tableau[0]=12.5;  tableau[1]=2;  tableau[2]=42.5;
+		  tableau[3]=12.6;  tableau[4]=2.8;  tableau[5]=28.5;
+		  */
+		  double[] tableau  = { 12.5 , 2 , 42.5 , 12.6 , 2.8 , 28.5 };
+		  for(int i=0;i<tableau.length;i++) {
+			  System.out.println("tableau[" + i + "]=" + tableau[i]);
+		  }
+		  //calculer et afficher la moyenne
+		  double somme = 0;
+		  for(int i=0;i<tableau.length;i++) {
+			  somme += tableau[i]; //somme = somme + tableau[i]
+		  }
+		  double moyenne = somme / tableau.length;
+		  System.out.println("moyenne=" + moyenne);
+		  //récupérer et afficher la plus grande valeur:
+		  double plusGrand= tableau[0];
+		  for(int i=1;i<tableau.length;i++) {
+			  if(tableau[i]>plusGrand)
+				  plusGrand=tableau[i];
+		  }
+		  System.out.println("plusGrand=" + plusGrand);
+	  }
+	  
+      public static void testString() {
+    	String s1 = "2023-01-17";
+       //extraire la partie mois de différentes façons et afficher cette valeur
+       String chaine="YTREZA" ;
+       //créer une nouvelle chaine inverse où tous les caractères sont dans l'ordre inverse 
+       //afficher la chaine inverse
+	  }
+	  
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
 		//testerTypes();
-		testerPersonne();
-		testerBagage();
+		//testerPersonne();
+		//testerBagage();
+		testTableaux();
+		testString();
 	}
 }
