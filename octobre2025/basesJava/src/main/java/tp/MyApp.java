@@ -52,10 +52,18 @@ public class MyApp {
 		  p2.setAge(23);
 		  System.out.println("p2=" + p2 ); //nouvel age maintenant 23
 	  }
+	  
+	  public static void testerBagage() {
+		  Bagage valise1 = new Bagage("valise1",12000,12.6);//12000g=12kg et 12.6 litres
+		  valise1.setPoids(12500);
+		  //System.out.println("valise1="+valise1.toString());
+		  System.out.println("valise1="+valise1);
+	  }
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
 		//testerTypes();
 		testerPersonne();
+		testerBagage();
 	}
 }
