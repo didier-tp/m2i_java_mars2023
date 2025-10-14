@@ -127,6 +127,17 @@ public class MyApp {
     	  
     	  System.out.println("racine carrée de 81=" + Math.sqrt(81));
       }
+      
+      public static void testerEmploye() {
+    	  Employe e1 = new Employe();
+    	  e1.setNom("toto");
+    	  e1.setAge(26);
+    	  e1.setSalaire(2600.0);
+    	  System.out.println("e1="+e1.toString() + " majeur:" + e1.estMajeur());
+    	  
+    	  Employe e2 = new Employe("jean Bon",44,77.6,2500.0);
+    	  System.out.println("e2="+e2.toString());
+      }
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
@@ -135,6 +146,7 @@ public class MyApp {
 		//testerBagage();
 		//testTableaux();
 		//testString();
-		testStatic();
+		//testStatic();
+		testerEmploye();
 	}
 }

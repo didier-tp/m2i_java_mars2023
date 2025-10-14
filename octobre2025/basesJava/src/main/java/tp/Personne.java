@@ -2,7 +2,7 @@ package tp;
 
 import java.util.Objects;
 
-public class Personne {
+public class Personne /* extends Object */ {
 	
 	public static final int AGE_MAJORITE=18;
 	
@@ -46,7 +46,7 @@ public class Personne {
 		System.out.println(this.toString());
 	}
 
-	@Override
+    @Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", age=" + age + ", poids=" + poids + "]";
 	}
