@@ -90,9 +90,22 @@ public class MyApp {
       public static void testString() {
     	String s1 = "2023-01-17";
        //extraire la partie mois de différentes façons et afficher cette valeur
+    	String sMois = s1.split("-")[1];
+    	System.out.println("sMois="+sMois);
+    	int posPremierTiret= s1.indexOf("-");
+    	int posDernierTiret= s1.lastIndexOf("-");
+    	String sMoisBis = s1.substring(posPremierTiret+1,posDernierTiret);
+    	System.out.println("sMoisBis="+sMoisBis);
+    	
        String chaine="YTREZA" ;
        //créer une nouvelle chaine inverse où tous les caractères sont dans l'ordre inverse 
        //afficher la chaine inverse
+       StringBuilder buffer = new StringBuilder(chaine.length());
+       for(int i=chaine.length()-1;i>=0;i--) {
+    	   buffer.append(chaine.charAt(i));
+       }
+       String inverse=buffer.toString();
+       System.out.println("inverse="+inverse);
 	  }
 	  
 	
