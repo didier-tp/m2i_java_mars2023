@@ -46,14 +46,16 @@ public class Personne {
 		System.out.println(this.toString());
 	}
 
-
 	@Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", age=" + age + ", poids=" + poids + "]";
 	}
 
+
 	//get..., set...() générés par assistants de eclipse ou intelliJ:
 	
+	
+
 	public String getNom() {
 		return nom;
 	}
