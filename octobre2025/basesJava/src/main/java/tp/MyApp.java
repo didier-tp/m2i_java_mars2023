@@ -172,6 +172,12 @@ public class MyApp {
     	  a=new Chat();
     	  a.parler();
       }
+      
+      public static void testAvion(){
+    		 Avion a1 = new Avion();
+    		 a1.initialiser();
+    		 a1.afficher();
+    	}
 	
       public static void main(String[] args) {
 		System.out.println("Hello world (main)");
@@ -182,6 +188,7 @@ public class MyApp {
 		//testString();
 		//testStatic();
 		//testerEmploye();
-		testerPolymorphisme();
+		//testerPolymorphisme();
+		testAvion();
 	}
 }
