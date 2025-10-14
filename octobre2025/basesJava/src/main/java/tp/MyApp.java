@@ -137,6 +137,40 @@ public class MyApp {
     	  
     	  Employe e2 = new Employe("jean Bon",44,77.6,2500.0);
     	  System.out.println("e2="+e2.toString());
+    	  
+    	  Personne p=null;
+    	  
+    	  p=new Personne("toto",45,67.9);
+    	  //System.out.println("p="+p.toString());
+    	  p.afficher(); //afficher() appel indirectement .toString() , polymorphisme indirect
+    	  
+    	  if(p instanceof Employe) {
+    		  Double salaire = ((Employe) p).getSalaire();
+    		  System.out.println("salaire de p="+salaire);
+    	  }
+    	  
+    	  p=new Employe("toto2",55,77.9,2500.0);
+    	  //System.out.println("p="+p.toString());
+    	  p.afficher();
+    	  
+    	  //NB: if(... instanceof ....) et appel spécifique = techniquement possible mais très déconseillé!!!
+    	  //if faut utiliser au maximum le polymorphisme
+    	  if(p instanceof Employe) {
+    		  Double salaire = ((Employe) p).getSalaire();
+    		  System.out.println("salaire de p="+salaire);
+    		  //p.afficherEmploye() // PAS BIEN
+    	  }else {
+    		  //p.afficherPersonne(); //PAS BIEN
+    	  }
+    	  
+      }
+      
+      public static void testerPolymorphisme(){
+    	  Animal a= null;
+    	  a = new Chien();
+    	  a.parler();
+    	  a=new Chat();
+    	  a.parler();
       }
 	
       public static void main(String[] args) {
@@ -147,6 +181,7 @@ public class MyApp {
 		//testTableaux();
 		//testString();
 		//testStatic();
-		testerEmploye();
+		//testerEmploye();
+		testerPolymorphisme();
 	}
 }

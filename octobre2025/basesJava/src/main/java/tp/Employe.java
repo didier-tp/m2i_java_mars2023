@@ -8,23 +8,23 @@ package tp;
 public class Employe extends Personne {
 	private Double salaire;
 	
-	@Override
-	public String toString(){
-		String sPers = super.toString();
-		return sPers + " de type Employe avec salaire=" + this.salaire;
-	}
 	
+	
+	@Override
+	public String toString() {
+		return super.toString() + " de type Employe avec salaire="+this.salaire;
+	}
+
 	public Employe(){
 		super();
 	}
 	
-	public Employe(String nom, Integer age, Double poids,Double salaire){
-		super(nom,age,poids);
-		this.salaire=salaire;
+	
+	public Employe(String nom, Integer age, Double poids,Double salaire) {
+		super(nom, age, poids);
+		this.salaire =salaire;
 	}
 
-
-	
 	//+get/set
 	public Double getSalaire() {
 		return salaire;
