@@ -174,6 +174,8 @@ public class MyApp {
       }
       
       public static void testAvion(){
+    	     //ObjectVolant obj = new ObjectVolant(); //new direct interdit car la classe ObjectVolant est "abstract"
+    	  
     		 Avion a1 = new Avion();
     		 a1.initialiser();
     		 a1.afficher();
