@@ -1,5 +1,6 @@
 package tp.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class ProduitDaoMap implements ProduitDAO {
 
 	@Override
 	public List<Produit> findAll() {
-		return ( List<Produit>) this.mapNumeroProduit.values();
+		return new ArrayList<Produit>(this.mapNumeroProduit.values());
 	}
 
 	@Override

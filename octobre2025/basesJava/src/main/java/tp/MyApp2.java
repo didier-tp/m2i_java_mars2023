@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import tp.dao.ProduitDAO;
+import tp.dao.ProduitDaoMap;
 import tp.pers.ComparatorPersonneAgeDesc;
 import tp.pers.ComparatorPersonneNom;
 import tp.pers.Personne;
@@ -12,11 +14,21 @@ public class MyApp2 {
 	
 	public static void main(String[] args) {
 		//testListe();
-		testerCollectionPersonne();
+		//testerCollectionPersonne();
+		testerProduitDao();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
 		*/
+	}
+	
+	public static void testerProduitDao(){
+		ProduitDAO produitDao = new ProduitDaoMap();
+		//ProduitDAO produitDao = new ProduitDaoJdbc();
+		produitDao.createProduit(new Produit(null,"pomme","nourriture",2.2,1.0));
+		produitDao.createProduit(new Produit(null,"tomate","nourriture",3.2,1.0));
+		List<Produit> tousLesProduit = produitDao.findAll();
+		System.out.println("tousLesProduit="+tousLesProduit);
 	}
 	
 	public static void testerCollectionPersonne(){
