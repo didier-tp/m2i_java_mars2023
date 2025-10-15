@@ -1,8 +1,11 @@
 package tp;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import tp.pers.ComparatorPersonneAgeDesc;
+import tp.pers.ComparatorPersonneNom;
 import tp.pers.Personne;
 
 public class MyApp2 {
@@ -22,15 +25,19 @@ public class MyApp2 {
 		List<Personne> listePers = new ArrayList<>(); //possible depuis java 1.7
 		//var listePers = new ArrayList<Personne>(); //possible depuis java 10 (souvent 11 ou 17)
 		
-		listePers.add(new Personne("toto" , 25 , 77.6)); //new Personne(nom,age,poids)
+		listePers.add(new Personne("toto" , 30 , 77.6)); //new Personne(nom,age,poids)
 		listePers.add(new Personne("dupond" , 36 , 78.6));
-		listePers.add(new Personne("luc" , 30 , 76.6));
+		listePers.add(new Personne("luc" , 25 , 76.6));
 		
 		//trier cette liste par noms croissants 
 		//avec ComparatorPersonneNom puis afficher cette liste modifiée
+		Collections.sort(listePers,new ComparatorPersonneNom());
+		System.out.println("liste triée selon noms croissants:" + listePers);
 		
 		//trier une nouvelle fois cette liste par ages décroissants 
 		//avec ComparatorPersonneAgeDesc puis afficher cette liste modifiée
+		Collections.sort(listePers,new ComparatorPersonneAgeDesc());
+		System.out.println("liste triée selon ages décroissants:" + listePers);
 	}
 	
 	public static void testListe() {
