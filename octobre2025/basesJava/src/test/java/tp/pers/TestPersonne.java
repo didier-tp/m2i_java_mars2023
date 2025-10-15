@@ -30,7 +30,7 @@ public class TestPersonne  {
 	@Test
 	public void testQuiVaBien() {
 		personne.setAge(20);
-		logger.trace("estMajeur pour 20 ans="+personne.estMajeur());
+		logger.debug("estMajeur pour 20 ans="+personne.estMajeur());
 		assertTrue(personne.estMajeur()==true);
 	}
 	

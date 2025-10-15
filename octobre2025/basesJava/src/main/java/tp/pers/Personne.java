@@ -27,6 +27,7 @@ public class Personne /* extends Object */ implements Transportable{
 		if(this.getAge()==null) return false;
 		else {
 			return (this.getAge()>=Personne.AGE_MAJORITE);
+			//return false;
 		}
 	}
 
