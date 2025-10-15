@@ -27,8 +27,8 @@ public class MyApp2 {
 		//ProduitDAO produitDao = new ProduitDaoJdbc();
 		produitDao.createProduit(new Produit(null,"pomme","nourriture",2.2,1.0));
 		produitDao.createProduit(new Produit(null,"tomate","nourriture",3.2,1.0));
-		List<Produit> tousLesProduit = produitDao.findAll();
-		System.out.println("tousLesProduit="+tousLesProduit);
+		List<Produit> tousLesProduits = produitDao.findAll();
+		System.out.println("tousLesProduits="+tousLesProduits);
 	}
 	
 	public static void testerCollectionPersonne(){
