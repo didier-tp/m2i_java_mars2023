@@ -1,4 +1,4 @@
-package tp;
+package tp.pers;
 
 //classe Employe qui herite de Personne
 //avec salaire en plus

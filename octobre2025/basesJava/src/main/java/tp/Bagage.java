@@ -5,10 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * classe de Bagage
+ */
+
 @Getter @Setter @NoArgsConstructor @ToString
 public class Bagage implements Transportable {
 	 private String label;
-	 private Double poids; //en grammes
+	 private Double poids; //en grammes  (anciennement Integer, maintenant Double)
 	 private Double volume; //en litres
 	 
 	//+toString() , +constructeurs , +get/set 

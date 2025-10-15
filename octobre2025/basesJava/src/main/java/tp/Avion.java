@@ -3,6 +3,9 @@ package tp;
 import java.util.ArrayList;
 import java.util.List;
 
+import tp.pers.Employe;
+import tp.pers.Personne;
+
 public class Avion  extends ObjectVolant{
 	
 	private String nom;

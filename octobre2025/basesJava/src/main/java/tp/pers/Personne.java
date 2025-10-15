@@ -1,6 +1,8 @@
-package tp;
+package tp.pers;
 
 import java.util.Objects;
+
+import tp.Transportable;
 
 public class Personne /* extends Object */ implements Transportable{
 	
@@ -68,13 +70,13 @@ public class Personne /* extends Object */ implements Transportable{
 		return age;
 	}
 
-	public void setAge(Integer age) {
+	public void setAge(Integer age) throws IllegalArgumentException{
 		//this.age = age;// code généré par assistant
 		if(age>=0)
 			this.age = age;
 		else {
-			System.out.println("age négatif invalide");
-			//throw new RuntimeException("age négatif invalide")
+			//System.out.println("age négatif invalide");
+			throw new IllegalArgumentException("age négatif invalide");
 		}
 	}
 
@@ -103,7 +105,7 @@ public class Personne /* extends Object */ implements Transportable{
 		return Objects.equals(age, other.age) && Objects.equals(nom, other.nom) && Objects.equals(poids, other.poids);
 	}
 
-	@Override
+	
 	public String getDesignation() {
 		return this.toString();
 	}
