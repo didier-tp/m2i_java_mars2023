@@ -51,7 +51,7 @@ public class MyApp {
 			       System.out.println("p2 et p3 n'ont pas les mêmes valeurs internes");
 			  try {
 			     p2.setAge(-23); //message d'erreur (age invalide)
-			  } catch (IllegalArgumentException e) {
+			  } catch (Exception e) {
 					//e.printStackTrace();
 				    System.err.println(e.getMessage());
 			   }

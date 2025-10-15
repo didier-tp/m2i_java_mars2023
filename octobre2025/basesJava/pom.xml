@@ -9,6 +9,8 @@
 		 <maven.compiler.release>17</maven.compiler.release>
 		 <maven.compiler.target>17</maven.compiler.target>
 		 <maven.compiler.source>17</maven.compiler.source>
+		 <junit.jupiter.version>5.9.3</junit.jupiter.version>
+         <junit.platform.version>1.9.3</junit.platform.version>
  </properties>
  
  <dependencies>
@@ -18,6 +20,27 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.42</version>
 		</dependency>
+		
+		<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter</artifactId>
+	    <version>${junit.jupiter.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+	<!-- junit-platform-suite with indirect junit-platform-suite-api and junit-platform-suite-engine -->
+	<dependency>
+	    <groupId>org.junit.platform</groupId>
+	    <artifactId>junit-platform-suite</artifactId>
+	    <version>${junit.platform.version}</version>
+	    <scope>test</scope>
+	</dependency>
+
+     <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.20.0</version>
+     </dependency>
  
  </dependencies>
  
