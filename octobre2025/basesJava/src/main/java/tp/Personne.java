@@ -2,7 +2,7 @@ package tp;
 
 import java.util.Objects;
 
-public class Personne /* extends Object */ {
+public class Personne /* extends Object */ implements Transportable{
 	
 	public static final int AGE_MAJORITE=18;
 	
@@ -101,6 +101,11 @@ public class Personne /* extends Object */ {
 			return false;
 		Personne other = (Personne) obj;
 		return Objects.equals(age, other.age) && Objects.equals(nom, other.nom) && Objects.equals(poids, other.poids);
+	}
+
+	@Override
+	public String getDesignation() {
+		return this.toString();
 	}
 
 	

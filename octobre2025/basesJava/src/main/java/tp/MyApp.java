@@ -54,8 +54,8 @@ public class MyApp {
 	  }
 	  
 	  public static void testerBagage() {
-		  Bagage valise1 = new Bagage("valise1",12000,12.6);//12000g=12kg et 12.6 litres
-		  valise1.setPoids(12500);
+		  Bagage valise1 = new Bagage("valise1",12000.0,12.6);//12000g=12kg et 12.6 litres
+		  valise1.setPoids(12500.0);
 		  //System.out.println("valise1="+valise1.toString());
 		  System.out.println("valise1="+valise1);
 	  }
