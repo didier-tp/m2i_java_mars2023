@@ -1,6 +1,11 @@
 package tp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class RacineApp {
+	
+	private static final Logger log= LoggerFactory.getLogger(RacineApp.class);
 	
 	public static void main(String[] args) {
 		// java tp.RacineApp 81 
@@ -21,7 +26,8 @@ public class RacineApp {
 		}
 		catch (NumberFormatException e) {
 			//e.printStackTrace();
-			System.err.println("l'argument doit être numerique !!!");
+			//System.err.println("l'argument doit être numerique !!!");
+			log.error("l'argument doit être numerique !!!");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
