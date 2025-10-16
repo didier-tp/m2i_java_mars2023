@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import tp.dao.ProduitDAO;
 import tp.dao.ProduitDaoMap;
@@ -18,8 +19,8 @@ public class MyApp2 {
 		//testListe();
 		//testerCollectionPersonne();
 		//testerStream();
-		//testerProduitDao();
-		testerDates();
+		testerProduitDao();
+		//testerDates();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
@@ -82,6 +83,16 @@ public class MyApp2 {
 		System.out.println("p2="+produitDao.findById(2));
 		produitDao.deleteById(2);
 		System.out.println("tousLesProduits qui restent="+produitDao.findAll());
+		
+		int numP = 1 ; // ou 2 ou 3
+		Optional<Produit> opProd = produitDao.findByIdOptional(numP);
+		System.out.println("opProd="+opProd);
+		Produit pOuNull = opProd.orElse(null);
+		System.out.println("pOuNull="+pOuNull);
+		Produit p = opProd.get();//java.util.NoSuchElementException: No value present si Optional.empty
+		System.out.println("p="+p);
+	
+		
 	}
 	
 	
