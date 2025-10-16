@@ -22,8 +22,7 @@ public class ProduitDaoMap implements ProduitDAO {
 
 	@Override
 	public Produit findById(int numero) {
-		// TODO Auto-generated method stub
-		return null;
+			return this.mapNumeroProduit.get(mapNumeroProduit);
 	}
 
 	@Override
@@ -33,14 +32,12 @@ public class ProduitDaoMap implements ProduitDAO {
 
 	@Override
 	public void updateProduit(Produit p) {
-		// TODO Auto-generated method stub
-
+		this.mapNumeroProduit.put(p.getNumero(), p);
 	}
 
 	@Override
 	public void deleteById(int numero) {
-		// TODO Auto-generated method stub
-
+		this.mapNumeroProduit.remove(numero);
 	}
 
 }
