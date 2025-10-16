@@ -1,6 +1,7 @@
 package tp.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import tp.Produit;
 
@@ -10,6 +11,10 @@ import tp.Produit;
  */
 
 public interface ProduitDAO {
+	
+	default Optional<Produit> findByIdOptional(int numero) { 
+		return Optional.ofNullable(findById(numero)); 
+	}
 	
 	Produit createProduit(Produit p); //en retour , le produit avec le numero souvent auto incrémenté
 	Produit findById(int numero);
