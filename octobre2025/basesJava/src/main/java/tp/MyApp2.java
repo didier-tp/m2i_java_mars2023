@@ -29,6 +29,12 @@ public class MyApp2 {
 		produitDao.createProduit(new Produit(null,"tomate","nourriture",3.2,1.0));
 		List<Produit> tousLesProduits = produitDao.findAll();
 		System.out.println("tousLesProduits="+tousLesProduits);
+		Produit p1 = produitDao.findById(1);
+		System.out.println("p1="+p1);
+		produitDao.updateProduit(new Produit(2,"tomate cottelée","nourriture",4.2,1.0));
+		System.out.println("p2="+produitDao.findById(2));
+		produitDao.deleteById(2);
+		System.out.println("tousLesProduits qui restent="+produitDao.findAll());
 	}
 	
 	public static void testerCollectionPersonne(){
