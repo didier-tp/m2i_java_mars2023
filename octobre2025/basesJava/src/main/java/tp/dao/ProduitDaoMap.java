@@ -22,7 +22,7 @@ public class ProduitDaoMap implements ProduitDAO {
 
 	@Override
 	public Produit findById(int numero) {
-			return this.mapNumeroProduit.get(mapNumeroProduit);
+			return this.mapNumeroProduit.get(numero);
 	}
 
 	@Override
