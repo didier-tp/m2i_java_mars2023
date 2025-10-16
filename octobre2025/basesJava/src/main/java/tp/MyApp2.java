@@ -68,7 +68,8 @@ public class MyApp2 {
 		
 		//trier une nouvelle fois cette liste par ages décroissants  (plus besoin du ComparatorPersonneAgeDesc):
 		//Collections.sort(listePers,(Personne p1,Personne p2)->{ return p2.getAge()-p1.getAge(); });
-		Collections.sort(listePers,(p1,p2)->p2.getAge()-p1.getAge());
+		//Collections.sort(listePers,(p1,p2)->p2.getAge()-p1.getAge());
+		Collections.sort(listePers,(p1,p2)->Integer.compare(p2.getAge(),p1.getAge()));
 		System.out.println("liste triée selon ages décroissants:" + listePers);
 		
 		//Ancien code avec classe imbriquée anonyme
