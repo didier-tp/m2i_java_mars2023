@@ -1,7 +1,9 @@
 package tp;
 
-import java.util.Collections;
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class MyCsvApp {
 	
@@ -25,7 +27,7 @@ public class MyCsvApp {
 		  
 		  myCsvUtil.writeStatFile( stat , "stats.csv");
 		  
-		  MyGenericCsvUtil.decrire("tp.Produit");
+		  //MyGenericCsvUtil.decrire("tp.Produit");
 		  
 		  //Suite faculative du Tp : générer un fichier avec produits triés par prix:
 		  
@@ -35,9 +37,15 @@ public class MyCsvApp {
 				               .toList();
 		  MyGenericCsvUtil.writeValuesAsCsvFile(listeProduitsTries, "produitsTries.csv");
 		  
-		  //generer un fichier json:
-		  //utiliser l'api jackson-databind:
-		  
+		  try {
+			//generer du  json via  l'api jackson-databind:
+			  ObjectMapper jacksonObjectMapper = new ObjectMapper();
+			  String listeProdAsJsonString = jacksonObjectMapper.writeValueAsString(listeProduitsTries);
+			  System.out.println("via jackson, listeProdAsJsonString="+listeProdAsJsonString);
+			  //plus qu'à placer ça dans un ficher texte ou l'envoyer en tant que réponse à une requete HTTP:
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

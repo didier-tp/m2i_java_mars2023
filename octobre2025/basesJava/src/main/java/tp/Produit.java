@@ -1,5 +1,7 @@
 package tp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +14,7 @@ public class Produit {
 	private String label;
 	
 	@CsvIgnore
+	@JsonIgnore
 	private String categorie;
 	
 	private Double prix;
