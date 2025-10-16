@@ -2,6 +2,7 @@ package tp;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import tp.dao.ProduitDAO;
@@ -14,8 +15,8 @@ public class MyApp2 {
 	
 	public static void main(String[] args) {
 		//testListe();
-		//testerCollectionPersonne();
-		testerProduitDao();
+		testerCollectionPersonne();
+		//testerProduitDao();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
@@ -52,10 +53,23 @@ public class MyApp2 {
 		Collections.sort(listePers,new ComparatorPersonneNom());
 		System.out.println("liste triée selon noms croissants:" + listePers);
 		
+		/*
 		//trier une nouvelle fois cette liste par ages décroissants 
 		//avec ComparatorPersonneAgeDesc puis afficher cette liste modifiée
 		Collections.sort(listePers,new ComparatorPersonneAgeDesc());
 		System.out.println("liste triée selon ages décroissants:" + listePers);
+		*/
+		
+		Collections.sort(listePers, new /* classe anonyme imbriquée et qui implements */
+				Comparator<Personne>() {
+					@Override
+					public int compare(Personne o1, Personne o2) {
+						return o2.getAge() - o1.getAge();
+					}
+		   }
+		);
+		System.out.println("liste triée selon ages décroissants:" + listePers);
+		
 	}
 	
 	public static void testListe() {
