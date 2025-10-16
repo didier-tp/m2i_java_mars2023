@@ -6,6 +6,9 @@ import tp.Transportable;
 
 public class Personne /* extends Object */ implements Transportable{
 	
+	public enum Genre { HOMME , FEMME , INDETERMINE };
+	
+	
 	public static final int AGE_MAJORITE=18;
 	
 	private static double esperanceVie=78.2; //+get/set static
@@ -13,8 +16,17 @@ public class Personne /* extends Object */ implements Transportable{
 	private String nom;
 	private Integer age;
 	private Double poids;
+	private Genre genre=Genre.INDETERMINE;  //+get/set
 	
 	
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
 	public static double getEsperanceVie() {
 		return esperanceVie;
 	}
@@ -38,7 +50,17 @@ public class Personne /* extends Object */ implements Transportable{
 		this.poids = poids;
 	}
 	
-    //constructeur par défaut (avec zéro paramètre)
+	
+	
+    public Personne(String nom, Integer age, Double poids, Genre genre) {
+		super();
+		this.nom = nom;
+		this.age = age;
+		this.poids = poids;
+		this.genre = genre;
+	}
+
+	//constructeur par défaut (avec zéro paramètre)
 	public Personne() {
 		super();
 	}
@@ -49,15 +71,17 @@ public class Personne /* extends Object */ implements Transportable{
 		System.out.println(this.toString());
 	}
 
-    @Override
-	public String toString() {
-		return "Personne [nom=" + nom + ", age=" + age + ", poids=" + poids + "]";
-	}
+   
 
 
 	//get..., set...() générés par assistants de eclipse ou intelliJ:
 	
 	
+
+	@Override
+	public String toString() {
+		return "Personne [nom=" + nom + ", age=" + age + ", poids=" + poids + ", genre=" + genre + "]";
+	}
 
 	public String getNom() {
 		return nom;

@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import tp.dao.ProduitDAO;
 import tp.dao.ProduitDaoMap;
 import tp.pers.Personne;
+import tp.pers.Personne.Genre;
 
 public class MyApp2 {
 	
@@ -30,8 +30,8 @@ public class MyApp2 {
 		listePers.add(new Personne("toto" , 30 , 77.6)); //new Personne(nom,age,poids)
 		listePers.add(new Personne("dupond" , 36 , 78.6));
 		listePers.add(new Personne("titi" , 6 , 38.6));
-		listePers.add(new Personne("luc" , 25 , 76.6));
-		listePers.add(new Personne("jean" , 16 , 58.6));
+		listePers.add(new Personne("luc" , 25 , 76.6 , Genre.HOMME));
+		listePers.add(new Personne("jeanne" , 16 , 58.6 , Genre.FEMME));
 		
 		//En Tp :
 		//construire une liste filtrée , triée et transformée
