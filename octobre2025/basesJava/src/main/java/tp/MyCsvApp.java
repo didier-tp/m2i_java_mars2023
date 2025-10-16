@@ -24,6 +24,9 @@ public class MyCsvApp {
 		  
 		  
 		  myCsvUtil.writeStatFile( stat , "stats.csv");
+		  
+		  MyGenericCsvUtil.decrire("tp.Produit");
+		  
 		  //Suite faculative du Tp : générer un fichier avec produits triés par prix:
 		  
 		  List<Produit> listeProduitsTries = 

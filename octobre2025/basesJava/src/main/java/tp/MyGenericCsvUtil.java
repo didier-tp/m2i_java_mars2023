@@ -4,9 +4,28 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class MyGenericCsvUtil {
+	
+	public static void decrire(String fullClassName) {
+		 try {
+			Class<?> c = Class.forName(fullClassName) ;
+			System.out.println("fullClassName="+fullClassName);
+			Field[] tabChamps = c.getDeclaredFields();
+			for (Field f : tabChamps) {
+				System.out.println("\tfield :"+f.getName());
+			}
+			Method[] tabMethods = c.getDeclaredMethods();
+			for (Method m : tabMethods) {
+				System.out.println("\tmethod :"+m.getName());
+			}
+		 } catch (Exception e) {
+			e.printStackTrace();
+		 }
+	}
+	
 	public static String writeValuesAsCsvString(Object obj) {
 		String csvString = null;
 		Class<?> c = obj.getClass(); // meta description de la classe de l'objet obj
