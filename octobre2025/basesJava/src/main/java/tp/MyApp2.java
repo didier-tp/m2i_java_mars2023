@@ -1,26 +1,58 @@
 package tp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import tp.dao.ProduitDAO;
 import tp.dao.ProduitDaoMap;
-import tp.pers.ComparatorPersonneAgeDesc;
-import tp.pers.ComparatorPersonneNom;
 import tp.pers.Personne;
 
 public class MyApp2 {
 	
 	public static void main(String[] args) {
 		//testListe();
-		testerCollectionPersonne();
+		//testerCollectionPersonne();
+		testerStream();
 		//testerProduitDao();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
 		*/
+	}
+	
+	public static void testerStream(){
+		List<Personne> listePers = new ArrayList<>(); //possible depuis java 1.7
+
+		listePers.add(new Personne("toto" , 30 , 77.6)); //new Personne(nom,age,poids)
+		listePers.add(new Personne("dupond" , 36 , 78.6));
+		listePers.add(new Personne("titi" , 6 , 38.6));
+		listePers.add(new Personne("luc" , 25 , 76.6));
+		listePers.add(new Personne("jean" , 16 , 58.6));
+		
+		//En Tp :
+		//construire une liste filtrée , triée et transformée
+		//personnes majeures seulement
+		//tri par nom
+		//nom en majuscule
+		List<Personne> listePers2 = 
+				listePers.stream()
+				          .filter(p->p.estMajeur())
+				          .sorted((p1,p2)->p1.getNom().compareTo(p2.getNom()))
+				          //.map((p)->{ p.setNom(p.getNom().toUpperCase()); return p; })
+				          .map((p)->new Personne(p.getNom().toUpperCase(),p.getAge(),p.getPoids()))
+				          //.collect(Collectors.toList()) //depuis java 8
+				          .toList();//depuis java 17
+		
+		System.out.println("listePers2="+listePers2);
+		System.out.println("listePers (d'origine)="+listePers);
+		
+		List<Double> listeDouble = Arrays.asList( 1.0 ,6.8 , 9.5 , 2.2 , 9.1 , 3.3  );
+		//en tp , calculer et afficher la somme , puis la moyenne 
+		
 	}
 	
 	public static void testerProduitDao(){
@@ -37,6 +69,8 @@ public class MyApp2 {
 		produitDao.deleteById(2);
 		System.out.println("tousLesProduits qui restent="+produitDao.findAll());
 	}
+	
+	
 	
 	public static void testerCollectionPersonne(){
 		//créer une liste de Personne , y ajouter quelques valeurs
