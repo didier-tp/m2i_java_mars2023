@@ -17,7 +17,7 @@ public class MyCsvUtil {
 			  scanner.nextLine();//première ligne à ignorer (titre des colonnes)
 			  while(scanner.hasNext()) {
 			    String ligne = scanner.nextLine();
-			    System.out.println("ligne lue=" + ligne) ;
+			    //System.out.println("ligne lue=" + ligne) ;
 			    String[] t = ligne.split(";");
 			    Produit p = new Produit(Integer.parseInt(t[0]),
 			                    t[1],
