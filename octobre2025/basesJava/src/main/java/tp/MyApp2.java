@@ -52,6 +52,9 @@ public class MyApp2 {
 		
 		List<Double> listeDouble = Arrays.asList( 1.0 ,6.8 , 9.5 , 2.2 , 9.1 , 3.3  );
 		//en tp , calculer et afficher la somme , puis la moyenne 
+		double somme = listeDouble.stream().reduce(0.0,(x,y)->(x+y));
+		double moyenne = somme / listeDouble.size();
+		System.out.println("moyenne="+moyenne);
 		
 	}
 	
