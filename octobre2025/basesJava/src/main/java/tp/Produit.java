@@ -10,7 +10,10 @@ public class Produit {
 	
 	private Integer numero; //id, clef primaire
 	private String label;
+	
+	@CsvIgnore
 	private String categorie;
+	
 	private Double prix;
 	private Double poids;
 	
