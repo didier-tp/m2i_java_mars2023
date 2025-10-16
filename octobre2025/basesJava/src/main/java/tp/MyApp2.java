@@ -1,11 +1,14 @@
 package tp;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import tp.dao.ProduitDAO;
@@ -20,7 +23,7 @@ public class MyApp2 {
 		//testerCollectionPersonne();
 		//testerStream();
 		testerProduitDao();
-		//testerDates();
+		testerDates();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
@@ -30,7 +33,7 @@ public class MyApp2 {
 	public static void testerDates(){
 		LocalDateTime ldt = LocalDateTime.now();
 		System.out.println(ldt);
-		//System.out.println(ldt.format(null));
+		System.out.println(ldt.format( DateTimeFormatter.ofPattern("dd/MM/yyyy",Locale.FRENCH)));
 		Personne p = new Personne("toto" , 30 , 77.6);
 		System.out.println(p.myToString());
 		System.out.println(p.toXmlString());
