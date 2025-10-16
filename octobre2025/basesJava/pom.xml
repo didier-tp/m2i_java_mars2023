@@ -14,6 +14,12 @@
  </properties>
  
  <dependencies>
+ 
+		 <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.18.4</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -28,7 +34,7 @@
 	    <scope>test</scope>
 	</dependency>
 
-	<!-- junit-platform-suite with indirect junit-platform-suite-api and junit-platform-suite-engine -->
+		<!-- junit-platform-suite with indirect junit-platform-suite-api and junit-platform-suite-engine -->
 	<dependency>
 	    <groupId>org.junit.platform</groupId>
 	    <artifactId>junit-platform-suite</artifactId>

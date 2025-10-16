@@ -34,6 +34,10 @@ public class MyCsvApp {
 				               .sorted((p1,p2)-> Double.compare(p1.getPrix(),p2.getPrix()) )
 				               .toList();
 		  MyGenericCsvUtil.writeValuesAsCsvFile(listeProduitsTries, "produitsTries.csv");
+		  
+		  //generer un fichier json:
+		  //utiliser l'api jackson-databind:
+		  
 	}
 
 }
