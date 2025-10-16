@@ -1,5 +1,6 @@
 package tp.pers;
 
+import java.text.MessageFormat;
 import java.util.Objects;
 
 import tp.Transportable;
@@ -81,6 +82,14 @@ public class Personne /* extends Object */ implements Transportable{
 	@Override
 	public String toString() {
 		return "Personne [nom=" + nom + ", age=" + age + ", poids=" + poids + ", genre=" + genre + "]";
+	}
+	
+	public String myToString() {
+		return MessageFormat.format("Je suis une personne de nom {0} et age={1} ",this.nom , this.age);
+	}
+	
+	public String toXmlString() {
+		return MessageFormat.format("<personne nom=''{0}'' age=''{1}'' /> ",this.nom , this.age);
 	}
 
 	public String getNom() {

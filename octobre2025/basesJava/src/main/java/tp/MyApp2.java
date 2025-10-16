@@ -1,5 +1,6 @@
 package tp;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,12 +17,22 @@ public class MyApp2 {
 	public static void main(String[] args) {
 		//testListe();
 		//testerCollectionPersonne();
-		testerStream();
+		//testerStream();
 		//testerProduitDao();
+		testerDates();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
 		*/
+	}
+	
+	public static void testerDates(){
+		LocalDateTime ldt = LocalDateTime.now();
+		System.out.println(ldt);
+		//System.out.println(ldt.format(null));
+		Personne p = new Personne("toto" , 30 , 77.6);
+		System.out.println(p.myToString());
+		System.out.println(p.toXmlString());
 	}
 	
 	public static void testerStream(){
