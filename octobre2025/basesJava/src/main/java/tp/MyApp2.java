@@ -72,8 +72,14 @@ public class MyApp2 {
 	}
 	
 	public static void testerProduitDao(){
+		/*
 		ProduitDaoJdbc produitDao = new ProduitDaoJdbc();
 		produitDao.initConnection();
+		*/
+		ProduitDAO produitDao = new ProduitDaoJdbc();
+		produitDao.createProduit(new Produit(null,"tomate","nourriture",3.2,1.0));
+		List<Produit> tousLesProduits = produitDao.findAll();
+		System.out.println("tousLesProduits="+tousLesProduits);
 		
 		/*
 		ProduitDAO produitDao = new ProduitDaoMap();
