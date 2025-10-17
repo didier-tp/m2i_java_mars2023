@@ -2,17 +2,15 @@ package tp;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Optional;
 
 import tp.dao.ProduitDAO;
-import tp.dao.ProduitDaoMap;
+import tp.dao.ProduitDaoJdbc;
 import tp.pers.Personne;
 import tp.pers.Personne.Genre;
 
@@ -23,7 +21,7 @@ public class MyApp2 {
 		//testerCollectionPersonne();
 		//testerStream();
 		testerProduitDao();
-		testerDates();
+		//testerDates();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
@@ -74,6 +72,10 @@ public class MyApp2 {
 	}
 	
 	public static void testerProduitDao(){
+		ProduitDaoJdbc produitDao = new ProduitDaoJdbc();
+		produitDao.initConnection();
+		
+		/*
 		ProduitDAO produitDao = new ProduitDaoMap();
 		//ProduitDAO produitDao = new ProduitDaoJdbc();
 		produitDao.createProduit(new Produit(null,"pomme","nourriture",2.2,1.0));
@@ -94,7 +96,7 @@ public class MyApp2 {
 		System.out.println("pOuNull="+pOuNull);
 		Produit p = opProd.get();//java.util.NoSuchElementException: No value present si Optional.empty
 		System.out.println("p="+p);
-	
+	    */
 		
 	}
 	
