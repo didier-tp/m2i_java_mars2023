@@ -10,6 +10,6 @@ dans pom.xml
 dans src/main/resources/db.properties (fichier à créer)
 ---------------------
 driver=com.mysql.cj.jdbc.Driver
-url=jdbc:mysql://localhost:3306/myLuminessDB?serverTimezone=UTC
+url=jdbc:mysql://localhost:3306/tpDB?serverTimezone=UTC
 username=root
-password=root
+password=
