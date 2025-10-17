@@ -20,12 +20,31 @@ public class MyApp2 {
 		//testListe();
 		//testerCollectionPersonne();
 		//testerStream();
-		testerProduitDao();
+		//testerProduitDao();
 		//testerDates();
 		/*
 		MyApp2 myApp2 = new MyApp2();
 		myApp2.testPasStatic();
 		*/
+		testSwitchAvecLambda();
+	}
+	
+	public static void testSwitchAvecLambda(){
+		List<Personne> listePers = new ArrayList<>(); //possible depuis java 1.7
+
+		listePers.add(new Personne("toto" , 30 , 77.6 , Genre.HOMME)); //new Personne(nom,age,poids)
+		listePers.add(new Personne("dupond" , 36 , 78.6));
+		listePers.add(new Personne("julie" , 6 , 38.6 , Genre.FEMME));
+		for(Personne p : listePers) {
+			
+			String message = 
+					switch(p.getGenre()) {
+			           case  HOMME -> { String msg = "Bonjour monsieur " + p.getNom(); yield msg; } 
+			           case  FEMME -> { String msg = "Bonjour madame " + p.getNom();; yield msg; } 
+			           default -> "?";
+			       };
+			System.out.println(message);
+		 }
 	}
 	
 	public static void testerDates(){
